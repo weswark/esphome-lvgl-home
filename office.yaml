@@ -20,17 +20,6 @@ esphome:
   area: ${room}
   platformio_options:
     board_build.flash_mode: dio
-  on_boot:
-    - priority: 800
-      then:
-        - lambda: |-
-            holding_gpio = new HoldingGpio(GPIO_NUM_14);
-    - priority: 200
-      then:
-        - script.execute:
-            id: lvgl_update_led
-            l_text: !lambda 'return (const char *)(id(contactor_relay).state ? "On" : "Off");'
-            l_color: !lambda 'return (id(contactor_relay).state ? id(on_color) : id(off_color));'
 
 esp32:
   board: esp32-s3-devkitc-1
