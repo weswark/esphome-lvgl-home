@@ -13,17 +13,6 @@ globals:
     type: bool
     initial_value: 'false'
 
-wifi:
-  on_connect:
-    - script.execute:
-        id: lvgl_update_status_icon
-        name: api_connection
-        is_on: true
-  on_disconnect:
-    - script.execute:
-        id: lvgl_update_status_icon
-        name: api_connection
-        is_on: false
 
 esphome:
   name: ${name}
