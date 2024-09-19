@@ -1,0 +1,156 @@
+# WT32-SC01 PLUS
+
+
+globals:
+  - id: inverter_on
+    type: bool
+    initial_value: 'false'
+  - id: current_tile_num
+    type: uint8_t
+    initial_value: '0'
+  - id: is_automatic_tile_change
+    type: bool
+    initial_value: 'false'
+
+wifi:
+  on_connect:
+    - script.execute:
+        id: lvgl_update_status_icon
+        name: api_connection
+        is_on: true
+  on_disconnect:
+    - script.execute:
+        id: lvgl_update_status_icon
+        name: api_connection
+        is_on: false
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  area: ${room}
+  platformio_options:
+    board_build.flash_mode: dio
+  on_boot:
+    - priority: 800
+      then:
+        - lambda: |-
+            holding_gpio = new HoldingGpio(GPIO_NUM_14);
+    - priority: 200
+      then:
+        - script.execute:
+            id: lvgl_update_led
+            l_text: !lambda 'return (const char *)(id(contactor_relay).state ? "On" : "Off");'
+            l_color: !lambda 'return (id(contactor_relay).state ? id(on_color) : id(off_color));'
+
+esp32:
+  board: esp32-s3-devkitc-1
+  variant: ESP32S3
+  flash_size: 16MB
+  framework:
+    type: esp-idf
+    sdkconfig_options:
+      CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240: y
+      CONFIG_ESP32S3_DATA_CACHE_64KB: y
+      CONFIG_SPIRAM_FETCH_INSTRUCTIONS: y
+      CONFIG_SPIRAM_RODATA: y
+
+psram:
+  mode: quad
+  speed: 80MHZ
+
+external_components:
+  - source: github://pr#6537
+    components: [ io_bus, i80, spi, ili9xxx ]
+  - source: github://clydebarrow/esphome@lvgl
+    components: [ lvgl ]
+  - source: github://syssi/esphome-jk-bms@main
+
+logger:
+  baud_rate: 0
+
+debug:
+
+uart:
+  - id: bms_uart
+    tx_pin: GPIO10
+    rx_pin: GPIO11
+    baud_rate: 115200
+  - id: inverter_uart
+    tx_pin: GPIO43
+    rx_pin: GPIO44
+    baud_rate: 9600
+
+sensor:
+  - platform: debug
+    free:
+      name: "Heap Free"
+    block:
+      name: "Heap Max Block"
+    loop_time:
+      name: "Loop Time"
+    psram:
+      name: "Free PSRAM"
+  - platform: internal_temperature
+    name: ESP32 Internal temperature
+    entity_category: diagnostic
+
+i2c:
+  sda: GPIO6
+  scl: GPIO5
+  id: touch_i2c
+
+touchscreen:
+  - platform: ft63x6
+    id: touch
+    interrupt_pin: GPIO7
+    transform:
+      swap_xy: true
+      mirror_x: true
+    on_release:
+      - script.execute: lvgl_resume
+
+output:
+  - platform: ledc
+    id: backlight_pwm
+    pin:
+      number: GPIO45
+      ignore_strapping_warning: true
+
+light:
+  - platform: monochromatic
+    id: backlight
+    output: backlight_pwm
+    restore_mode: ALWAYS_ON
+
+i80:
+  - id: i80bus
+    dc_pin: 
+      number: GPIO0
+      ignore_strapping_warning: true
+    wr_pin: GPIO47
+    data_pins:
+      - GPIO9
+      - number: GPIO46
+        ignore_strapping_warning: true
+      - number: GPIO3
+        ignore_strapping_warning: true
+      - GPIO8
+      - GPIO18
+      - GPIO17
+      - GPIO16
+      - GPIO15
+
+display:
+  - platform: ili9xxx
+    model: ST7796
+    bus_type: i80
+    reset_pin: GPIO4
+    pixel_mode: 16bit
+    color_order: bgr
+    invert_colors: true
+    dimensions:
+      width: 480
+      height: 320
+    transform:
+      swap_xy: true
+    auto_clear_enabled: false
