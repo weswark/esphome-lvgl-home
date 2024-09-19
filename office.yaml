@@ -58,12 +58,12 @@ psram:
   mode: quad
   speed: 80MHZ
 
-external_components:
-  - source: github://pr#6537
-    components: [ io_bus, i80, spi, ili9xxx ]
-  - source: github://clydebarrow/esphome@lvgl
-    components: [ lvgl ]
-  - source: github://syssi/esphome-jk-bms@main
+#external_components:
+#  - source: github://pr#6537
+#    components: [ io_bus, i80, spi, ili9xxx ]
+#  - source: github://clydebarrow/esphome@lvgl
+#    components: [ lvgl ]
+#  - source: github://syssi/esphome-jk-bms@main
 
 logger:
   baud_rate: 0
