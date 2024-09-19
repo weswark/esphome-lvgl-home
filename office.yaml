@@ -1,6 +1,7 @@
 # WT32-SC01 PLUS
 
 
+    
 globals:
   - id: inverter_on
     type: bool
@@ -66,8 +67,11 @@ psram:
 #  - source: github://syssi/esphome-jk-bms@main
 
 external_components:
- - source: github://clydebarrow/esphome@i8080
-   components: [ i80, io_bus, ili9xxx, spi ]
+# - source: github://clydebarrow/esphome@i8080
+#   components: [ i80, io_bus, ili9xxx, spi ]
+ - source: github://clydebarrow/esphome@lvgl
+    refresh: 1min
+    components: [ lvgl, font, display ]  
 
 logger:
   baud_rate: 0
