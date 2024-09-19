@@ -65,6 +65,10 @@ psram:
 #    components: [ lvgl ]
 #  - source: github://syssi/esphome-jk-bms@main
 
+external_components:
+ - source: github://clydebarrow/esphome@i8080
+   components: [ i80, io_bus, ili9xxx, spi ]
+
 logger:
   baud_rate: 0
 
