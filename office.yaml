@@ -1,7 +1,4 @@
 # WT32-SC01 PLUS
-
-
-    
 globals:
   - id: inverter_on
     type: bool
