@@ -1,0 +1,188 @@
+# 480x800 Screen
+
+
+#-------------------------------------------
+# LVGL Buttons
+#-------------------------------------------     
+lvgl:
+  displays:
+    - display_id: my_display
+  touchscreens:
+    - touchscreen_id: my_touchscreen
+  on_idle:
+    - timeout: 10s
+      then:
+        - logger.log: idle timeout
+        - if:
+            condition:
+              lvgl.is_idle:
+                timeout: 5s
+            then:
+              - logger.log: LVGL is idle
+    - timeout: 15s
+      then:
+        - logger.log: idle 15s timeout
+
+      #- lvgl.pause:
+      #- light.turn_off:
+      #    id: display_backlight
+      #    transition_length: 5s    
+
+  style_definitions:
+    - id: no_checked_color
+      bg_color: 0xCC5E14
+      text_color: 0xB6B6B6
+
+  theme:
+    button:
+      text_font: roboto24
+      scroll_on_focus: true
+      group: general
+      radius: 25px
+      width: 150px
+      height: 109px
+      pad_all: 10px
+      shadow_width: 0 # This is required even though the default is suposed to be 0
+      bg_color: 0x313131
+      text_color: 0xB6B6B6
+      checked:
+        bg_color: 0xCC5E14
+        text_color: 0xB6B6B6
+
+  page_wrap: true
+  
+  top_layer:
+    widgets:
+      - obj:
+          id: boot_screen
+          layout: 
+            type: flex
+            flex_flow: COLUMN_WRAP 
+          width: 800px
+          height: 480px
+          text_font: roboto24
+          scrollbar_mode: 'off'
+          bg_color: 0xffffff
+          bg_opa: COVER
+          radius: 0
+          pad_all: 5
+          widgets:
+            - image:
+                src: boot_logo
+                antialias: true
+                pad_bottom: 10
+            - label:
+                id: ip_address_label
+                text: "IP Address:"                
+            - label:
+                text:
+                  format: "MAC Address: %s"
+                  args: [ 'id(mac_address).state.c_str()' ]                
+            - label:
+                id: connected_ssid_label
+                text: "Connected SSID:"
+            - label:
+                id: wifi_signal_db_percent_label
+                text: "WiFi Strength: 0%"
+            - label:
+                text:
+                  format: "ESPHome Version: %s"
+                  args: [ 'id(esphome_version).state.c_str()' ]
+            - obj:
+               radius: 0
+               pad_all: 0
+               border_width: 0
+               width: 470px
+               flex_grow: 1            
+               widgets:
+                 - button:
+                    align: bottom_right
+                    radius: 15
+                    width: 100
+                    height: 60
+                    checkable: true
+                    widgets:
+                     - label:
+                         text_color: 0xffffff
+                         align: center
+                         text: "OK"
+                    on_press:
+                     - lvgl.widget.hide: boot_screen
+ 
+  pages:
+    - id: main_page
+      skip: true
+      layout: 
+        type: flex
+        flex_flow: column_wrap
+      width: 100%
+      bg_color: Black
+      bg_opa: cover
+      pad_all: 5
+      widgets:
+        - button:
+            height: $button_hight_double
+            checkable: true
+            id: lv_button_1
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $button_1_icon
+                  id: lv_button_1_icon
+              - label:
+                  align: bottom_left
+                  text: $button_1_name
+
+
+
+
+#-------------------------------------------
+# Graphics and Fonts
+#-------------------------------------------
+image:
+  - file: https://esphome.io/_static/logo-text-on-light.svg
+    id: boot_logo
+    resize: 460x90
+    type: RGB565
+    use_transparency: true
+
+font:
+  - file: "gfonts://Roboto"
+    id: roboto24
+    size: 24
+    bpp: 4
+    extras:
+      # http://materialdesignicons.com/cdn/7.4.47/
+      - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
+        glyphs: [
+          "\U000F004B",
+          "\U0000f0ed",
+          "\U000F006E",
+          "\U000F012C",
+          "\U000F179B",
+          "\U000F0748",
+          "\U000F1A1B",
+          "\U000F02DC",
+          "\U000F0A02",
+          "\U000F035F",
+          "\U000F0156",
+          "\U000F0C5F",
+          "\U000f0084",
+          "\U000f0091",
+        ]
+
+  # http://materialdesignicons.com/cdn/7.4.47/
+  - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
+    id: light40
+    size: 40
+    bpp: 4
+    glyphs: [
+      "\U000F0335",  # mdi-lightbulb
+      "\U000F0769",  # mdi-ceiling-light
+      "\U000F06B5",  # mdi-lamp
+      "\U000F08DD",  # mdi-floor-lamp
+      "\U000F12BA",  # mdi-string-lights
+    ]         
+
+              
