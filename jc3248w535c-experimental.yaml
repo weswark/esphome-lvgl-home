@@ -84,5 +84,3 @@ lvgl:
         - switch:
             align: CENTER
             id: light_switch
-            on_click:
-              light.toggle: local_light
