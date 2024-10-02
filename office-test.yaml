@@ -171,8 +171,6 @@ globals:
     type: Color
     initial_value: "Color::random_color()"
 
-lvgl:
-
 display:
   - platform: axs15231
     data_rate: 40MHz #20mhz is default
@@ -189,10 +187,6 @@ display:
       swap_xy: false
     rotation: 90
     auto_clear_enabled: false
-#    lambda: |-
-#      it.fill(id(bgcolor));
-#      it.print(it.get_width()/2, it.get_height()/2-20, id(font_title), TextAlign::CENTER, "ESPHome");
-#      it.print(it.get_width()/2, it.get_height()/2+20, id(font_std), TextAlign::CENTER, "@UTBDK");
 
 touchscreen:
   - platform: axs15231
@@ -201,15 +195,5 @@ touchscreen:
     i2c_id: touchscreen_bus
     transform:
       swap_xy: true
-    on_touch:
-      - lambda: |-
-          Color newColor;
-          do { newColor =  Color::random_color(); } while (newColor == id(bgcolor));
-          id(bgcolor) = newColor;
 
-          ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
-            touch.x,
-            touch.y,
-            touch.x_raw,
-            touch.y_raw
-          );
+lvgl:
