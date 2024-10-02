@@ -84,3 +84,6 @@ lvgl:
         - switch:
             align: CENTER
             id: light_switch
+              on_click:
+                - homeassistant.action:
+                    action: light.toggle
