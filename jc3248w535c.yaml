@@ -10,8 +10,6 @@ esphome:
     board_build.f_cpu: 240000000L
 
 external_components:
-  #- source: github://buglloc/esphome-components
-  #- source:  github://Garag/esphome-components
   - source:  github://clowrey/esphome-components
     components: [axs15231]
     refresh: 10min
