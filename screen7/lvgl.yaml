@@ -1,3 +1,27 @@
+substitutions:
+  lightbulb:     "\U000F0335"
+  ceiling_light: "\U000F0769"
+  lamp:          "\U000F06B5"
+  floor_lamp:    "\U000F08DD"
+  string_lights: "\U000F12BA"
+
+  icon_font: light40
+  text_font: roboto24  
+  button_on_color: "Dark_Orange"
+  icon_on_color: "Yellow"
+  button_off_color: "Very_Dark_Gray"
+  icon_off_color: "White"
+  button_text_color: "White"
+  button_hight_single: '109px'
+  button_hight_double: '228px'
+  button_width: '150px' 
+  
+  button_1_name: "Local Light"
+  button_1_id: local_light
+  button_1_icon: $lightbulb
+  button_1_HAdevice: $button_1_id  
+
+
 
 #-------------------------------------------
 # LVGL Buttons
