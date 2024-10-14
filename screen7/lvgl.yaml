@@ -88,8 +88,6 @@ lvgl:
               - label:
                   align: bottom_left
                   text: $button_1_name
-            on_click:
-                light.toggle: $button_1_HAdevice
               
 #-------------------------------------------
 # Graphics and Fonts
