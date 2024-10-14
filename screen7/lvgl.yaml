@@ -1,19 +1,142 @@
+
+#-------------------------------------------
+# LVGL Buttons
+#-------------------------------------------    
 lvgl:
+  displays: 
+    - my_display
+  touchscreens:
+    - my_touchscreen
+
+  style_definitions:
+    - id: style_line
+      line_color: Blue
+      line_width: 8
+      line_rounded: true
+    - id: date_style
+      text_font: roboto24
+      align: center
+      text_color: 0x333333
+      bg_opa: cover
+      radius: 4
+      pad_all: 2
+
+  theme:
+    button:
+      text_font: roboto24
+      scroll_on_focus: true
+      radius: 25
+      width: $button_width
+      height: $button_hight_single
+      pad_left: 10px
+      pad_top: 10px
+      pad_bottom: 10px
+      pad_right: 10px
+      shadow_width: 0
+      bg_color: $button_off_color
+      text_color: $button_text_color
+      checked:
+        bg_color: $button_on_color
+        text_color: $button_text_color
+
+  page_wrap: true
+
   pages:
-    - id: room_page
+    - id: main_page
+      layout: 
+        type: flex
+        flex_flow: column_wrap
+      width: 100%
+      bg_color: Black
+      bg_opa: cover
+      pad_all: 5
       widgets:
         - button:
-            id: light_btn
-            align: CENTER
-            width: 100
-            height: 70
+            height: $button_hight_double
             checkable: true
+            id: lv_button_1
             widgets:
               - label:
-                  align: CENTER
-                  text: 'office_lamp_light'
+                  text_font: $icon_font
+                  align: top_left
+                  text: $button_1_icon
+                  id: lv_button_1_icon
+              - label:
+                  align: bottom_left
+                  text: $button_1_name
             on_click:
-              - homeassistant.action:
-                  action: light.toggle
-                  data:
-                    entity_id: light.office_lamp_light
+                light.toggle: $button_1_HAdevice
+              
+#-------------------------------------------
+# Internal backlight + light attaced to internal relay
+#-------------------------------------------
+light:
+  - platform: monochromatic
+    output: GPIO38
+    name: Display Backlight
+    id: display_backlight
+    restore_mode: ALWAYS_ON
+
+  - platform: binary
+    output: internal_relay_1
+    name: $button_1_name
+    id: $button_1_id
+    on_turn_on:
+      then:
+        - lvgl.widget.update:
+            id: lv_button_1_icon
+            text_color: $icon_on_color
+        - lvgl.widget.update:
+            id: lv_button_1
+            state:
+              checked: true            
+    on_turn_off:
+      then:
+        - lvgl.widget.update:
+            id: lv_button_1_icon
+            text_color: $icon_off_color
+        - lvgl.widget.update:
+            id: lv_button_1
+            state:
+              checked: false             
+
+#-------------------------------------------
+# Graphics and Fonts
+#-------------------------------------------
+font:
+  - file: "gfonts://Roboto"
+    id: roboto24
+    size: 24
+    bpp: 4
+    extras:
+      # http://materialdesignicons.com/cdn/7.4.47/
+      - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
+        glyphs: [
+          "\U000F004B",
+          "\U0000f0ed",
+          "\U000F006E",
+          "\U000F012C",
+          "\U000F179B",
+          "\U000F0748",
+          "\U000F1A1B",
+          "\U000F02DC",
+          "\U000F0A02",
+          "\U000F035F",
+          "\U000F0156",
+          "\U000F0C5F",
+          "\U000f0084",
+          "\U000f0091",
+        ]
+
+  # http://materialdesignicons.com/cdn/7.4.47/
+  - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
+    id: light40
+    size: 40
+    bpp: 4
+    glyphs: [
+      "\U000F0335",  # mdi-lightbulb
+      "\U000F0769",  # mdi-ceiling-light
+      "\U000F06B5",  # mdi-lamp
+      "\U000F08DD",  # mdi-floor-lamp
+      "\U000F12BA",  # mdi-string-lights
+    ]   
