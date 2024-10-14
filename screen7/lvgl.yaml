@@ -1,0 +1,19 @@
+lvgl:
+  pages:
+    - id: room_page
+      widgets:
+        - button:
+            id: light_btn
+            align: CENTER
+            width: 100
+            height: 70
+            checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Remote light'
+            on_click:
+              - homeassistant.action:
+                  action: light.toggle
+                  data:
+                    entity_id: light.remote_light

@@ -92,35 +92,3 @@ display:
     invert_colors: true
     auto_clear_enabled: false
     update_interval: never
-
-binary_sensor:
-  - platform: homeassistant
-    id: remote_light
-    entity_id: light.remote_light
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: light_btn
-          state:
-            checked: !lambda return x;
-
-lvgl:
-  pages:
-    - id: room_page
-      widgets:
-        - button:
-            id: light_btn
-            align: CENTER
-            width: 100
-            height: 70
-            checkable: true
-            widgets:
-              - label:
-                  align: CENTER
-                  text: 'Remote light'
-            on_click:
-              - homeassistant.action:
-                  action: light.toggle
-                  data:
-                    entity_id: light.remote_light
