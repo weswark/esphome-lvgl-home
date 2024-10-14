@@ -1,8 +1,6 @@
 lvgl:
   pages:
     - id: room_page
-
-        # Office Air Conditioner
       widgets:
         - button:
             id: light_btn
@@ -13,10 +11,9 @@ lvgl:
             widgets:
               - label:
                   align: CENTER
-                  text: 'Aircon'
-            on_press:
-              - homeassistant.service:
-                  service: climate.set_hvac_mode
+                  text: 'office_lamp_light'
+            on_click:
+              - homeassistant.action:
+                  action: light.toggle
                   data:
-                    entity_id: climate.office_air_conditioner
-                    hvac_mode: "auto"
+                    entity_id: light.office_lamp_light
