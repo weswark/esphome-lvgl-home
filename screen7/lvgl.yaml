@@ -92,39 +92,6 @@ lvgl:
                 light.toggle: $button_1_HAdevice
               
 #-------------------------------------------
-# Internal backlight + light attaced to internal relay
-#-------------------------------------------
-light:
-  - platform: monochromatic
-    output: GPIO38
-    name: Display Backlight
-    id: display_backlight
-    restore_mode: ALWAYS_ON
-
-  - platform: binary
-    output: internal_relay_1
-    name: $button_1_name
-    id: $button_1_id
-    on_turn_on:
-      then:
-        - lvgl.widget.update:
-            id: lv_button_1_icon
-            text_color: $icon_on_color
-        - lvgl.widget.update:
-            id: lv_button_1
-            state:
-              checked: true            
-    on_turn_off:
-      then:
-        - lvgl.widget.update:
-            id: lv_button_1_icon
-            text_color: $icon_off_color
-        - lvgl.widget.update:
-            id: lv_button_1
-            state:
-              checked: false             
-
-#-------------------------------------------
 # Graphics and Fonts
 #-------------------------------------------
 font:
