@@ -1,13 +1,4 @@
 # Designed for ESP32-S3-Touch-LCD-7
-esphome:
-  name: ${name}
-  friendly_name: ${friendly_name}
-  area: ${room}
-  platformio_options:
-    build_unflags: -Werror=all
-    board_build.flash_mode: dio
-
-
 esp32:
   board: esp32-s3-devkitc-1
   framework:
@@ -20,8 +11,23 @@ esp32:
       CONFIG_SPIRAM_FETCH_INSTRUCTIONS: y
       CONFIG_SPIRAM_RODATA: y
 
+# Esphome
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  area: ${room}
+  platformio_options:
+    build_unflags: -Werror=all
+    board_build.flash_mode: dio
+
+# Over the Air Updates
+ota:
+  platform: esphome
+
+# Enable Home Assistant API
 api:
 
+# Enable logging
 logger:
   level: DEBUG
   hardware_uart: UART0
@@ -30,29 +36,12 @@ logger:
     modbus_controller.sensor: INFO
     sensor: INFO
 
-
-ota:
-  platform: esphome
-
-external_components:
-  - source: github://pr#7356
-    components: [ch422g]
-
-ch422g:
-  - id: io_ex
-    address: 0x24
-
+# Video memory
 psram:
   mode: octal
   speed: 80MHz
 
-i2c:
-  sda: 8
-  scl: 9
-  frequency: 400kHz
-  scan: false
-  id: bus_a
-
+# Touch screen
 touchscreen:
   - platform: gt911
     address: 0x5D
@@ -63,6 +52,24 @@ touchscreen:
       ch422g: io_ex
       number: 1
 
+# i2c connections
+i2c:
+  sda: 8
+  scl: 9
+  frequency: 400kHz
+  scan: false
+  id: bus_a
+
+ch422g:
+  - id: io_ex
+    address: 0x24
+
+external_components:
+  - source: github://pr#7356
+    components: [ch422g]
+
+
+# Display
 display:
   - platform: rpi_dpi_rgb
     id: main_display
