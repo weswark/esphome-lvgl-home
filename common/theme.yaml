@@ -1,16 +1,4 @@
 substitutions:
-  name: "guition-esp32-s3-4848s040"
-  friendly_name: "Guition480"
-  device_description: "Guition ESP32-S3-4848S040 480*480 Smart Screen"
-  project_name: "Guition.ESP32_S3_4848S040"
-  project_version: "0.9.1"
-  
-  lightbulb:     "\U000F0335"
-  ceiling_light: "\U000F0769"
-  lamp:          "\U000F06B5"
-  floor_lamp:    "\U000F08DD"
-  string_lights: "\U000F12BA"
-
   icon_font: light40
   text_font: roboto24  
   button_on_color: "Dark_Orange"
@@ -20,12 +8,7 @@ substitutions:
   button_text_color: "White"
   button_hight_single: '109px'
   button_hight_double: '228px'
-  button_width: '150px' 
-  
-  button_1_name: "Local Light"
-  button_1_id: local_light
-  button_1_icon: $lightbulb
-  button_1_HAdevice: $button_1_id  
+  button_width: '150px'
 
 lvgl:
   theme:
