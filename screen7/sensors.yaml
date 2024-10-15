@@ -1,7 +1,7 @@
-light:
+binary_sensor:
   - platform: homeassistant
     id: office_feature_lights
-    name: 'Local light'
+    entity_id: light.office_feature_lights
     on_turn_on:
       - lvgl.widget.update:
           id: light_switch
