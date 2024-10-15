@@ -16,4 +16,4 @@ lvgl:
               - homeassistant.action:
                   action: light.toggle
                   data:
-                    entity_id: light.office_feature_lights
+                    entity_id: light.office_lamp_light
