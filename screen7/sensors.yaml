@@ -1,4 +1,14 @@
-binary_sensor:
+light:
   - platform: homeassistant
     id: office_feature_lights
-    entity_id: light.office_feature_lights
+    name: 'Local light'
+    on_turn_on:
+      - lvgl.widget.update:
+          id: light_switch
+          state:
+            checked: true
+    on_turn_off:
+      - lvgl.widget.update:
+          id: light_switch
+          state:
+            checked: false
