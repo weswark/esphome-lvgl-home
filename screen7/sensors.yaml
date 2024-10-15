@@ -1,11 +1,9 @@
-binary_sensor:
+sensor:
   - platform: homeassistant
-    id: office_lamp_light
+    id: light_brightness
     entity_id: light.office_lamp_light
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: light_btn
-          state:
-            checked: !lambda return x;
+    attribute: brightness
+    on_value:
+      - lvgl.slider.update:
+          id: dimmer_slider
+          value: !lambda return x;
