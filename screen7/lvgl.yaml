@@ -4,6 +4,6 @@ lvgl:
       widgets:
         - switch:
             align: CENTER
-            id: light_switch
+            id: office_feature_lights
             on_click:
-              light.toggle: local_light
+              light.toggle: office_feature_lights
