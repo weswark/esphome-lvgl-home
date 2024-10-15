@@ -2,13 +2,10 @@ binary_sensor:
   - platform: homeassistant
     id: office_feature_lights
     entity_id: light.office_feature_lights
-    on_turn_on:
-      - lvgl.widget.update:
-          id: light_switch
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: light_btn
           state:
-            checked: true
-    on_turn_off:
-      - lvgl.widget.update:
-          id: light_switch
-          state:
-            checked: false
+            checked: !lambda return x;
