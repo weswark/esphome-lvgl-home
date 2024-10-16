@@ -1,9 +1,4 @@
 substitutions:
-  button_1_name: "Local Light"
-  button_1_id: local_light
-  button_1_icon: $lightbulb
-  button_1_device: light.office_lamp_light
-
   icon_font: light40
   text_font: roboto24
   screen_height: '480px'
@@ -51,6 +46,8 @@ lvgl:
       bg_opa: cover
       pad_all: 5
       widgets:
+
+      # Button 1
         - button: 
             height: $button_height_single
             checkable: true
@@ -59,14 +56,14 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  id: lv_button_1_icon                  
-                  text: $button_1_icon
+                  id: office_lamp_light_icon                  
+                  text: $lightbulb
               - label:
                   align: bottom_left
-                  id: lv_button_1_label
-                  text: $button_1_name
+                  id: office_lamp_light
+                  text: "Office Light"
             on_click:
                 - homeassistant.service:
                     service: switch.toggle
                     data:
-                      entity_id: $button_1_device
+                      entity_id: light.office_lamp_light
