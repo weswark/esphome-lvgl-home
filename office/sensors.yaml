@@ -2,7 +2,6 @@ binary_sensor:
 
   # Office Evening Scene
   - platform: homeassistant
-    id: office_scene_evening_sensor
     entity_id: binary_sensor.office_scene_evening
     publish_initial_state: true
     on_state:
@@ -14,7 +13,6 @@ binary_sensor:
 
   # Office Calls Scene
   - platform: homeassistant
-    id: office_scene_calls_sensor
     entity_id: binary_sensor.office_scene_desk_call
     publish_initial_state: true
     on_state:
@@ -26,7 +24,6 @@ binary_sensor:
 
   # Office Features Scene
   - platform: homeassistant
-    id: office_scene_features_sensor
     entity_id: binary_sensor.office_scene_features
     publish_initial_state: true
     on_state:
@@ -38,7 +35,6 @@ binary_sensor:
 
   # Office Storage Light
   - platform: homeassistant
-    id: office_storage_light_sensor
     entity_id: light.office_storage
     publish_initial_state: true
     on_state:
@@ -50,7 +46,6 @@ binary_sensor:
 
   # 3d Printer
   - platform: homeassistant
-    id: homeassistant_printer_power_sensor
     entity_id: switch.office_3d_printer_power
     publish_initial_state: true
     on_state:
@@ -62,7 +57,6 @@ binary_sensor:
 
   # 3d Printer Lights
   - platform: homeassistant
-    id: printer_lights_sensor
     entity_id: switch.office_3d_printer_lights
     publish_initial_state: true
     on_state:
@@ -74,12 +68,22 @@ binary_sensor:
 
   # Lenovo Server
   - platform: homeassistant
-    id: homeassistant_lenovo_power_sensor
     entity_id: switch.office_lenovo_power_switch
     publish_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
           id: lenovo_power_button
+          state:
+            checked: !lambda return x;
+
+  # Lenovo Server
+  - platform: homeassistant
+    entity_id: binary_sensor.office_air_conditioner
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_aircon_button
           state:
             checked: !lambda return x;
