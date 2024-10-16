@@ -6,7 +6,7 @@ substitutions:
   button_off_color: "Very_Dark_Gray"
   icon_off_color: "White"
   button_text_color: "White"
-  button_height_single: '96px'
+  button_height: '96px'
   button_width: '110px'
 
 lvgl:
