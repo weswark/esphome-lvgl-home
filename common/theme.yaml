@@ -15,7 +15,7 @@ lvgl:
     button:
       text_font: $text_font
       scroll_on_focus: true
-      radius: 16px
+      radius: 12px
       width: $button_width
       height: $button_height_single
       pad_all: 8px
