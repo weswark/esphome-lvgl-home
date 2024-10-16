@@ -186,3 +186,8 @@ lvgl:
               - label:
                   align: bottom_left
                   text: "Aircon"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_air_conditioner
