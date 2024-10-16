@@ -24,7 +24,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: office_scene_evening_label
-                  text: "Evening Lighting"
+                  text: "Evening"
             on_click:
               - homeassistant.service:
                   service: scene.turn_on
@@ -46,7 +46,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: office_scene_calls_label
-                  text: "Calls Lighting"
+                  text: "Calls"
             on_click:
               - homeassistant.service:
                   service: scene.turn_on
@@ -68,7 +68,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: scene_features_label
-                  text: "Features Lighting"
+                  text: "Features"
             on_click:
               - homeassistant.service:
                   service: scene.turn_on
@@ -89,7 +89,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: office_storage_light_label
-                  text: "Storage Light"
+                  text: "Storage"
             on_click:
               - homeassistant.service:
                   service: light.toggle
@@ -110,7 +110,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: printer_power_label
-                  text: "3d Printer"
+                  text: "Printer"
             on_click:
               - homeassistant.service:
                   service: switch.toggle
@@ -131,7 +131,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: printer_lights_label
-                  text: "3d Printer Lights"
+                  text: "Printer Lights"
             on_click:
               - homeassistant.service:
                   service: switch.toggle
