@@ -39,7 +39,7 @@ lvgl:
                   text: $lightbulb
               - label:
                   align: bottom_left
-                  id: office_lamp_light
+                  id: office_lamp_light_label
                   text: "Office Light"
             on_click:
                 - homeassistant.service:
