@@ -113,20 +113,3 @@ switch:
   - platform: lvgl
     id: office_air_conditioner_switch
     widget: office_aircon_button
-    on_state:
-      then:
-        - if:
-            condition:
-              binary_sensor.is_on: office_air_conditioner_switch
-            then:
-              - homeassistant.service:
-                  service: climate.set_hvac_mode
-                  data:
-                    entity_id: climate.office_air_conditioner
-                    hvac_mode: "auto"
-            else:
-              - homeassistant.service:
-                  service: climate.set_hvac_mode
-                  data:
-                    entity_id: climate.office_air_conditioner
-                    hvac_mode: "off"
