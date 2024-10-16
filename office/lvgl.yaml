@@ -199,3 +199,7 @@ lvgl:
                     format: "Switch state: %d"
                     args: [ x ]
 
+switch:
+  - platform: lvgl
+    id: office_air_conditioner_switch
+    widget: office_aircon_button 
