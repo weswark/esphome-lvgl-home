@@ -14,7 +14,7 @@ lvgl:
   theme:
     button:
       scroll_on_focus: true
-      radius: 25
+      radius: 12
       width: $button_width
       height: $button_hight_single
       pad_left: 10px
