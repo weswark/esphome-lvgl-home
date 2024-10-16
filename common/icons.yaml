@@ -4,7 +4,7 @@
 font:
   - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
     id: icon_font
-    size: 32
+    size: 36
     bpp: 4
     glyphs: [
       "\U000F0335",  # mdi-lightbulb
@@ -16,6 +16,7 @@ font:
       "\U000F00AC",  # mdi-blinds
       "\U000F1A4C",  # mdi-lightbulb-night
       "\U000F1087",  # mdi-router-network
+      "\U000F036B",  # mdi-message-video
       ]
 
 # Map icons to names
@@ -29,3 +30,4 @@ substitutions:
   blinds:         "\U000F00AC"
   nightlight:     "\U000F1A4C"
   network:        "\U000F1087"
+  videocall:        "\U000F036B"
