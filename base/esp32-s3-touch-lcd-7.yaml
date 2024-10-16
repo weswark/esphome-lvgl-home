@@ -51,6 +51,14 @@ touchscreen:
     reset_pin:
       ch422g: io_ex
       number: 1
+    on_touch:
+      - lambda: |-
+            ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
+                touch.x,
+                touch.y,
+                touch.x_raw,
+                touch.y_raw
+                );
 
 # i2c connections
 i2c:
