@@ -186,3 +186,5 @@ lvgl:
               - label:
                   align: bottom_left
                   text: "Aircon"
+            on_click:
+              switch.toggle: office_air_conditioner_switch
