@@ -174,18 +174,18 @@ lvgl:
                   text: "Blind"
 
         # Office Aircon
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: office_aircon_button
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  text: $aircon
-              - label:
-                  align: bottom_left
-                  text: "Aircon"
+#        - button: 
+#            height: $button_height_single
+#            checkable: true
+#            id: office_aircon_button
+#            widgets:
+#              - label:
+#                  text_font: $icon_font
+#                  align: top_left
+#                  text: $aircon
+#              - label:
+#                  align: bottom_left
+#                  text: "Aircon"
 #            on_click:
 #              switch.toggle: office_air_conditioner_switch2
 
