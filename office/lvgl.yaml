@@ -53,28 +53,26 @@ lvgl:
                     data:
                       entity_id: light.office_lamp_light
 
-      # Button 3
+      # Scene Features
         - button: 
             height: $button_height_single
             checkable: true
-            id: test_three
+            id: scene_features
             widgets:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  id: test_icon_three                
+                  id: scene_features_icon                
                   text: $lightbulb
               - label:
                   align: bottom_left
-                  id: test_label_three
-                  text: "Test"
+                  id: scene_features_label
+                  text: "Features Lighting"
             on_click:
-                - homeassistant.service:
-                    service: light.toggle
-                    data:
-                      entity_id: light.office_lamp_light
-
-
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_features
 
         # 3d Printer
         - button: 
@@ -107,7 +105,7 @@ lvgl:
                   text_font: $icon_font
                   align: top_left
                   id: printer_lights_icon
-                  text: $lightbulb
+                  text: $lights
               - label:
                   align: bottom_left
                   id: printer_lights_label
