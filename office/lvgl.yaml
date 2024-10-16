@@ -1,3 +1,21 @@
+substitutions:
+  button_1_name: "Local Light"
+  button_1_id: local_light
+  button_1_icon: $lightbulb
+  button_1_device: light.office_lamp_light
+
+  # Icons
+  lightbulb:         "\U000F0335"
+  ceiling_light:     "\U000F0769"
+  lamp:              "\U000F06B5"
+  floor_lamp:        "\U000F08DD"
+  string_lights:     "\U000F12BA"
+  track_light:       "\U000F0914"
+  bulkhead_light:    "\U000F1A2F" 
+  led_strip:         "\U000F07D6" 
+  coach_lamp:        "\U000F1020"
+  ceiling_fan_light: "\U000F1798"
+
 binary_sensor:
   - platform: homeassistant
     id: remote_light
@@ -12,18 +30,31 @@ binary_sensor:
 
 lvgl:
   pages:
-    - id: room_page
+    - id: main_page
+      layout: 
+        type: flex
+        flex_flow: column_wrap
+      width: 100%
       bg_color: Black
+      bg_opa: cover
+      pad_all: 5
       widgets:
-        - button:
-            id: light_btn
-            checkable: true
-            widgets:
-              - label:
-                  align: CENTER
-                  text: 'Remote light'
-            on_click:
-              - homeassistant.action:
-                  action: light.toggle
+        - button: 
+          height: ${hight}
+          checkable: true
+          id: lv_button_${id}
+          widgets:
+            - label:
+                text_font: $icon_font
+                align: top_left
+                id: lv_button_${id}_icon                  
+                text: $button_${id}_icon
+            - label:
+                align: bottom_left
+                id: lv_button_${id}_label
+                text: $button_${id}_name
+          on_click:
+              - homeassistant.service:
+                  service: switch.toggle
                   data:
-                    entity_id: light.office_lamp_light
+                    entity_id: $button_${id}_device
