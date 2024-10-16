@@ -11,6 +11,7 @@ binary_sensor:
             checked: !lambda return x;
 
 lvgl:
+    ...
     pages:
       - id: room_page
         widgets:
@@ -29,3 +30,5 @@ lvgl:
                     action: light.toggle
                     data:
                       entity_id: light.office_lamp_light
+
+
