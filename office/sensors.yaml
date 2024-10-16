@@ -74,7 +74,7 @@ binary_sensor:
 
   # Lenovo Server
   - platform: homeassistant
-    id: office_lenovo_power_switch
+    id: lenovo_power
     entity_id: switch.lenovo_power
     publish_initial_state: true
     on_state:
