@@ -1,17 +1,17 @@
 # http://materialdesignicons.com/cdn/7.4.47/
 
+# Define icons used
 font:
   - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
-    id: light40
-    #size: 40
+    id: icon_font
     size: 32
     bpp: 4
     glyphs: [
       "\U000F0335",  # mdi-lightbulb
       "\U000F042B",  # mdi-printer-3d
-    ]       
+      ]
 
-
+# Map icons to names
 substitutions:
   lightbulb:         "\U000F0335"
   printer:           "\U000F042B"
