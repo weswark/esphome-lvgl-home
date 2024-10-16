@@ -112,10 +112,13 @@ binary_sensor:
 
 
 
-
 switch:
-  - platform: template
+  - platform: lvgl
     id: office_air_conditioner_switch
+    widget: office_aircon_button   
+#switch:
+#  - platform: template
+#    id: office_air_conditioner_switch
     turn_on_action:
       - homeassistant.service:
           service: climate.set_hvac_mode
