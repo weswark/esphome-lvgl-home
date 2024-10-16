@@ -9,9 +9,23 @@ font:
     glyphs: [
       "\U000F0335",  # mdi-lightbulb
       "\U000F042B",  # mdi-printer-3d
+      "\U000F0D43",  # mdi-air-filter
+      "\U000F1051",  # mdi-led-strip-variant
+      "\U000F03D7",  # mdi-package-variant-closed
+      "\U000F07D6",  # mdi-led-strip
+      "\U000F00AC",  # mdi-blinds
+      "\U000F1A4C",  # mdi-lightbulb-night
+      "\U000F1087",  # mdi-router-network
       ]
 
 # Map icons to names
 substitutions:
-  lightbulb:         "\U000F0335"
-  printer:           "\U000F042B"
+  lightbulb:      "\U000F0335"
+  printer:        "\U000F042B"
+  aircon:         "\U000F0D43"
+  ledstrip:       "\U000F1051"
+  package:        "\U000F03D7"
+  lights:         "\U000F07D6"
+  blinds:         "\U000F00AC"
+  nightlight:     "\U000F1A4C"
+  network:        "\U000F1087"
