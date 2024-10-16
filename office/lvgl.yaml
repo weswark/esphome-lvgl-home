@@ -20,7 +20,7 @@ lvgl:
                   text_font: $icon_font
                   align: top_left
                   id: office_scene_evening_icon                
-                  text: $ledstrip
+                  text: $nightlight
               - label:
                   align: bottom_left
                   id: office_scene_evening_label
