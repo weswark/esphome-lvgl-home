@@ -96,21 +96,14 @@ binary_sensor:
           state:
             checked: !lambda return x;
 
-
-#  # Office Aircon
-#  - platform: homeassistant
-#    id: office_air_conditioner
-#    entity_id: binary_sensor.office_air_conditioner
-#    publish_initial_state: true
-#    on_state:
-#      then:
-#        lvgl.widget.update:
-#          id: office_aircon_button
-#          state:
-#            checked: !lambda return x;
-
-switch:
-  - platform: lvgl
-    name: aircon
-    id: office_air_conditioner_switch
-    widget: office_aircon_button
+  # Office Aircon
+  - platform: homeassistant
+    id: office_air_conditioner
+    entity_id: switch.office_air_conditioner
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_aircon_button
+          state:
+            checked: !lambda return x;
