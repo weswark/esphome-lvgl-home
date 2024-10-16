@@ -13,7 +13,7 @@ font:
       "\U000F1051",  # mdi-led-strip-variant
       "\U000F03D7",  # mdi-package-variant-closed
       "\U000F07D6",  # mdi-led-strip
-      "\U000F00AC",  # mdi-blinds
+      "\U000F00AC",  # mdi-blind
       "\U000F1A4C",  # mdi-lightbulb-night
       "\U000F1087",  # mdi-router-network
       "\U000F036B",  # mdi-message-video
@@ -27,7 +27,7 @@ substitutions:
   ledstrip:       "\U000F1051"
   package:        "\U000F03D7"
   lights:         "\U000F07D6"
-  blinds:         "\U000F00AC"
+  blind:          "\U000F00AC"
   nightlight:     "\U000F1A4C"
   network:        "\U000F1087"
-  videocall:        "\U000F036B"
+  videocall:      "\U000F036B"
