@@ -11,7 +11,7 @@ substitutions:
   button_width: '150px' 
   padding: 8px
   radius: 12px
-  shadow_width: 0
+  shadow_width: 0px
 
 lvgl:
   theme:
