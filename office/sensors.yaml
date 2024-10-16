@@ -9,3 +9,15 @@ binary_sensor:
           id: office_lamp_light
           state:
             checked: !lambda return x;
+
+  # 3d Printer
+  - platform: homeassistant
+    id: homeassistant_printer_power
+    entity_id: switch.office_3d_printer_power
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: printer_power
+          state:
+            checked: !lambda return x;
