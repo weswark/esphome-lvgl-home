@@ -42,7 +42,7 @@ lvgl:
                   text_font: $icon_font
                   align: top_left
                   id: office_scene_calls_icon                
-                  text: $ledstrip
+                  text: $videocall
               - label:
                   align: bottom_left
                   id: office_scene_calls_label
