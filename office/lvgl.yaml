@@ -4,6 +4,30 @@ substitutions:
   button_1_icon: $lightbulb
   button_1_device: light.office_lamp_light
 
+  icon_font: light40
+  text_font: roboto24
+  screen_height: '480px'
+  screen_width: '480px'
+  button_on_color: "Burnt_Sienna"
+  button_off_color: "Very_Dark_Gray"  
+  icon_on_color: "Yellow"
+  icon_off_color: "Gray"
+  label_on_color: "White"  
+  label_off_color: "Gray"
+  button_text_color: "White"
+  button_height_single: '109px'
+  button_height_double: '228px'
+  button_width: '150px'
+  touchscreen_idle_timeout: "120s"
+  touchscreen_daytime_brightness: "100%"
+  touchscreen_nighttime_brightness: "50%"
+  # Screen goes to sleep at Mightnight
+  screen_sleep_hour: '0'
+  screen_sleep_minute: '0'
+  # Screen wakes up at 5:30am
+  screen_wake_hour: '5'
+  screen_wake_minute: '30'
+
   # Icons
   lightbulb:         "\U000F0335"
   ceiling_light:     "\U000F0769"
