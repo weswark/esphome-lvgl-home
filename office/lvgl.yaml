@@ -1,7 +1,7 @@
 binary_sensor:
   - platform: homeassistant
     id: remote_light
-    entity_id: light.remote_light
+    entity_id: light.office_lamp_light
     publish_initial_state: true
     on_state:
       then:
@@ -28,4 +28,4 @@ lvgl:
                 - homeassistant.action:
                     action: light.toggle
                     data:
-                      entity_id: light.remote_light
+                      entity_id: light.office_lamp_light
