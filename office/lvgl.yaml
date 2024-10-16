@@ -187,7 +187,7 @@ lvgl:
                   align: bottom_left
                   text: "Aircon"
             on_click:
-              switch.toggle: office_air_conditioner_switch
+              switch.toggle: office_air_conditioner_switch2
 
 
         # Office Aircon
