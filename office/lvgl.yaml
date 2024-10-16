@@ -17,9 +17,6 @@ lvgl:
       widgets:
         - button:
             id: light_btn
-            align: CENTER
-            width: 100
-            height: 70
             checkable: true
             widgets:
               - label:
@@ -30,5 +27,3 @@ lvgl:
                   action: light.toggle
                   data:
                     entity_id: light.office_lamp_light
-
-
