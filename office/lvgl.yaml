@@ -74,26 +74,7 @@ lvgl:
                     data:
                       entity_id: light.office_lamp_light
 
-      # Button 4
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: test_four
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: test_icon_four              
-                  text: $lightbulb
-              - label:
-                  align: bottom_left
-                  id: test_label_four
-                  text: "Test"
-            on_click:
-                - homeassistant.service:
-                    service: light.toggle
-                    data:
-                      entity_id: light.office_lamp_light
+
 
         # 3d Printer
         - button: 
@@ -115,3 +96,24 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_3d_printer_power
+
+      # 3d Printer Lights
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: printer_lights
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: printer_lights_icon
+                  text: $lightbulb
+              - label:
+                  align: bottom_left
+                  id: printer_lights_label
+                  text: "3d Printer Lights"
+            on_click:
+                - homeassistant.service:
+                    service: switch.toggle
+                    data:
+                      entity_id: switch.office_3d_printer_lights
