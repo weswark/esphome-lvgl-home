@@ -57,7 +57,7 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: true
-            id: scene_features
+            id: office_scene_features_button
             widgets:
               - label:
                   text_font: $icon_font
@@ -78,7 +78,7 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: true
-            id: printer_power
+            id: printer_power_button
             widgets:
               - label:
                   text_font: $icon_font
@@ -99,7 +99,7 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: true
-            id: printer_lights
+            id: printer_lights_button
             widgets:
               - label:
                   text_font: $icon_font
