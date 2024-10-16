@@ -116,3 +116,24 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_3d_printer_lights
+
+        # Lenovo Server
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: lenovo_power_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: lenovo_power_icon
+                  text: $printer
+              - label:
+                  align: bottom_left
+                  id: lenovo_power_label
+                  text: "Lenovo Server"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_lenovo_power_switch
