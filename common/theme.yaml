@@ -6,17 +6,20 @@ substitutions:
   button_off_color: "Very_Dark_Gray"
   icon_off_color: "White"
   button_text_color: "White"
-  button_hight_single: '109px'
-  button_hight_double: '228px'
-  button_width: '150px'
+  button_height_single: '96px'
+  button_width: '110px'
 
 lvgl:
+  style_definitions:
+    - id: no_checked_color
+      bg_color: 0xCC5E14
+      text_color: 0xB6B6B6
   theme:
     button:
       scroll_on_focus: true
-      radius: 12
+      radius: 5
       width: $button_width
-      height: $button_hight_single
+      height: $button_height
       pad_left: 10px
       pad_top: 10px
       pad_bottom: 10px
