@@ -32,6 +32,6 @@ binary_sensor:
     on_state:
       then:
         lvgl.widget.update:
-          id: printer_lights_button
+          id: office_scene_features_button
           state:
             checked: !lambda return x;
