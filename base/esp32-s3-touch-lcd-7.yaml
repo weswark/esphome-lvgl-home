@@ -40,7 +40,7 @@ logger:
 # Video memory
 psram:
   mode: octal
-  speed: 160MHz
+  speed: 80MHz
 
 # Touch screen
 touchscreen:
