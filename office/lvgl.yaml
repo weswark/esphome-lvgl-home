@@ -110,3 +110,24 @@ lvgl:
                     service: light.toggle
                     data:
                       entity_id: light.office_lamp_light
+
+      # Button 5
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: test_four
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: test_icon_five
+                  text: $lightbulb
+              - label:
+                  align: bottom_left
+                  id: test_label_five
+                  text: "Test"
+            on_click:
+                - homeassistant.service:
+                    service: light.toggle
+                    data:
+                      entity_id: light.office_lamp_light
