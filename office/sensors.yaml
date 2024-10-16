@@ -1,5 +1,29 @@
 binary_sensor:
 
+  # Office Calls Scene
+  - platform: homeassistant
+    id: office_scene_calls_sensor
+    entity_id: binary_sensor.office_scene_calls
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_scene_calls_button
+          state:
+            checked: !lambda return x;
+
+  # Office Features Scene
+  - platform: homeassistant
+    id: office_scene_features_sensor
+    entity_id: binary_sensor.office_scene_features
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_scene_features_button
+          state:
+            checked: !lambda return x;
+
   # 3d Printer
   - platform: homeassistant
     id: homeassistant_printer_power_sensor
@@ -21,17 +45,5 @@ binary_sensor:
       then:
         lvgl.widget.update:
           id: printer_lights_button
-          state:
-            checked: !lambda return x;
-
-  # Office Scene Features
-  - platform: homeassistant
-    id: office_scene_features_sensor
-    entity_id: binary_sensor.office_scene_features
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_scene_features_button
           state:
             checked: !lambda return x;
