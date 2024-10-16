@@ -105,7 +105,7 @@ lvgl:
                   text_font: $icon_font
                   align: top_left
                   id: printer_power_icon
-                  text: $lightbulb
+                  text: $printer
               - label:
                   align: bottom_left
                   id: printer_power_label
