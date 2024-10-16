@@ -192,8 +192,16 @@ lvgl:
 
         # Office Aircon
         - switch: 
-            height: $button_height_single
             id: office_aircon_button
-            label:
-              align: bottom_left
-              text: "Aircon"
+            turn_on_action:
+              - homeassistant.service:
+                  service: climate.set_hvac_mode
+                  data:
+                    entity_id: climate.office_air_conditioner
+                    hvac_mode: "auto"
+            turn_off_action:
+              - homeassistant.service:
+                  service: climate.set_hvac_mode
+                  data:
+                    entity_id: climate.office_air_conditioner
+                    hvac_mode: "off"
