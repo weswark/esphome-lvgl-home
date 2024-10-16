@@ -1,7 +1,8 @@
 font:
   - file: "gfonts://Roboto"
     id: roboto24
-    size: 24
+    #size: 24
+    size: 18
     bpp: 4
     extras:
       # http://materialdesignicons.com/cdn/7.4.47/
@@ -26,7 +27,8 @@ font:
   # http://materialdesignicons.com/cdn/7.4.47/
   - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
     id: light40
-    size: 40
+    #size: 40
+    size: 24
     bpp: 4
     glyphs: [
       "\U000F0335",  # mdi-lightbulb
