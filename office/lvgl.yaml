@@ -157,7 +157,7 @@ lvgl:
               - homeassistant.service:
                   service: switch.toggle
                   data:
-                    entity_id: switch.office_lenovo_power_switch
+                    entity_id: switch.lenovo_power
 
         # Office Blind
         - button: 
