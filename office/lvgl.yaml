@@ -30,7 +30,7 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: true
-            id: lv_button_1
+            id: office_lamp_light
             widgets:
               - label:
                   text_font: $icon_font
