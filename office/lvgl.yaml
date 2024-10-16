@@ -186,20 +186,3 @@ lvgl:
               - label:
                   align: bottom_left
                   text: "Aircon"
-#            on_click:
-#              switch.toggle: office_air_conditioner_switch2
-
-
-        # Office Aircon
-        - switch: 
-            id: office_aircon_switch
-            on_value:
-              then:
-                - logger.log:
-                    format: "Switch state: %d"
-                    args: [ x ]
-
-switch:
-  - platform: lvgl
-    id: office_air_conditioner_switch
-    widget: office_aircon_button 
