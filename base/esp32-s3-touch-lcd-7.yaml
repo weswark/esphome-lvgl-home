@@ -76,7 +76,7 @@ display:
     auto_clear_enabled: false
     update_interval: never
     color_order: RGB
-    pclk_frequency: 16MHz
+    pclk_frequency: 14MHz
     dimensions:
       width: 800
       height: 480
