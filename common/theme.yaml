@@ -10,10 +10,6 @@ substitutions:
   button_width: '110px'
 
 lvgl:
-  style_definitions:
-    - id: no_checked_color
-      bg_color: 0xCC5E14
-      text_color: 0xB6B6B6
   theme:
     button:
       scroll_on_focus: true
