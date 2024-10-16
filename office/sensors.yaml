@@ -109,16 +109,10 @@ binary_sensor:
 #          state:
 #            checked: !lambda return x;
 
-
-
-
+  
 switch:
-  - platform: lvgl
+  - platform: template
     id: office_air_conditioner_switch
-    widget: office_aircon_button   
-#switch:
-#  - platform: template
-#    id: office_air_conditioner_switch
     turn_on_action:
       - homeassistant.service:
           service: climate.set_hvac_mode
