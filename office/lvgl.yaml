@@ -52,16 +52,58 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: true
-            id: test
+            id: test_two
             widgets:
               - label:
                   text_font: $icon_font
                   align: top_left
+                  id: test_icon_two          
+                  text: $lightbulb
+              - label:
+                  align: bottom_left
+                  id: test_label_two
+                  text: "Test"
+            on_click:
+                - homeassistant.service:
+                    service: light.toggle
+                    data:
+                      entity_id: light.office_lamp_light
+
+      # Button 3
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: test_three
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left_three
                   id: test_icon                 
                   text: $lightbulb
               - label:
                   align: bottom_left
-                  id: test_label
+                  id: test_label_three
+                  text: "Test"
+            on_click:
+                - homeassistant.service:
+                    service: light.toggle
+                    data:
+                      entity_id: light.office_lamp_light
+
+      # Button 4
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: test_four
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: test_icon_four              
+                  text: $lightbulb
+              - label:
+                  align: bottom_left
+                  id: test_label_four
                   text: "Test"
             on_click:
                 - homeassistant.service:
