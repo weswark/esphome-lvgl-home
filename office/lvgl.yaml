@@ -192,5 +192,5 @@ lvgl:
 
         # Office Aircon
         - switch: 
-            id: office_aircon_button
+            id: office_aircon_switch
 
