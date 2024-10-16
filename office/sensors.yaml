@@ -87,7 +87,7 @@ binary_sensor:
   # Office Blind
   - platform: homeassistant
     id: office_blind
-    entity_id: binary_sensor.office_blind_state
+    entity_id: switch.office_blind
     publish_initial_state: true
     on_state:
       then:
