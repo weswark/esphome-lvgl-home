@@ -116,6 +116,12 @@ binary_sensor:
 switch:
   - platform: template
     id: office_air_conditioner_switch
+    lambda: |-
+      if (id(binary_sensor.office_air_conditioner).state) {
+        return true;
+      } else {
+        return false;
+      }
     turn_on_action:
       - homeassistant.service:
           service: climate.set_hvac_mode
