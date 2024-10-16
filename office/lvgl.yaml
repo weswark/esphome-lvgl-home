@@ -158,3 +158,31 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_lenovo_power_switch
+
+        # Blinds
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blinds_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blinds
+              - label:
+                  align: bottom_left
+                  text: "Blinds"
+
+        # Aircon
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_aircon_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $aircon
+              - label:
+                  align: bottom_left
+                  text: "Aircon"
