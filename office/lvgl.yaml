@@ -115,7 +115,7 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: true
-            id: test_four
+            id: test_five
             widgets:
               - label:
                   text_font: $icon_font
