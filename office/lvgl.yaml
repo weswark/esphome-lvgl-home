@@ -110,13 +110,8 @@ lvgl:
                   align: bottom_left
                   id: printer_power_label
                   text: "Printer"
-            on_turn_on:
+            on_click:
               - homeassistant.service:
-                  service: switch.turn_on
-                  data:
-                    entity_id: switch.office_3d_printer_power
-            on_turn_off:
-              - homeassistant.service:
-                  service: switch.turn_off
+                  service: switch.toggle
                   data:
                     entity_id: switch.office_3d_printer_power
