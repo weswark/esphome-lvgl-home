@@ -3,7 +3,7 @@ font:
   - file: "gfonts://Roboto"
     id: roboto24
     #size: 24
-    size: 14
+    size: 16
     bpp: 4
     extras:
       # http://materialdesignicons.com/cdn/7.4.47/
@@ -30,7 +30,7 @@ font:
   - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
     id: light40
     #size: 40
-    size: 28
+    size: 32
     bpp: 4
     glyphs: [
       "\U000F0335",  # mdi-lightbulb
