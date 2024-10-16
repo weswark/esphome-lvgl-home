@@ -1,34 +1,34 @@
-binary_sensor:
+sensor:
   - platform: homeassistant
-    id: remote_light
+    id: light_brightness
     entity_id: light.office_lamp_light
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: light_btn
-          state:
-            checked: !lambda return x;
+    attribute: brightness
+    on_value:
+      - lvgl.slider.update:
+          id: dimmer_slider
+          value: !lambda return x;
 
 lvgl:
     ...
     pages:
       - id: room_page
         widgets:
-          - button:
-              id: light_btn
-              align: CENTER
-              width: 100
-              height: 70
-              checkable: true
-              widgets:
-                - label:
-                    align: CENTER
-                    text: 'Remote light'
-              on_click:
+          - slider:
+              id: dimmer_slider
+              x: 20
+              y: 50
+              width: 30
+              height: 220
+              pad_all: 8
+              min_value: 0
+              max_value: 255
+              on_release:
                 - homeassistant.action:
-                    action: light.toggle
+                    action: light.turn_on
                     data:
                       entity_id: light.office_lamp_light
+                      brightness: !lambda return int(x);
+
+
 
 
