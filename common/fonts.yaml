@@ -24,18 +24,3 @@ font:
           "\U000f0084",
           "\U000f0091",
         ]
-
-  # http://materialdesignicons.com/cdn/7.4.47/
-  # Icons
-  - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
-    id: light40
-    #size: 40
-    size: 32
-    bpp: 4
-    glyphs: [
-      "\U000F0335",  # mdi-lightbulb
-      "\U000F0769",  # mdi-ceiling-light
-      "\U000F06B5",  # mdi-lamp
-      "\U000F08DD",  # mdi-floor-lamp
-      "\U000F12BA",  # mdi-string-lights
-    ]       
