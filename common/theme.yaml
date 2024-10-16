@@ -11,7 +11,7 @@ substitutions:
   button_width: '150px' 
   padding: 8px
   radius: 12px
-  shadow_width: 0px
+  
 
 lvgl:
   theme:
@@ -22,7 +22,7 @@ lvgl:
       width: $button_width
       height: $button_height_single
       pad_all: $padding
-      shadow_width: $shadow_width
+      shadow_width: 0
       bg_color: $button_off_color
       text_color: $button_text_color
       checked:
