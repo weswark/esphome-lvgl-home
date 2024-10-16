@@ -1,17 +1,16 @@
 substitutions:
-  icon_font: light40
-  text_font: roboto24  
+  icon_font: icon_font
+  text_font: text_font  
   button_on_color: "Dark_Orange"
   icon_on_color: "Yellow"
   button_off_color: "Very_Dark_Gray"
   icon_off_color: "White"
   button_text_color: "White"
-  button_height_single: '109px'
-  button_height_double: '228px'
-  button_width: '150px' 
+  button_height_single: 109px
+  button_height_double: 228px
+  button_width: 150px
   padding: 8px
   radius: 12px
-  
 
 lvgl:
   theme:
