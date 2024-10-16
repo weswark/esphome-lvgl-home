@@ -40,7 +40,7 @@ logger:
 # Video memory
 psram:
   mode: octal
-  speed: 80MHz
+  speed: 160MHz
 
 # Touch screen
 touchscreen:
@@ -76,7 +76,7 @@ display:
     auto_clear_enabled: false
     update_interval: never
     color_order: RGB
-    pclk_frequency: 14MHz
+    pclk_frequency: 16MHz
     dimensions:
       width: 800
       height: 480
