@@ -13,15 +13,6 @@ substitutions:
   button_height_single: '109px'
   button_height_double: '228px'
   button_width: '150px'
-  touchscreen_idle_timeout: "120s"
-  touchscreen_daytime_brightness: "100%"
-  touchscreen_nighttime_brightness: "50%"
-  # Screen goes to sleep at Mightnight
-  screen_sleep_hour: '0'
-  screen_sleep_minute: '0'
-  # Screen wakes up at 5:30am
-  screen_wake_hour: '5'
-  screen_wake_minute: '30'
 
 lvgl:
   pages:
@@ -52,6 +43,6 @@ lvgl:
                   text: "Office Light"
             on_click:
                 - homeassistant.service:
-                    service: switch.toggle
+                    service: light.toggle
                     data:
                       entity_id: light.office_lamp_light
