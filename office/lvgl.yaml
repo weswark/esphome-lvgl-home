@@ -10,10 +10,10 @@ lvgl:
       pad_all: 5
       widgets:
 
-      # Scene Features
+        # Scene Features
         - button: 
             height: $button_height_single
-            checkable: true
+            checkable: false
             id: office_scene_features_button
             widgets:
               - label:
@@ -52,7 +52,7 @@ lvgl:
                   data:
                     entity_id: switch.office_3d_printer_power
 
-      # 3d Printer Lights
+        # 3d Printer Lights
         - button: 
             height: $button_height_single
             checkable: true
@@ -68,7 +68,7 @@ lvgl:
                   id: printer_lights_label
                   text: "3d Printer Lights"
             on_click:
-                - homeassistant.service:
-                    service: switch.toggle
-                    data:
-                      entity_id: switch.office_3d_printer_lights
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_3d_printer_lights
