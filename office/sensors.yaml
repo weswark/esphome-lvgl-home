@@ -77,7 +77,19 @@ binary_sensor:
           state:
             checked: !lambda return x;
 
-  # Lenovo Server
+  # Office Blind
+  - platform: homeassistant
+    entity_id: binary_sensor.office_blind_state
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_blind_button
+          state:
+            checked: !lambda return x;
+
+
+  # Office Aircon
   - platform: homeassistant
     entity_id: binary_sensor.office_air_conditioner
     publish_initial_state: true
