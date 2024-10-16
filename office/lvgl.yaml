@@ -9,26 +9,21 @@ sensor:
           value: !lambda return x;
 
 lvgl:
-    ...
-    pages:
-      - id: room_page
-        widgets:
-          - slider:
-              id: dimmer_slider
-              x: 20
-              y: 50
-              width: 30
-              height: 220
-              pad_all: 8
-              min_value: 0
-              max_value: 255
-              on_release:
-                - homeassistant.action:
-                    action: light.turn_on
-                    data:
-                      entity_id: light.office_lamp_light
-                      brightness: !lambda return int(x);
-
-
-
-
+  pages:
+    - id: room_page
+      widgets:
+        - slider:
+            id: dimmer_slider
+            x: 20
+            y: 50
+            width: 30
+            height: 220
+            pad_all: 8
+            min_value: 0
+            max_value: 255
+            on_release:
+              - homeassistant.action:
+                  action: light.turn_on
+                  data:
+                    entity_id: light.office_lamp_light
+                    brightness: !lambda return int(x);
