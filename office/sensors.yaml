@@ -1,14 +1,4 @@
 binary_sensor:
-  - platform: homeassistant
-    id: homeassistant_office_lamp_light_sensor
-    entity_id: light.office_lamp_light
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_lamp_light_button
-          state:
-            checked: !lambda return x;
 
   # 3d Printer
   - platform: homeassistant
