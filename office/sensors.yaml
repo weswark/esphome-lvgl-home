@@ -2,7 +2,7 @@ binary_sensor:
 
   # Office Evening Scene
   - platform: homeassistant
-    id: binary_sensor.office_scene_evening
+    id: office_scene_evening
     entity_id: binary_sensor.office_scene_evening
     publish_initial_state: true
     on_state:
