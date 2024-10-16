@@ -172,6 +172,11 @@ lvgl:
               - label:
                   align: bottom_left
                   text: "Blind"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_blind
 
         # Office Aircon
         - button: 
