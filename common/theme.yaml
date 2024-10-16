@@ -9,19 +9,22 @@ substitutions:
   button_height_single: '109px'
   button_height_double: '228px'
   button_width: '150px' 
+  padding: 8px
+  radius: 12px
+  shadow_width: 0
 
 lvgl:
   theme:
     button:
       text_font: $text_font
       scroll_on_focus: true
-      radius: 12px
+      radius: $radius
       width: $button_width
       height: $button_height_single
-      pad_all: 8px
-      shadow_width: 0 # This is required even though the default is suposed to be 0
-      bg_color: Very_Dark_Gray
-      text_color: Gray
+      pad_all: $padding
+      shadow_width: $shadow_width
+      bg_color: $button_off_color
+      text_color: $button_text_color
       checked:
         bg_color: $button_on_color
-        text_color: Gray
+        text_color: $button_text_color
