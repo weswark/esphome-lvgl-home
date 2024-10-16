@@ -109,9 +109,10 @@ binary_sensor:
 #          state:
 #            checked: !lambda return x;
 
-  - platform: homeassistant
+switch:
+  - platform: lvgl
     id: office_air_conditioner_switch
-    entity_id: switch.office_air_conditioner_switch
+    widget: office_aircon_button
     on_state:
       then:
         - if:
@@ -129,36 +130,3 @@ binary_sensor:
                   data:
                     entity_id: climate.office_air_conditioner
                     hvac_mode: "off"
-
-switch:
-  - platform: lvgl
-    id: office_air_conditioner_switch
-    widget: office_aircon_button
-#    turn_on_action:
-#      - homeassistant.service:
-#          service: climate.set_hvac_mode
-#          data:
-#            entity_id: climate.office_air_conditioner
-#            hvac_mode: "auto"
-#    turn_off_action:
-#      - homeassistant.service:
-#          service: climate.set_hvac_mode
-#          data:
-#            entity_id: climate.office_air_conditioner
-#            hvac_mode: "off"
-
-script:
-  - id: aircon
-    then:      
-      - if: 
-          condition:
-            light.is_off: backlight
-          then: 
-            - lvgl.resume:
-            - delay: 100ms
-            - light.turn_on: backlight
-            - delay: 180s
-            - light.turn_off: backlight
-            - lvgl.page.show: main_page
-            - lvgl.pause:
-                show_snow: true
