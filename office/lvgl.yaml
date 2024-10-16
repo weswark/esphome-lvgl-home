@@ -95,7 +95,7 @@ lvgl:
                     data:
                       entity_id: light.office_lamp_light
 
-        # Printer Power
+        # 3d Printer
         - button: 
             height: $button_height_single
             checkable: true
@@ -109,7 +109,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: printer_power_label
-                  text: "Printer"
+                  text: "3d Printer"
             on_click:
               - homeassistant.service:
                   service: switch.toggle
