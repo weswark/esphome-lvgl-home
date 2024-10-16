@@ -2,6 +2,7 @@ binary_sensor:
 
   # Office Evening Scene
   - platform: homeassistant
+    id: binary_sensor.office_scene_evening
     entity_id: binary_sensor.office_scene_evening
     publish_initial_state: true
     on_state:
@@ -13,6 +14,7 @@ binary_sensor:
 
   # Office Calls Scene
   - platform: homeassistant
+    id: binary_sensor.office_scene_desk_call
     entity_id: binary_sensor.office_scene_desk_call
     publish_initial_state: true
     on_state:
@@ -24,6 +26,7 @@ binary_sensor:
 
   # Office Features Scene
   - platform: homeassistant
+    id: binary_sensor.office_scene_features
     entity_id: binary_sensor.office_scene_features
     publish_initial_state: true
     on_state:
@@ -35,6 +38,7 @@ binary_sensor:
 
   # Office Storage Light
   - platform: homeassistant
+    id: light.office_storage
     entity_id: light.office_storage
     publish_initial_state: true
     on_state:
@@ -46,6 +50,7 @@ binary_sensor:
 
   # 3d Printer
   - platform: homeassistant
+    id: switch.office_3d_printer_power
     entity_id: switch.office_3d_printer_power
     publish_initial_state: true
     on_state:
@@ -57,6 +62,7 @@ binary_sensor:
 
   # 3d Printer Lights
   - platform: homeassistant
+    id: switch.office_3d_printer_lights
     entity_id: switch.office_3d_printer_lights
     publish_initial_state: true
     on_state:
@@ -68,6 +74,7 @@ binary_sensor:
 
   # Lenovo Server
   - platform: homeassistant
+    id: switch.office_lenovo_power_switch
     entity_id: switch.office_lenovo_power_switch
     publish_initial_state: true
     on_state:
@@ -79,6 +86,7 @@ binary_sensor:
 
   # Office Blind
   - platform: homeassistant
+    id: binary_sensor.office_blind_state
     entity_id: binary_sensor.office_blind_state
     publish_initial_state: true
     on_state:
@@ -91,6 +99,7 @@ binary_sensor:
 
   # Office Aircon
   - platform: homeassistant
+    id: binary_sensor.office_air_conditioner
     entity_id: binary_sensor.office_air_conditioner
     publish_initial_state: true
     on_state:
