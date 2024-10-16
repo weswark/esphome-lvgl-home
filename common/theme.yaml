@@ -1,6 +1,6 @@
 substitutions:
   icon_font: icon_font
-  text_font: text_font  
+  text_font: text_font
   button_on_color: "Dark_Orange"
   icon_on_color: "Yellow"
   button_off_color: "Very_Dark_Gray"
@@ -16,7 +16,8 @@ lvgl:
   theme:
     button:
       text_font: $text_font
-      scroll_on_focus: true
+      #scroll_on_focus: true
+      scroll_on_focus: false
       radius: $radius
       width: $button_width
       height: $button_height_single
