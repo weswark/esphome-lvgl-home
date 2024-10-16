@@ -1,1 +1,11 @@
-
+binary_sensor:
+  - platform: homeassistant
+    id: remote_light
+    entity_id: light.office_lamp_light
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: light_btn
+          state:
+            checked: !lambda return x;
