@@ -188,3 +188,12 @@ lvgl:
                   text: "Aircon"
             on_click:
               switch.toggle: office_air_conditioner_switch
+
+
+        # Office Aircon
+        - switch: 
+            height: $button_height_single
+            id: office_aircon_button
+            label:
+              align: bottom_left
+              text: "Aircon"
