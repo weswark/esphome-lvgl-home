@@ -9,6 +9,8 @@ sensor:
           value: !lambda return x;
 
 lvgl:
+  touchscreens:
+    - touchscreen_id: my_touchscreen
   pages:
     - id: room_page
       widgets:
