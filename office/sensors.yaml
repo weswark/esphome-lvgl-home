@@ -36,6 +36,18 @@ binary_sensor:
           state:
             checked: !lambda return x;
 
+  # Office Storage Light
+  - platform: homeassistant
+    id: office_storage_light_sensor
+    entity_id: light.office_storage
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_storage_light
+          state:
+            checked: !lambda return x;
+
   # 3d Printer
   - platform: homeassistant
     id: homeassistant_printer_power_sensor
@@ -57,5 +69,17 @@ binary_sensor:
       then:
         lvgl.widget.update:
           id: printer_lights_button
+          state:
+            checked: !lambda return x;
+
+  # Lenovo Server
+  - platform: homeassistant
+    id: homeassistant_lenovo_power_sensor
+    entity_id: switch.office_lenovo_power_switch
+    publish_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: lenovo_power_button
           state:
             checked: !lambda return x;
