@@ -108,3 +108,23 @@ binary_sensor:
           id: office_aircon_button
           state:
             checked: !lambda return x;
+
+
+
+
+
+switch:
+  - platform: template
+    id: office_air_conditioner_switch
+    turn_on_action:
+      - homeassistant.service:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: climate.office_air_conditioner
+            hvac_mode: "auto"
+    turn_off_action:
+      - homeassistant.service:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: climate.office_air_conditioner
+            hvac_mode: "off"
