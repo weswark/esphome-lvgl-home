@@ -16,18 +16,6 @@ substitutions:
   coach_lamp:        "\U000F1020"
   ceiling_fan_light: "\U000F1798"
 
-binary_sensor:
-  - platform: homeassistant
-    id: remote_light
-    entity_id: light.office_lamp_light
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: light_btn
-          state:
-            checked: !lambda return x;
-
 lvgl:
   pages:
     - id: main_page
@@ -40,21 +28,21 @@ lvgl:
       pad_all: 5
       widgets:
         - button: 
-          height: ${hight}
+          height: $button_height_single
           checkable: true
-          id: lv_button_${id}
+          id: lv_button_1
           widgets:
             - label:
                 text_font: $icon_font
                 align: top_left
-                id: lv_button_${id}_icon                  
-                text: $button_${id}_icon
+                id: lv_button_1_icon                  
+                text: $button_1_icon
             - label:
                 align: bottom_left
-                id: lv_button_${id}_label
-                text: $button_${id}_name
+                id: lv_button_1_label
+                text: $button_1_name
           on_click:
               - homeassistant.service:
                   service: switch.toggle
                   data:
-                    entity_id: $button_${id}_device
+                    entity_id: $button_1_device
