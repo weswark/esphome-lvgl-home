@@ -13,6 +13,7 @@ binary_sensor:
 lvgl:
   pages:
     - id: room_page
+      bg_color: Black
       widgets:
         - button:
             id: light_btn
