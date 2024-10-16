@@ -21,6 +21,7 @@ lvgl:
       pad_bottom: 10px
       pad_right: 10px
       shadow_width: 0
+      align: CENTER
       bg_color: $button_off_color
       text_color: $button_text_color
       checked:
