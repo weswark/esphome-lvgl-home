@@ -52,17 +52,17 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: true
-            id: office_lamp_light2
+            id: test
             widgets:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  id: office_lamp_light_icon 2                 
+                  id: test_icon                 
                   text: $lightbulb
               - label:
                   align: bottom_left
-                  id: office_lamp_light_label2
-                  text: "Office Light"
+                  id: test_label
+                  text: "Test"
             on_click:
                 - homeassistant.service:
                     service: light.toggle
