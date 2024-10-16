@@ -193,4 +193,9 @@ lvgl:
         # Office Aircon
         - switch: 
             id: office_aircon_switch
+            on_value:
+              then:
+                - logger.log:
+                    format: "Switch state: %d"
+                    args: [ x ]
 
