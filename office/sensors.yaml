@@ -44,7 +44,7 @@ binary_sensor:
     on_state:
       then:
         lvgl.widget.update:
-          id: office_storage_light
+          id: office_storage_light_button
           state:
             checked: !lambda return x;
 
