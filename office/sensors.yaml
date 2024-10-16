@@ -111,5 +111,6 @@ binary_sensor:
 
 switch:
   - platform: lvgl
+    name: aircon
     id: office_air_conditioner_switch
     widget: office_aircon_button
