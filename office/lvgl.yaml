@@ -77,8 +77,8 @@ lvgl:
             widgets:
               - label:
                   text_font: $icon_font
-                  align: top_left_three
-                  id: test_icon                 
+                  align: top_left
+                  id: test_icon_three                
                   text: $lightbulb
               - label:
                   align: bottom_left
