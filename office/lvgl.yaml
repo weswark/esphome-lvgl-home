@@ -199,7 +199,7 @@ lvgl:
 
         # Dimmer
         - button: 
-            height: $button_height_double
+            height: $button_height_single
             checkable: true
             id: dimmer
             widgets:
