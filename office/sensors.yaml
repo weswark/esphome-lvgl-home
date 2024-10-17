@@ -111,12 +111,12 @@ sensor:
             args: [ 'x' ]
 
   # Header Office Temperate
-  - platform: homeassistant
-    id: office_temperature
-    entity_id: sensor.office_temperature
-    on_value:
-      - lvgl.label.update:
-          id: office_temp
-          text:
-            format: "%.1f"
-            args: [ 'x' ]
+#  - platform: homeassistant
+#    id: office_temperature
+#    entity_id: sensor.office_temperature
+#    on_value:
+#      - lvgl.label.update:
+#          id: office_temp
+#          text:
+#            format: "%.1f"
+#            args: [ 'x' ]
