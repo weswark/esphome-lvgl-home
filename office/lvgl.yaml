@@ -16,8 +16,8 @@ lvgl:
               text_color: 0xFFFFFF
           # Outdoor Temperature
           - label:
-              text: "-.-°"
-              id: outdoor_temp
+              text: "-.-° indoor"
+              id: indoor_temp
               x: 5
               y: 5
               text_color: 0xFFFFFF
