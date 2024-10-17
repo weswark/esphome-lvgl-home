@@ -10,8 +10,8 @@ time:
       - script.execute: time_update
     on_time:
       - minutes: '*'
-        seconds: 0  
-      then:
+        seconds: 0
+        then:
           - script.execute: time_update
 
 script:
@@ -19,3 +19,7 @@ script:
     then:
       - lvgl.label.update:
           id: display_time
+          text: !lambda |-
+            static char time_buf[17];
+            auto now = id(sntp_time).now();            
+            return time_buf; 
