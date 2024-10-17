@@ -15,7 +15,7 @@ lvgl:
 
       # Clock
       - label:
-          text: "00:00 am"
+          text: "--:--"
           id: display_time
           align: top_mid
           x: 5
