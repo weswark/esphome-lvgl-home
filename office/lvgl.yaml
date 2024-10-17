@@ -11,7 +11,7 @@ lvgl:
           align: top_mid
           x: 5
           y: 0
-          text_align: right
+          text_align: center
           text_color: 0xFFFFFF 
 
       # Outdoor Temperature
@@ -21,7 +21,15 @@ lvgl:
           align: top_left
           x: 0
           y: 5
-          #text_align: right
+          text_color: 0xFFFFFF
+
+      # Office Temperature
+      - label:
+          text: "-.-°C"
+          id: office_temp
+          align: top_left
+          x: 0
+          y: 5
           text_color: 0xFFFFFF
 
   pages:
