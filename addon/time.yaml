@@ -22,4 +22,10 @@ script:
           text: !lambda |-
             static char time_buf[17];
             auto now = id(sntp_time).now();            
+            bool is_pm = now.hour >= 12;
+            int hour_12 = now.hour % 12;
+            if (hour_12 == 0) {
+                hour_12 = 12; // 12 AM/PM should be displayed as 12, not 0
+            }
+            snprintf(time_buf, sizeof(time_buf), "%2d:%02d%s", hour_12, now.minute, is_pm ? "pm" : "am");
             return time_buf; 
