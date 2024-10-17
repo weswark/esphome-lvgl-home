@@ -8,8 +8,8 @@ sensor:
       - lvgl.label.update:
           id: temperatures
           text:
-            format: "%.0f° / %.0f°"
-            args: [ 'id(outdoor_temperature).state', 'x' ]
+            format: "%d° / %d°"
+            args: [ '(int)round(id(outdoor_temperature).state)', '(int)round(x)' ]
 
   - platform: homeassistant
     entity_id: sensor.outdoor_temperature
@@ -18,8 +18,9 @@ sensor:
       - lvgl.label.update:
           id: temperatures
           text:
-            format: "%.0f° / %.0f°"
-            args: [ 'x', 'id(office_temperature).state' ]
+            format: "%d° / %d°"
+            args: [ '(int)round(x)', '(int)round(id(office_temperature).state)' ]
+
 
 
 binary_sensor:
