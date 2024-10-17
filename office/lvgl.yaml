@@ -212,7 +212,7 @@ lvgl:
                   text: "Dimmer"
               - slider:
                   align: top_right
-                  id: dimmer_slider
+                  id: slider
                   x: -5
                   y: 5
                   width: 40
