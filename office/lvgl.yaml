@@ -4,6 +4,24 @@ lvgl:
   top_layer:
     widgets:
 
+      layout: 
+        type: flex
+        flex_flow: ROW
+          # Outdoor Temperature
+          - label:
+              text: "-.-°"
+              id: outdoor_temp
+              x: 5
+              y: 5
+              text_color: 0xFFFFFF
+          # Outdoor Temperature
+          - label:
+              text: "-.-°"
+              id: outdoor_temp
+              x: 5
+              y: 5
+              text_color: 0xFFFFFF
+        
       # Clock
       - label:
           text: "00:00 am"
@@ -13,15 +31,6 @@ lvgl:
           y: 0
           text_align: center
           text_color: 0xFFFFFF 
-
-      # Outdoor Temperature
-      - label:
-          text: "-.-°"
-          id: outdoor_temp
-          align: top_left
-          x: 5
-          y: 5
-          text_color: 0xFFFFFF
           
 
   pages:
