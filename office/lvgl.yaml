@@ -158,7 +158,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: printer_lights_label
-                  text: "Printer Lights"
+                  text: "Lighting"
             on_click:
               - homeassistant.service:
                   service: switch.toggle
@@ -179,7 +179,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: lenovo_power_label
-                  text: "Lenovo Server"
+                  text: "Lenovo"
             on_click:
               - homeassistant.service:
                   service: switch.toggle
