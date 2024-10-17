@@ -206,11 +206,9 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: dimmer_icon
                   id: $ledstrip
               - label:
                   align: bottom_left
-                  id: dimmer_label
                   text: "Dimmer"
               - slider:
                   align: top_right
