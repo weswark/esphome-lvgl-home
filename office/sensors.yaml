@@ -18,7 +18,7 @@ sensor:
       - lvgl.label.update:
           id: temperatures
           text:
-            format: "%f° / %f°"
+            format: "%.0f° / %.0f°"
             args: [ 'x', 'id(office_temperature).state' ]
 
 
