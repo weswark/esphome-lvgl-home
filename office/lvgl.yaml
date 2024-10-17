@@ -3,7 +3,7 @@ lvgl:
     - id: main_page
       layout: 
         type: flex
-        flex_flow: column_wrap
+        flex_flow: row
       width: 100%
       bg_color: Black
       bg_opa: cover
@@ -24,7 +24,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: office_scene_evening_label
-                  text: "Evening2"
+                  text: "Evening"
             on_click:
               - homeassistant.service:
                   service: scene.turn_on
