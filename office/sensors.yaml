@@ -8,7 +8,7 @@ sensor:
       - lvgl.label.update:
           id: temperatures
           text:
-            format: "%f° / %f°"
+            format: "%.0f° / %.0f°"
             args: [ 'id(outdoor_temperature).state', 'x' ]
 
   - platform: homeassistant
