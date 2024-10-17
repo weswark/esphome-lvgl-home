@@ -159,25 +159,6 @@ lvgl:
                   data:
                     entity_id: switch.lenovo_power
 
-        # Office Blind
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: office_blind_button
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  text: $blind
-              - label:
-                  align: bottom_left
-                  text: "Blind"
-            on_click:
-              - homeassistant.service:
-                  service: switch.toggle
-                  data:
-                    entity_id: switch.office_blind
-
         # Office Aircon
         - button: 
             height: $button_height_single
