@@ -32,7 +32,7 @@ lvgl:
       width: 100%
       bg_color: Black
       bg_opa: cover
-      pad_top: 30
+      pad_top: 28
       pad_bottom: 5
       pad_left: 5
       pad_right: 5
