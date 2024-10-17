@@ -23,9 +23,6 @@ lvgl:
           text_align: center
           text_color: 0xFFFFFF 
 
-
-          
-
   pages:
     - id: main_page
       layout: 
@@ -61,7 +58,6 @@ lvgl:
                   data:
                     entity_id: scene.office_features
 
-        
         # Office Calls Scene
         - button: 
             height: $button_height_single
@@ -206,8 +202,6 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_air_conditioner
-
-
 
         # Webhook Figma
         - button: 
