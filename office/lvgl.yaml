@@ -196,3 +196,51 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_air_conditioner
+
+        # Dimmer
+        - button: 
+            height: $button_height_double
+            checkable: true
+            id: dimmer
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: dimmer_icon
+                  id: $ledstrip
+              - label:
+                  align: bottom_left
+                  id: dimmer_label
+                  text: "Dimmer"
+              - slider:
+                  align: top_right
+                  id: dimmer_slider
+                  x: -5
+                  y: 5
+                  width: 40
+                  height: 165
+                  pad_all: 0
+                  min_value: 0
+                  max_value: 255
+                  radius: 10px
+                  knob:
+                    bg_color: White
+                    radius: 2px
+                    pad_left: -3px
+                    pad_right: -3px
+                    pad_top: -18px
+                    pad_bottom: -18px
+                  indicator:
+                    radius: 0px
+                    bg_color: Gray
+                  on_release:
+                    - homeassistant.action:
+                        action: light.turn_on
+                        data:
+                          entity_id: light.office_lamp_light
+                          brightness: !lambda return int(x);
+            on_click:
+                - homeassistant.service:
+                    service: light.toggle
+                    data:
+                      entity_id: light.office_lamp_light
