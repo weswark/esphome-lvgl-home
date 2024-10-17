@@ -3,8 +3,8 @@ lvgl:
     - id: main_page
       layout: 
         type: flex
-        flex_flow: row
-      width: 800px
+        flex_flow: column
+      width: 100%
       bg_color: Black
       bg_opa: cover
       pad_all: 5
