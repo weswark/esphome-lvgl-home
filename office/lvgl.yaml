@@ -4,7 +4,7 @@ lvgl:
   top_layer:
     widgets:
 
-      # Outdoor Temperature
+      # Temperature
       - label:
           text: "-° / -°"
           id: temperatures
