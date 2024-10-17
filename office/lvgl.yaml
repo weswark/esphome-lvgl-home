@@ -227,3 +227,136 @@ lvgl:
                   service: button.press
                   data:
                     entity_id: button.webhook_figma
+
+        # Webhook Forklift
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_forklift_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Forklift"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_forklift
+
+        # Webhook Ia Writer
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_iawriter_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Ia Writer"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_iawriter
+
+        # Webhook Mail
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_mail_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Mail"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_mail
+
+        # Webhook Mainsail
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_mainsail_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Mainsail"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_mainsail
+
+        # Webhook Meet
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_meet_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Meet"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_meet
+
+        # Webhook Obsbot
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_obsbot_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Obsbot"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_obsbot
+
+        # Webhook Slack
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_slack_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Slack"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_slack
