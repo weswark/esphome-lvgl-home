@@ -6,8 +6,8 @@ lvgl:
           text: "00:00 am"
           id: display_time
           align: top_mid
-          x: -2
-          y: -10
+          x: 5
+          y: 0
           text_align: right
           text_color: 0xFFFFFF 
 
@@ -15,8 +15,8 @@ lvgl:
           text: "-.-°C"
           id: outdoor_temp
           align: top_left
-          x: 12
-          y: -10
+          x: 
+          y: 5
           #text_align: right
           text_color: 0xFFFFFF
 
