@@ -95,3 +95,15 @@ binary_sensor:
           id: office_aircon_button
           state:
             checked: !lambda return x;
+
+
+sensor:
+  - platform: homeassistant
+    id: outdoor_temperature
+    entity_id: sensor.outdoor_temperature
+    on_value:
+      - lvgl.label.update:
+          id: outdoor_temp
+          text:
+            format: "\U000F10C3 %.1f°C"
+            args: [ 'x' ]
