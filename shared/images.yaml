@@ -1,0 +1,6 @@
+image:
+  - file: https://esphome.io/_static/logo-text-on-light.svg
+    id: figma
+    resize: 460x90
+    type: RGB565
+    use_transparency: true
