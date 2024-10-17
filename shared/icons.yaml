@@ -17,6 +17,8 @@ font:
       "\U000F1A4C",  # mdi-lightbulb-night
       "\U000F1087",  # mdi-router-network
       "\U000F036B",  # mdi-message-video
+      "\U000F0614",  # mdi-application-outline
+F0614
       ]
 
 # Map icons to names
@@ -31,3 +33,4 @@ substitutions:
   nightlight:     "\U000F1A4C"
   network:        "\U000F1087"
   videocall:      "\U000F036B"
+  application:    "\U000F0614"
