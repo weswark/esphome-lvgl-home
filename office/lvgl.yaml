@@ -4,7 +4,7 @@ lvgl:
       layout: 
         type: flex
         flex_flow: row
-      width: 100%
+      width: 800px
       bg_color: Black
       bg_opa: cover
       pad_all: 5
