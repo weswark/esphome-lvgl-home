@@ -16,7 +16,7 @@ lvgl:
 
       # Outdoor Temperature
       - label:
-          text: "-.-°C"
+          text: "-.-°"
           id: outdoor_temp
           align: top_left
           x: 5
@@ -25,7 +25,7 @@ lvgl:
 
       # Office Temperature
 #      - label:
-#          text: "-.-°C"
+#          text: "-.-°"
 #          id: office_temp
 #          align: top_left
 #          x: 0
