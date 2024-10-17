@@ -206,3 +206,24 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_air_conditioner
+
+
+
+        # Webhook Figma
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_figma_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $application
+              - label:
+                  align: bottom_left
+                  text: "Figma"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_figma
