@@ -7,7 +7,7 @@ lvgl:
       # Outdoor Temperature
       - label:
           text: "-.-°"
-          id: outdoor_temp
+          id: temperatures
           align: top_left
           x: 5
           y: 5
