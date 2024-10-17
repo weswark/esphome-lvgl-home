@@ -1,4 +1,25 @@
 lvgl:
+
+  top_layer:
+    widgets:
+      - label:
+          text: "00:00 am"
+          id: display_time
+          align: top_mid
+          x: -2
+          y: -10
+          text_align: right
+          text_color: 0xFFFFFF 
+
+      - label:
+          text: "-.-°C"
+          id: outdoor_temp
+          align: top_left
+          x: 12
+          y: -10
+          #text_align: right
+          text_color: 0xFFFFFF
+
   pages:
     - id: main_page
       layout: 
