@@ -105,5 +105,5 @@ sensor:
       - lvgl.label.update:
           id: outdoor_temp
           text:
-            format: "\U000F10C3 %.1f°C"
+            format: "\U000F050F %.1f°C"
             args: [ 'x' ]
