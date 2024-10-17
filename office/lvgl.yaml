@@ -1,7 +1,10 @@
 lvgl:
 
+  # Header
   top_layer:
     widgets:
+
+      # Clock
       - label:
           text: "00:00 am"
           id: display_time
@@ -11,6 +14,7 @@ lvgl:
           text_align: right
           text_color: 0xFFFFFF 
 
+      # Outdoor Temperature
       - label:
           text: "-.-°C"
           id: outdoor_temp
