@@ -222,7 +222,7 @@ lvgl:
                   max_value: 100
                   radius: 8px
                   knob:
-                    bg_color: White
+                    bg_color: Grey
                     radius: 2px
                     pad_left: -2px
                     pad_right: -2px
@@ -230,7 +230,6 @@ lvgl:
                     pad_bottom: -18px
                   indicator:
                     radius: 0px
-                    bg_color: white
                     bg_color: White
                   on_release:
                     - homeassistant.action:
