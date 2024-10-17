@@ -197,7 +197,7 @@ lvgl:
                   data:
                     entity_id: switch.office_air_conditioner
 
-        # Dimmer
+        # Blind
         - button: 
             height: $button_height_double
             checkable: true
@@ -206,10 +206,10 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $ledstrip
+                  text: $blind
               - label:
                   align: bottom_left
-                  text: "Dimmer"
+                  text: "Blind"
               - slider:
                   align: top_right
                   id: slider
@@ -219,26 +219,27 @@ lvgl:
                   height: 165
                   pad_all: 0
                   min_value: 0
-                  max_value: 255
-                  radius: 10px
+                  max_value: 100
+                  radius: 8px
                   knob:
                     bg_color: White
                     radius: 2px
-                    pad_left: -3px
-                    pad_right: -3px
+                    pad_left: -2px
+                    pad_right: -2px
                     pad_top: -18px
                     pad_bottom: -18px
                   indicator:
                     radius: 0px
-                    bg_color: Gray
+                    bg_color: white
+                    bg_color: White
                   on_release:
                     - homeassistant.action:
-                        action: light.turn_on
+                        action: cover.set_cover_position
                         data:
-                          entity_id: light.office_lamp_light
-                          brightness: !lambda return int(x);
+                          entity_id: cover.office_blind
+                          position: !lambda return int(x);
             on_click:
-                - homeassistant.service:
-                    service: light.toggle
-                    data:
-                      entity_id: light.office_lamp_light
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_blind
