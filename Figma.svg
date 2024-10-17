@@ -1,0 +1,35 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle opacity="0.1" cx="512" cy="512" r="355" stroke="black" stroke-width="2"/>
+<circle opacity="0.1" cx="512" cy="512" r="228" stroke="black" stroke-width="2"/>
+<circle opacity="0.1" cx="512" cy="512" r="214" stroke="black" stroke-width="2"/>
+<circle opacity="0.1" cx="512" cy="512" r="102" stroke="black" stroke-width="2"/>
+<circle opacity="0.1" cx="512" cy="512" r="70" stroke="black" stroke-width="2"/>
+<rect opacity="0.1" x="511" y="100" width="2" height="824" fill="black"/>
+<rect opacity="0.1" x="924" y="511" width="2" height="824" transform="rotate(90 924 511)" fill="black"/>
+<rect opacity="0.1" x="785" y="100" width="2" height="824" fill="black"/>
+<rect opacity="0.1" x="374" y="100" width="2" height="824" fill="black"/>
+<rect opacity="0.1" x="648" y="100" width="2" height="824" fill="black"/>
+<rect opacity="0.1" x="237" y="100" width="2" height="824" fill="black"/>
+<rect opacity="0.1" x="924" y="785" width="2" height="824" transform="rotate(90 924 785)" fill="black"/>
+<rect opacity="0.1" x="924" y="374" width="2" height="824" transform="rotate(90 924 374)" fill="black"/>
+<rect opacity="0.1" x="924" y="648" width="2" height="824" transform="rotate(90 924 648)" fill="black"/>
+<rect opacity="0.1" x="924" y="237" width="2" height="824" transform="rotate(90 924 237)" fill="black"/>
+<g filter="url(#filter0_d_60_385)">
+<path d="M416.5 798C469.216 798 512 755.216 512 702.5V607H416.5C363.784 607 321 649.784 321 702.5C321 755.216 363.784 798 416.5 798Z" fill="white"/>
+<path d="M321 511.5C321 458.784 363.784 416 416.5 416H512V607H416.5C363.784 607 321 564.216 321 511.5Z" fill="white"/>
+<path d="M321 320.5C321 267.784 363.784 225 416.5 225H512V416H416.5C363.784 416 321 373.216 321 320.5Z" fill="white"/>
+<path d="M512 225H607.5C660.216 225 703 267.784 703 320.5C703 373.216 660.216 416 607.5 416H512V225Z" fill="white"/>
+<path d="M703 511.5C703 564.216 660.216 607 607.5 607C554.784 607 512 564.216 512 511.5C512 458.784 554.784 416 607.5 416C660.216 416 703 458.784 703 511.5Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_d_60_385" x="321" y="225" width="382" height="576" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="3"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_60_385"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_60_385" result="shape"/>
+</filter>
+</defs>
+</svg>
