@@ -3,7 +3,7 @@ lvgl:
     - id: main_page
       layout: 
         type: flex
-        flex_flow: column
+        flex_flow: row_wrap
       width: 100%
       bg_color: Black
       bg_opa: cover
