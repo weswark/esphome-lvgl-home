@@ -107,7 +107,7 @@ sensor:
       - lvgl.label.update:
           id: outdoor_temp
           text:
-            format: "%.1f"
+            format: "%.1f°C"
             args: [ 'x' ]
 
   # Header Office Temperate
