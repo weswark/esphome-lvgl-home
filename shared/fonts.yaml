@@ -3,6 +3,6 @@ font:
     id: text_font
     size: 16
     bpp: 4
-    glyphs: [
-      "\U000F050F",  # mdi-themometer
-      ]
+#    glyphs: [
+#      "\U000F050F",  # mdi-themometer
+#      ]
