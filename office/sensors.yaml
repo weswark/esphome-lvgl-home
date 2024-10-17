@@ -2,14 +2,24 @@ sensor:
 
   # Header Outdoor Temperate
   - platform: homeassistant
-    id: outdoor_temperature
-    entity_id: sensor.outdoor_temperature
+    entity_id: sensor.office_temperature
+    id: office_temperature
     on_value:
       - lvgl.label.update:
-          id: outdoor_temp
+          id: temperatures
           text:
-            format: "%.1f°"
-            args: [ 'x' ]
+            format: "%.1f° / %.1f°"
+            args: [ 'id(outdoor_temperature).state', 'x' ]
+
+  - platform: homeassistant
+    entity_id: sensor.outdoor_temperature
+    id: outdoor_temperature
+    on_value:
+      - lvgl.label.update:
+          id: temperatures
+          text:
+            format: "%.1f° / %.1f°"
+            args: [ 'x', 'id(office_temperature).state' ]
 
 
 binary_sensor:
