@@ -98,12 +98,25 @@ binary_sensor:
 
 
 sensor:
+
+  # Header Outdoor Temperate
   - platform: homeassistant
     id: outdoor_temperature
     entity_id: sensor.outdoor_temperature
     on_value:
       - lvgl.label.update:
           id: outdoor_temp
+          text:
+            format: "%.1f"
+            args: [ 'x' ]
+
+  # Header Office Temperate
+  - platform: homeassistant
+    id: office_temperature
+    entity_id: sensor.office_temperature
+    on_value:
+      - lvgl.label.update:
+          id: office_temp
           text:
             format: "%.1f"
             args: [ 'x' ]
