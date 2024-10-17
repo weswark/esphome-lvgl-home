@@ -107,13 +107,3 @@ binary_sensor:
           id: office_aircon_button
           state:
             checked: !lambda return x;
-
-# Dimmer switch button state - define its settings in substitutions
-    platform: homeassistant
-    id: dimmer_brightness
-    entity_id: light.office_lamp_light
-    attribute: brightness
-    on_value:
-      - lvgl.slider.update:
-          id: dimmer_slider
-          value: !lambda return x;
