@@ -84,18 +84,6 @@ binary_sensor:
           state:
             checked: !lambda return x;
 
-  # Office Blind
-  - platform: homeassistant
-    id: office_blind
-    entity_id: switch.office_blind
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_blind_button
-          state:
-            checked: !lambda return x;
-
   # Office Aircon
   - platform: homeassistant
     id: office_air_conditioner
