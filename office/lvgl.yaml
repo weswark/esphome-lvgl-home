@@ -19,7 +19,7 @@ lvgl:
           text: "-.-°C"
           id: outdoor_temp
           align: top_left
-          x: 0
+          x: 5
           y: 5
           text_color: 0xFFFFFF
 
