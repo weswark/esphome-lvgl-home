@@ -11,7 +11,7 @@ lvgl:
           align: top_left
           x: 8
           y: 4
-          text_color: Light_Slate_Gray
+          text_color: #DADADA
 
       # Clock
       - label:
@@ -21,7 +21,7 @@ lvgl:
           x: 0
           y: 4
           text_align: center
-          text_color: Light_Slate_Gray
+          text_color: #DADADA
 
   pages:
     - id: main_page
