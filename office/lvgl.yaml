@@ -209,10 +209,9 @@ lvgl:
             checkable: false
             id: webhook_figma_button
             widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  text: $application
+              - image:
+                  src: figma_logo
+                  antialias: true
               - label:
                   align: bottom_left
                   text: "Figma"
