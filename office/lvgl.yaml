@@ -209,9 +209,9 @@ lvgl:
             checkable: false
             id: webhook_figma_button
             widgets:
-              - image:
-                  src: figma_logo
-                  antialias: true
+              #- image:
+              #    src: figma_logo
+              #    antialias: true
               - label:
                   align: bottom_left
                   text: "Figma"
