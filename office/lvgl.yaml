@@ -9,7 +9,7 @@ lvgl:
           text: "-° / -°"
           id: temperatures
           align: top_left
-          x: 5
+          x: 10
           y: 4
           text_color: 0xFFFFFF
 
