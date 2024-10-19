@@ -6,6 +6,7 @@ lvgl:
 
       # Temperature
       - label:
+          text_font: $text_font
           text: "-° / -°"
           id: temperatures
           align: top_left
@@ -15,6 +16,7 @@ lvgl:
 
       # Clock
       - label:
+          text_font: $text_font
           text: "--:--"
           id: display_time
           align: top_mid
@@ -49,7 +51,6 @@ lvgl:
                   id: scene_features_icon                
                   text: $ledstrip
               - label:
-                  text_font: $text_font
                   align: bottom_left
                   id: scene_features_label
                   text: "Features"
