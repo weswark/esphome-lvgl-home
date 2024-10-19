@@ -49,6 +49,7 @@ lvgl:
                   id: scene_features_icon                
                   text: $ledstrip
               - label:
+                  text_font: $text_font
                   align: bottom_left
                   id: scene_features_label
                   text: "Features"
