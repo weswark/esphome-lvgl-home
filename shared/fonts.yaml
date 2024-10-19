@@ -1,15 +1,8 @@
 substitutions:
   text_font: text_font
-  status_font: status_font
 
 font:
   - file: "gfonts://Roboto"
     id: text_font
     size: 16
-    bpp: 4
-
-font:
-  - file: "gfonts://Roboto"
-    id: status_font
-    size: 14
     bpp: 4
