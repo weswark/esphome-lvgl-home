@@ -6,4 +6,3 @@ output:
       number: 2
       mode: OUTPUT
       inverted: false
-      allow_other_uses: true
