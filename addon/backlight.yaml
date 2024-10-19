@@ -5,7 +5,6 @@ output:
       ch422g: io_ex
       number: 2
       mode: OUTPUT
-      inverted: false
 
 light:
   - platform: monochromatic
