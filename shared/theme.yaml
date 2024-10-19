@@ -13,7 +13,7 @@ substitutions:
 lvgl:
   theme:
     button:
-      text_font: $text_font
+      #text_font: $text_font
       scroll_on_focus: false
       radius: $radius
       width: $button_width
