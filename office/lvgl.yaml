@@ -51,7 +51,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: scene_features_label
-                  text: "Features2"
+                  text: "Features"
             on_click:
               - homeassistant.service:
                   service: scene.turn_on
