@@ -6,7 +6,7 @@ lvgl:
 
       # Temperature
       - label:
-          styles: status_style
+          #styles: status_style
           text: "-° / -°"
           id: temperatures
           align: top_left
@@ -16,7 +16,7 @@ lvgl:
 
       # Clock
       - label:
-          styles: status_style
+          #styles: status_style
           text: "--:--"
           id: display_time
           align: top_mid
