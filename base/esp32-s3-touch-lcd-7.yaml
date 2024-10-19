@@ -131,6 +131,7 @@ switch:
   - platform: gpio
     name: Display Backlight
     icon: mdi:gesture-tap-button
+    id: display_backlight
     pin: 
       ch422g: io_ex
       number: 2
