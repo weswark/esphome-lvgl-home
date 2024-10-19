@@ -52,7 +52,7 @@ lvgl:
                   align: bottom_left
                   id: scene_features_label
                   text: "Features"
-            on_click:
+            on_press:
               - homeassistant.service:
                   service: scene.turn_on
                   data:
@@ -78,7 +78,7 @@ lvgl:
                   align: bottom_left
                   id: office_scene_calls_label
                   text: "Calls"
-            on_click:
+            on_press:
               - homeassistant.service:
                   service: scene.turn_on
                   data:
@@ -104,7 +104,7 @@ lvgl:
                   align: bottom_left
                   id: office_scene_evening_label
                   text: "Evening"
-            on_click:
+            on_press:
               - homeassistant.service:
                   service: scene.turn_on
                   data:
@@ -193,17 +193,17 @@ lvgl:
                   align: bottom_left
                   id: office_blind_label
                   text: "Blind"
-            on_click:
+            on_press:
               - homeassistant.service:
-                  service: switch.toggle
+                  service: cover.close_cover
                   data:
-                    entity_id: cover.close_cover
+                    entity_id: cover.office_blind
             on_release:
               - homeassistant.service:
-                  service: switch.toggle
+                  service: cover.open_cover
                   data:
-                    entity_id: cover.open_cover
-
+                    entity_id: cover.office_blind
+                    
         # Lenovo Server
         - button: 
             height: $button_height_single
