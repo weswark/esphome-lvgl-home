@@ -129,23 +129,19 @@ display:
 # Backlight Control
 switch:
   - platform: gpio
-    name: Display Backlight
-    icon: mdi:gesture-tap-button
     id: display_backlight
     pin: 
       ch422g: io_ex
       number: 2
       allow_other_uses: true
     restore_mode: ALWAYS_ON
+    internal: true
 
-# Presence Control of Backlight
-interval:
-  - interval: 1s
-    then:
-      if:
-        condition:
-          binary_sensor.is_on: office_presence
-        then:
-          - switch.turn_on: display_backlight
-        else:
-          - switch.turn_off: display_backlight
+binary_sensor:
+  - platform: homeassistant
+    id: office_presence
+    entity_id: binary_sensor.office_presence_presence
+    on_press:
+      - switch.turn_on: display_backlight  # Turn on backlight when binary sensor is ON
+    on_release:
+      - switch.turn_off: display_backlight  # Turn off backlight when binary sensor is OFF
