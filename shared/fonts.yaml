@@ -4,6 +4,7 @@ font:
     size: 16
     bpp: 4
 
+font:
   - file: "gfonts://Roboto"
     id: status_font
     size: 14
