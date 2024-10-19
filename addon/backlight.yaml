@@ -1,5 +1,5 @@
 # Panel Backlight
-light:
+switch:
   - platform: gpio
     id: display_backlight
     pin: 
@@ -15,11 +15,11 @@ binary_sensor:
     id: backlight_presence
     entity_id: binary_sensor.office_presence_presence
     on_press:
-      - light.turn_on:
+      - switch.turn_on:
           id: display_backlight
           brightness: 100%  # Full brightness
           transition: 1s    # Fade up over 1 second
     on_release:
-      - light.turn_off:
+      - switch.turn_off:
           id: display_backlight
           transition: 1s    # Fade down over 1 second
