@@ -210,9 +210,13 @@ lvgl:
             checkable: false
             id: webhook_mail_button
             widgets:
-              - image:
-                  src: mail_logo
-                  antialias: true
+              #- image:
+              #    src: mail_logo
+              #    antialias: true
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $email
               - label:
                   align: bottom_left
                   text: "Mail"
