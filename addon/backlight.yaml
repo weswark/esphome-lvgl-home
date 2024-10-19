@@ -10,3 +10,4 @@ light:
     id: backlight_light
     output: backlight_output
     name: "Backlight"
+    default_transition_length: 1s
