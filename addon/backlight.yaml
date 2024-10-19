@@ -6,8 +6,7 @@ output:
       number: 2
 
 light:
-  - platform: binary
+  - platform: monochromatic
     id: backlight_light
     output: backlight_output
     name: "Backlight"
-    default_transition_length: 1s
