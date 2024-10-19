@@ -1,5 +1,20 @@
-  # Office Presence
+# Panel Backlight
+switch:
+  - platform: gpio
+    id: display_backlight
+    pin: 
+      ch422g: io_ex
+      number: 2
+      allow_other_uses: true
+    restore_mode: ALWAYS_ON
+    internal: true
+
+# Presence Sensor Trigger
+binary_sensor:
   - platform: homeassistant
-    id: office_presence
+    id: backlight_presence
     entity_id: binary_sensor.office_presence_presence
-    publish_initial_state: true
+    on_press:
+      - switch.turn_on: display_backlight  # Turn on backlight when binary sensor is ON
+    on_release:
+      - switch.turn_off: display_backlight  # Turn off backlight when binary sensor is OFF
