@@ -92,7 +92,7 @@ lvgl:
                   align: bottom_left
                   id: office_scene_evening_label
                   text: "Evening"
-            on_click:
+            on_press:
               - homeassistant.service:
                   service: scene.turn_on
                   data:
