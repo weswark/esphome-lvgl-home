@@ -24,8 +24,8 @@ binary_sensor:
       - light.turn_on:
           id: display_backlight
           brightness: 100%  # Full brightness
-          transition: 1s    # Fade up over 1 second
+          transition_length: 1s    # Fade up over 1 second
     on_release:
       - light.turn_off:
           id: display_backlight
-          transition: 1s    # Fade down over 1 second
+          transition_length: 1s    # Fade down over 1 second
