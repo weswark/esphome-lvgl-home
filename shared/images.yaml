@@ -4,7 +4,6 @@ image:
     resize: 32x32
     type: RGB565
     use_transparency: true
-    antialias: true
 
   - file: https://raw.githubusercontent.com/jtenniswood/esphome-lvgl/main/images/obsbot.svg
     id: obsbot_logo
