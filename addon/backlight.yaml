@@ -1,38 +1,8 @@
 output:
-  - platform: gpio
-    id: backlight_output
-    pin:
-      ch422g: io_ex
-      number: 2
-      allow_other_uses: true
-    
-light:
-  - platform: monochromatic
-    id: backlight
-    name: Back Light
-    entity_category: config
-    output: backlight_output
-    restore_mode: ALWAYS_ON
-
-
-# Panel Backlight
-switch:
-  - platform: gpio
-    id: display_backlight
+  - platform: ledc
     pin: 
       ch422g: io_ex
       number: 2
       allow_other_uses: true
-    restore_mode: ALWAYS_ON
-    #internal: true
-
-# Presence Sensor Trigger
-binary_sensor:
-  - platform: homeassistant
-    id: backlight_presence
-    entity_id: binary_sensor.office_presence_presence
-    on_press:
-      - switch.turn_on: display_backlight  # Turn on backlight when binary sensor is ON
-    on_release:
-      - switch.turn_off: display_backlight  # Turn off backlight when binary sensor is OFF
-
+    id: backlight_output
+    zero_means_zero: true
