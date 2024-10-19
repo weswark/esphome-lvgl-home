@@ -19,6 +19,7 @@ font:
       "\U000F036B",  # mdi-message-video
       "\U000F0614",  # mdi-application-outline
       "\U000F07C9",  # mdi-forklift
+      "\U000F01EE",  # mdi-email
       ]
 
 # Map icons to names
@@ -35,3 +36,4 @@ substitutions:
   videocall:      "\U000F036B"
   application:    "\U000F0614"
   forklift:       "\U000F07C9"
+  email:          "\U000F01EE"
