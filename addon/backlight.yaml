@@ -6,3 +6,11 @@ output:
       number: 2
       mode: OUTPUT
       inverted: false
+
+light:
+  - platform: monochromatic
+    id: backlight
+    name: Back Light
+    entity_category: config
+    output: backlight_output
+    restore_mode: ALWAYS_ON
