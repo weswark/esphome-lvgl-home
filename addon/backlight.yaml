@@ -6,9 +6,7 @@ output:
       number: 2
 
 light:
-  - platform: monochromatic
+  - platform: binary
     id: backlight_light
-    name: Back Light
-    entity_category: config
     output: backlight_output
-    restore_mode: ALWAYS_ON
+    name: "Backlight"
