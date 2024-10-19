@@ -41,16 +41,16 @@ lvgl:
         - button: 
             height: $button_height_single
             checkable: false
-            id: office_scene_features_button
+            id: office_scene_off_button
             widgets:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  id: scene_features_icon                
+                  id: scene_off_icon                
                   text: $ledstrip
               - label:
                   align: bottom_left
-                  id: scene_features_label
+                  id: scene_off_label
                   text: "Lights Off"
             on_click:
               - homeassistant.service:
