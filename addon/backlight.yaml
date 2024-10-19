@@ -5,11 +5,11 @@ mcp23017:
 output:
   - platform: mcp23017
     id: backlight_output
-    pin: 2  # MCP23017 pin number
+    pin: 2
     mcp23017_id: mcp23017_hub
 
 light:
-  - platform: monochromatic
+  - platform: binary
     id: backlight_light
     output: backlight_output
     name: "Dimmable Backlight"
