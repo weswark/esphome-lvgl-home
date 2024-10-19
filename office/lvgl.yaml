@@ -284,10 +284,9 @@ lvgl:
             checkable: false
             id: webhook_mainsail_button
             widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  text: $application
+              - image:
+                  src: mainsail_logo
+                  antialias: true
               - label:
                   align: bottom_left
                   text: "Mainsail"
