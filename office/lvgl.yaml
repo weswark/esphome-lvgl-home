@@ -1,0 +1,312 @@
+lvgl:
+  pages:
+    - id: main_page
+      layout: 
+        type: flex
+        flex_flow: column_wrap
+      width: 100%
+      bg_color: Black
+      bg_opa: cover
+      pad_top: 28
+      pad_bottom: 5
+      pad_left: 5
+      pad_right: 5
+      widgets:
+
+        # Office Features Scene
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: office_scene_features_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: scene_features_icon                
+                  text: $ledstrip
+              - label:
+                  align: bottom_left
+                  id: scene_features_label
+                  text: "Features"
+            on_click:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_features
+
+        # Office Calls Scene
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: office_scene_calls_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: office_scene_calls_icon                
+                  text: $videocall
+              - label:
+                  align: bottom_left
+                  id: office_scene_calls_label
+                  text: "Calls"
+            on_click:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_desk_call
+
+        # Office Evening Scene
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: office_scene_evening_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: office_scene_evening_icon                
+                  text: $nightlight
+              - label:
+                  align: bottom_left
+                  id: office_scene_evening_label
+                  text: "Evening"
+            on_click:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_evening 
+
+        # Office Storage Light
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_storage_light_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: office_storage_light_icon
+                  text: $printer
+              - label:
+                  align: bottom_left
+                  id: office_storage_light_label
+                  text: "Storage"
+            on_click:
+              - homeassistant.service:
+                  service: light.toggle
+                  data:
+                    entity_id: light.office_storage
+
+        # 3d Printer
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: printer_power_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: printer_power_icon
+                  text: $printer
+              - label:
+                  align: bottom_left
+                  id: printer_power_label
+                  text: "Printer"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_3d_printer_power
+
+        # 3d Printer Lights
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: printer_lights_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: printer_lights_icon
+                  text: $lights
+              - label:
+                  align: bottom_left
+                  id: printer_lights_label
+                  text: "Lighting"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_3d_printer_lights
+                    
+        # Lenovo Server
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: lenovo_power_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: lenovo_power_icon
+                  text: $printer
+              - label:
+                  align: bottom_left
+                  id: lenovo_power_label
+                  text: "Lenovo"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.lenovo_power
+
+        # Office Aircon
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_aircon_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $aircon
+              - label:
+                  align: bottom_left
+                  text: "Aircon"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_air_conditioner
+
+
+        # Webhook Mail
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_mail_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $gmail
+              - label:
+                  align: bottom_left
+                  text: "Mail"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_mail
+
+        # Webhook Slack
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_slack_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $slack
+              - label:
+                  align: bottom_left
+                  text: "Slack"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_slack
+
+        # Webhook Meet
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_meet_button
+            widgets:
+              - image:
+                  src: meet_logo
+                  antialias: true
+              - label:
+                  align: bottom_left
+                  text: "Meet"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_meet
+
+        # Webhook Figma
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_figma_button
+            widgets:
+              - image:
+                  src: figma_logo
+                  antialias: true
+              - label:
+                  align: bottom_left
+                  text: "Figma"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_figma
+
+        # Webhook Forklift
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_forklift_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $forklift
+              - label:
+                  align: bottom_left
+                  text: "Forklift"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_forklift
+
+        # Webhook Ia Writer
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_iawriter_button
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $command
+              - label:
+                  align: bottom_left
+                  text: "Ia Writer"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_iawriter
+
+        # Webhook Mainsail
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_mainsail_button
+            widgets:
+              - image:
+                  src: mainsail_logo
+                  antialias: true
+              - label:
+                  align: bottom_left
+                  text: "Mainsail"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_mainsail
+
