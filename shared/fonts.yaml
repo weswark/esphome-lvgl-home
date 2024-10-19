@@ -8,6 +8,3 @@ font:
     id: status_font
     size: 14
     bpp: 4
-#    glyphs: [
-#      "\U000F050F",  # mdi-themometer
-#      ]
