@@ -1,10 +1,10 @@
 output:
-  - platform: ledc
-    pin: 
+  - platform: gpio
+    id: backlight_output
+    pin:
       ch422g: io_ex
       number: 2
-    id: backlight_output
-    zero_means_zero: true
+      allow_other_uses: true
     
 light:
   - platform: monochromatic
