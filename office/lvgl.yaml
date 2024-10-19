@@ -316,24 +316,6 @@ lvgl:
                   data:
                     entity_id: button.webhook_meet
 
-        # Webhook Obsbot
-        - button: 
-            height: $button_height_single
-            checkable: false
-            id: webhook_obsbot_button
-            widgets:
-              - image:
-                  src: obsbot_logo
-                  antialias: true
-              - label:
-                  align: bottom_left
-                  text: "Obsbot"
-            on_click:
-              - homeassistant.service:
-                  service: button.press
-                  data:
-                    entity_id: button.webhook_obsbot
-
         # Webhook Slack
         - button: 
             height: $button_height_single
