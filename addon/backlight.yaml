@@ -1,7 +1,7 @@
 # Panel Backlight
 switch:
   - platform: gpio
-    id: display_backlight
+    id: display_backlight_switch
     pin: 
       ch422g: io_ex
       number: 2
@@ -9,17 +9,23 @@ switch:
     restore_mode: ALWAYS_ON
     internal: true
 
-# Presence Sensor Trigger
+light:
+  - platform: monochromatic
+    output: backlight_pwm
+    id: display_backlight
+    internal: true
+    name: "Display Backlight"
+
 binary_sensor:
   - platform: homeassistant
-    id: backlight_presence
+    id: office_presence
     entity_id: binary_sensor.office_presence_presence
     on_press:
-      - switch.turn_on:
+      - light.turn_on:
           id: display_backlight
           brightness: 100%  # Full brightness
           transition: 1s    # Fade up over 1 second
     on_release:
-      - switch.turn_off:
+      - light.turn_off:
           id: display_backlight
           transition: 1s    # Fade down over 1 second
