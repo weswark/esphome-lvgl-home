@@ -211,13 +211,10 @@ lvgl:
             checkable: false
             id: webhook_mail_button
             widgets:
-              #- image:
-              #    src: mail_logo
-              #    antialias: true
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $email
+                  text: $gmail
               - label:
                   align: bottom_left
                   text: "Mail"
@@ -233,10 +230,10 @@ lvgl:
             checkable: false
             id: webhook_slack_button
             widgets:
-              - image:
-                  src: slack_logo
-                  pad_top: 5
-                  antialias: true
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $slack
               - label:
                   align: bottom_left
                   text: "Slack"
