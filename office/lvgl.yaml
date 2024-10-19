@@ -1,3 +1,4 @@
+
 lvgl:
 
   # Header
@@ -234,6 +235,7 @@ lvgl:
             widgets:
               - image:
                   src: slack_logo
+                  pad_top: 5
                   antialias: true
               - label:
                   align: bottom_left
