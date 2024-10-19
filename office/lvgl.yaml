@@ -203,6 +203,61 @@ lvgl:
                   data:
                     entity_id: switch.office_air_conditioner
 
+
+        # Webhook Mail
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_mail_button
+            widgets:
+              - image:
+                  src: mail_logo
+                  antialias: true
+              - label:
+                  align: bottom_left
+                  text: "Mail"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_mail
+
+        # Webhook Slack
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_slack_button
+            widgets:
+              - image:
+                  src: slack_logo
+                  antialias: true
+              - label:
+                  align: bottom_left
+                  text: "Slack"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_slack
+
+        # Webhook Meet
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: webhook_meet_button
+            widgets:
+              - image:
+                  src: meet_logo
+                  antialias: true
+              - label:
+                  align: bottom_left
+                  text: "Meet"
+            on_click:
+              - homeassistant.service:
+                  service: button.press
+                  data:
+                    entity_id: button.webhook_meet
+
         # Webhook Figma
         - button: 
             height: $button_height_single
@@ -259,24 +314,6 @@ lvgl:
                   data:
                     entity_id: button.webhook_iawriter
 
-        # Webhook Mail
-        - button: 
-            height: $button_height_single
-            checkable: false
-            id: webhook_mail_button
-            widgets:
-              - image:
-                  src: mail_logo
-                  antialias: true
-              - label:
-                  align: bottom_left
-                  text: "Mail"
-            on_click:
-              - homeassistant.service:
-                  service: button.press
-                  data:
-                    entity_id: button.webhook_mail
-
         # Webhook Mainsail
         - button: 
             height: $button_height_single
@@ -295,38 +332,4 @@ lvgl:
                   data:
                     entity_id: button.webhook_mainsail
 
-        # Webhook Meet
-        - button: 
-            height: $button_height_single
-            checkable: false
-            id: webhook_meet_button
-            widgets:
-              - image:
-                  src: meet_logo
-                  antialias: true
-              - label:
-                  align: bottom_left
-                  text: "Meet"
-            on_click:
-              - homeassistant.service:
-                  service: button.press
-                  data:
-                    entity_id: button.webhook_meet
 
-        # Webhook Slack
-        - button: 
-            height: $button_height_single
-            checkable: false
-            id: webhook_slack_button
-            widgets:
-              - image:
-                  src: slack_logo
-                  antialias: true
-              - label:
-                  align: bottom_left
-                  text: "Slack"
-            on_click:
-              - homeassistant.service:
-                  service: button.press
-                  data:
-                    entity_id: button.webhook_slack
