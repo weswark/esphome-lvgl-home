@@ -138,3 +138,13 @@ switch:
 # CH422G saves the last state internally, but gpio switch sets state as off except when using RESTORE_ modes
     restore_mode: ALWAYS_ON
 
+interval:
+  - interval: 1s  # Check every second or adjust as needed
+    then:
+      if:
+        condition:
+          binary_sensor.is_on: office_presence
+        then:
+          - switch.turn_on: display_backlight
+        else:
+          - switch.turn_off: display_backlight
