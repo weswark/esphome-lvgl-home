@@ -1,3 +1,7 @@
+substitutions:
+  text_font: text_font
+  status_font: status_font
+
 font:
   - file: "gfonts://Roboto"
     id: text_font
