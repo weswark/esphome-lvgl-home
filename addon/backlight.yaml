@@ -1,3 +1,18 @@
+output:
+  - platform: ledc
+    pin: GPIO6
+    id: backlight_output
+    zero_means_zero: true
+    
+light:
+  - platform: monochromatic
+    id: backlight
+    name: Back Light
+    entity_category: config
+    output: backlight_output
+    restore_mode: ALWAYS_ON
+
+
 # Panel Backlight
 switch:
   - platform: gpio
