@@ -1,12 +1,15 @@
 output:
-  - platform: gpio
+  - platform: ledc  # Use PWM (LED Controller)
     id: backlight_output
     pin:
       ch422g: io_ex
       number: 2
+    frequency: 1000 Hz  # Adjust frequency if needed for your setup
 
 light:
   - platform: monochromatic
     id: backlight_light
     output: backlight_output
-    name: "Backlight"
+    name: "Dimmable Backlight"
+    default_transition_length: 1s
+    gamma_correct: 2.8
