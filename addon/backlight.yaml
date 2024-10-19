@@ -1,17 +1,20 @@
-mcp23017:
-  - id: 'mcp23017_hub'
-    address: 0x24
+# Panel Backlight
+switch:
+  - platform: gpio
+    id: display_backlight
+    pin: 
+      ch422g: io_ex
+      number: 2
+      allow_other_uses: true
+    restore_mode: ALWAYS_ON
+    internal: true
 
-output:
-  - platform: mcp23017
-    id: backlight_output
-    pin: 2
-    mcp23017_id: mcp23017_hub
-
-light:
-  - platform: binary
-    id: backlight_light
-    output: backlight_output
-    name: "Dimmable Backlight"
-    default_transition_length: 1s
-    gamma_correct: 2.8
+# Presence Sensor Trigger
+binary_sensor:
+  - platform: homeassistant
+    id: backlight_presence
+    entity_id: binary_sensor.office_presence_presence
+    on_press:
+      - switch.turn_on: display_backlight  # Turn on backlight when binary sensor is ON
+    on_release:
+      - switch.turn_off: display_backlight  # Turn off backlight when binary sensor is OFF
