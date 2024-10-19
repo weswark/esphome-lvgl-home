@@ -1,6 +1,9 @@
 output:
   - platform: ledc
-    pin: GPIO6
+    pin: 
+      ch422g: io_ex
+      number: 2
+      allow_other_uses: true
     id: backlight_output
     zero_means_zero: true
     
@@ -22,7 +25,7 @@ switch:
       number: 2
       allow_other_uses: true
     restore_mode: ALWAYS_ON
-    internal: true
+    #internal: true
 
 # Presence Sensor Trigger
 binary_sensor:
