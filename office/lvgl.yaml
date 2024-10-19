@@ -1,7 +1,4 @@
-
 lvgl:
-
-  # Header
   top_layer:
     widgets:
 
