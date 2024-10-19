@@ -1,6 +1,7 @@
 substitutions:
   icon_font: icon_font
   text_font: text_font
+  text_font: status_font
   button_on_color: "Dark_Orange"
   icon_on_color: "Yellow"
   button_off_color: "Very_Dark_Gray"
