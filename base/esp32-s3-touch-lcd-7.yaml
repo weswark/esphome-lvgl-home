@@ -34,8 +34,8 @@ ota:
   platform: esphome
 
 ch422g:
-  id: io_ex
-  address: 0x24
+  - id: io_ex
+    address: 0x24
 
 i2c:
   sda: 8
