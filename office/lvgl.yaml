@@ -212,7 +212,6 @@ lvgl:
               - image:
                   src: figma_logo
                   antialias: true
-                  pad_bottom: 10
               - label:
                   align: bottom_left
                   text: "Figma"
@@ -323,10 +322,9 @@ lvgl:
             checkable: false
             id: webhook_obsbot_button
             widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  text: $application
+              - image:
+                  src: obsbot_logo
+                  antialias: true
               - label:
                   align: bottom_left
                   text: "Obsbot"
