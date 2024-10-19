@@ -1,4 +1,4 @@
 lvgl:
   style_definitions:
     - id: status_style
-      text_font: status_font
+      text_font: $status_font
