@@ -6,8 +6,6 @@ esphome:
   platformio_options:
     # build_unflags: -Werror=all
     board_build.flash_mode: dio
-  on_boot:
-    script.execute: backlight_off
 
 esp32:
   board: esp32-s3-devkitc-1
@@ -56,9 +54,6 @@ touchscreen:
     i2c_id: bus_a
     address: 0x5D
     id: device_touchscreen
-    on_touch:
-      then:
-        - script.execute: backlight_off
 
 display:
   - platform: rpi_dpi_rgb
