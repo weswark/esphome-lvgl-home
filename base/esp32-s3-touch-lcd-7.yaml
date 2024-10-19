@@ -25,8 +25,15 @@ esp32:
 psram:
   mode: octal
   speed: 80MHz
+
+external_components:
+  # CH422G I/O Expander
+  # https://github.com/esphome/esphome/pull/7356
+  - source: github://pr#7356
+    components: [ch422g]
   
 api:
+
 logger:
   hardware_uart: USB_SERIAL_JTAG
 
