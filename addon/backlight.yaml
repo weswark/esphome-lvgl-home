@@ -1,5 +1,5 @@
 # Panel Backlight
-switch:
+light:
   - platform: gpio
     id: display_backlight
     pin: 
