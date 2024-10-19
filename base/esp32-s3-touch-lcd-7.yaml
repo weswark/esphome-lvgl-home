@@ -1,58 +1,42 @@
 # Designed for ESP32-S3-Touch-LCD-7
-esp32:
-  board: esp32-s3-devkitc-1
-  variant: esp32s3
-  flash_size: 8MB
-  framework:
-    type: esp-idf
-    platform_version: 6.8.1
-    version: 5.3.0
-    sdkconfig_options:
-      CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240: y
-      CONFIG_ESP32S3_DATA_CACHE_64KB: y
-      CONFIG_SPIRAM_FETCH_INSTRUCTIONS: y
-      CONFIG_SPIRAM_RODATA: y
-      CONFIG_ESPTOOLPY_FLASHSIZE_8MB: y
-
-# Esphome
 esphome:
   name: ${name}
   friendly_name: ${friendly_name}
   area: ${room}
   platformio_options:
-    build_unflags: -Werror=all
+    # build_unflags: -Werror=all
     board_build.flash_mode: dio
-    build_flags: "-DBOARD_HAS_PSRAM" # Added
-    board_build.esp-idf.memory_type: qio_opi #Added
-    board_upload.maximum_ram_size: 524288 #Added
-    board_build.flash_size: 8MB #Added
+  on_boot:
+    script.execute: backlight_off
 
-# Over the Air Updates
-ota:
-  platform: esphome
-
-# Enable Home Assistant API
-api:
-
-# Enable logging
-logger:
-  level: DEBUG
-  hardware_uart: UART0
-
-# Video memory
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: esp-idf
+    platform_version: 6.8.1
+    version: 5.3.0
+    sdkconfig_options:
+      CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240: "y"
+      CONFIG_ESP32S3_DATA_CACHE_64KB: "y"
+      CONFIG_SPIRAM_FETCH_INSTRUCTIONS: y
+      CONFIG_SPIRAM_RODATA: y
+  flash_size: 16MB
+  
 psram:
   mode: octal
   speed: 80MHz
+  
+api:
+logger:
+  hardware_uart: USB_SERIAL_JTAG
 
-# Touch screen
-touchscreen:
-  platform: gt911
-  address: 0x5D
-  id: my_touchscreen
-  update_interval: 16ms
-  interrupt_pin: 4
+ota:
+  platform: esphome
 
-# i2c connections
+ch422g:
+  - id: io_ex
+    address: 0x24
+
 i2c:
   sda: 8
   scl: 9
@@ -60,16 +44,14 @@ i2c:
   scan: false
   id: bus_a
 
-ch422g:
-  - id: io_ex
-    address: 0x24
-
-external_components:
-  # CH422G I/O Expander
-  # https://github.com/esphome/esphome/pull/7356
-  - source: github://pr#7356
-    components: [ch422g]
-
+touchscreen:
+  - platform: gt911
+    i2c_id: bus_a
+    address: 0x5D
+    id: device_touchscreen
+    on_touch:
+      then:
+        - script.execute: backlight_off
 
 display:
   - platform: rpi_dpi_rgb
@@ -124,3 +106,16 @@ display:
         - 48        #g5
         - 47        #g6
         - 21        #g7
+
+output:
+  - platform: ledc
+    pin: GPIO6
+    id: backlight_output
+    zero_means_zero: true
+light:
+  - platform: monochromatic
+    id: backlight
+    name: Back Light
+    entity_category: config
+    output: backlight_output
+    restore_mode: ALWAYS_ON
