@@ -210,7 +210,7 @@ lvgl:
             id: webhook_figma_button
             widgets:
               - image:
-                  src: boot_logo
+                  src: figma_logo
                   antialias: true
                   pad_bottom: 10
               - label:
