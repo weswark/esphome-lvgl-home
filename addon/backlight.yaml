@@ -1,1 +1,5 @@
-t
+  # Office Presence
+  - platform: homeassistant
+    id: office_presence
+    entity_id: binary_sensor.office_presence_presence
+    publish_initial_state: true
