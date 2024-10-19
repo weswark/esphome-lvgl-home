@@ -57,6 +57,11 @@ lvgl:
                   service: scene.turn_on
                   data:
                     entity_id: scene.office_features
+            on_release:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_off
 
         # Office Calls Scene
         - button: 
@@ -78,6 +83,11 @@ lvgl:
                   service: scene.turn_on
                   data:
                     entity_id: scene.office_desk_call
+            on_release:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_off
 
         # Office Evening Scene
         - button: 
@@ -94,7 +104,7 @@ lvgl:
                   align: bottom_left
                   id: office_scene_evening_label
                   text: "Evening"
-            on_press:
+            on_click:
               - homeassistant.service:
                   service: scene.turn_on
                   data:
@@ -167,6 +177,32 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_3d_printer_lights
+
+        # Blinds
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blind
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: office_blind_icon
+                  text: $printer
+              - label:
+                  align: bottom_left
+                  id: office_blind_label
+                  text: "Blind"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: cover.close_cover
+            on_release:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: cover.open_cover
 
         # Lenovo Server
         - button: 
