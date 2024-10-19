@@ -111,7 +111,7 @@ display:
 
 output:
   - platform: ledc
-    pin: GPIO6
+    pin: EXIO2
     id: backlight_output
     zero_means_zero: true
 light:
