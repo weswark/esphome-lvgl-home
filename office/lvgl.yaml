@@ -285,7 +285,7 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $application
+                  text: $forklift
               - label:
                   align: bottom_left
                   text: "Forklift"
