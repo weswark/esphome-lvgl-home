@@ -204,13 +204,13 @@ lvgl:
                   service: cover.set_cover_position
                   data:
                     entity_id: cover.office_blind
-                    position: 100
+                    position: "100"
             on_release:
               - homeassistant.service:
                   service: cover.set_cover_position
                   data:
                     entity_id: cover.office_blind
-                    position: 50
+                    position: "0"
                     
         # Lenovo Server
         - button: 
