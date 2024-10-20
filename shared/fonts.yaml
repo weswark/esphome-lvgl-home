@@ -3,3 +3,8 @@ font:
     id: text_font
     size: 16
     bpp: 4
+
+  - file: "gfonts://Roboto"
+    id: small_font
+    size: 13
+    bpp: 4
