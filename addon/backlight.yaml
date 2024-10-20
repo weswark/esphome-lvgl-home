@@ -24,6 +24,7 @@ binary_sensor:
     on_press:
       - logger.log: "Screensaver is turned off"
       - lvgl.resume:
+      - delay: 1s
       - light.turn_on: display_backlight
 
     on_release:
