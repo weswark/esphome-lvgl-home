@@ -10,7 +10,7 @@ lvgl:
           align: top_left
           x: 8
           y: 4
-          text_color: White
+          text_color: 0xFFFFFF
 
       # Clock
       - label:
@@ -21,7 +21,7 @@ lvgl:
           x: 0
           y: 4
           text_align: center
-          text_color: White
+          text_color: 0xFFFFFF
           
   pages:
     - id: main_page
