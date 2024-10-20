@@ -9,7 +9,7 @@ switch:
     restore_mode: ALWAYS_ON
     #internal: true
 
-# Presence Sensor Trigger
+# Presence Sensor
 binary_sensor:
   - platform: homeassistant
     id: backlight_presence
@@ -23,3 +23,11 @@ binary_sensor:
       - switch.turn_off: display_backlight
       - lvgl.pause:
           show_snow: true
+
+# Stops screen saver
+touchscreen:
+  on_touch:
+    then:
+      - logger.log: "Screen is active"
+      - lvgl.resume:
+      - switch.turn_on: display_backlight
