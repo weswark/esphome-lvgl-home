@@ -27,6 +27,12 @@ esphome:
     board_upload.maximum_ram_size: 524288 #Added
     board_build.flash_size: 8MB #Added
 
+    on_boot:
+        priority: -100
+        then:
+          - lambda: |-
+              lv_disp_set_inactive_time(NULL, 60000);  // Set the screen saver timeout to 1 minute
+          
 # Over the Air Updates
 ota:
   platform: esphome
