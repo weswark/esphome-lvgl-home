@@ -35,6 +35,7 @@ lvgl:
       pad_bottom: 5
       pad_left: 5
       pad_right: 5
+      
       widgets:
       
         # Office Features Scene
@@ -42,6 +43,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: office_scene_features_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -57,17 +59,13 @@ lvgl:
                   service: scene.turn_on
                   data:
                     entity_id: scene.office_features
-            on_long_press:
-              - homeassistant.service:
-                  service: scene.turn_on
-                  data:
-                    entity_id: scene.office_off
 
         # Office Calls Scene
         - button: 
             height: $button_height_single
             checkable: false
             id: office_scene_calls_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -83,17 +81,13 @@ lvgl:
                   service: scene.turn_on
                   data:
                     entity_id: scene.office_desk_call
-            on_long_press:
-              - homeassistant.service:
-                  service: scene.turn_on
-                  data:
-                    entity_id: scene.office_off
 
         # Office Evening Scene
         - button: 
             height: $button_height_single
             checkable: false
             id: office_scene_evening_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -109,17 +103,13 @@ lvgl:
                   service: scene.turn_on
                   data:
                     entity_id: scene.office_evening
-            on_long_press:
-              - homeassistant.service:
-                  service: scene.turn_on
-                  data:
-                    entity_id: scene.office_off
 
         # Office Storage Light
         - button: 
             height: $button_height_single
             checkable: true
             id: office_storage_light_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -141,6 +131,7 @@ lvgl:
             height: $button_height_single
             checkable: true
             id: printer_power_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -162,6 +153,7 @@ lvgl:
             height: $button_height_single
             checkable: true
             id: printer_lights_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -183,6 +175,7 @@ lvgl:
             height: $button_height_single
             checkable: true
             id: lenovo_power_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -204,6 +197,7 @@ lvgl:
             height: $button_height_single
             checkable: true
             id: office_aircon_button
+            styles: control
             widgets:
               - label:
                   text_font: $icon_font
@@ -224,6 +218,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: webhook_mail_button
+            styles: webhook
             widgets:
               - label:
                   text_font: $icon_font
@@ -243,6 +238,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: webhook_slack_button
+            styles: webhook
             widgets:
               - label:
                   text_font: $icon_font
@@ -262,6 +258,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: webhook_meet_button
+            styles: webhook
             widgets:
               - image:
                   src: meet_logo
@@ -280,6 +277,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: webhook_figma_button
+            styles: webhook
             widgets:
               - image:
                   src: figma_logo
@@ -298,6 +296,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: webhook_forklift_button
+            styles: webhook
             widgets:
               - label:
                   text_font: $icon_font
@@ -317,6 +316,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: webhook_iawriter_button
+            styles: webhook
             widgets:
               - label:
                   text_font: $icon_font
