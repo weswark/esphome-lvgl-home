@@ -15,8 +15,11 @@ binary_sensor:
     id: backlight_presence
     entity_id: binary_sensor.office_presence_presence
     on_press:
-      - switch.turn_on: display_backlight  # Turn on backlight when binary sensor is ON
-      - switch.turn_off: screensaver
+      - logger.log: "Screensaver is turned off"
+      - switch.turn_on: display_backlight
+      - lvgl.resume:
     on_release:
-      - switch.turn_off: display_backlight  # Turn off backlight when binary sensor is OFF
-      - switch.turn_on: screensaver
+      - logger.log: "Screensaver is turned on"
+      - switch.turn_off: display_backlight
+      - lvgl.pause:
+          show_snow: true
