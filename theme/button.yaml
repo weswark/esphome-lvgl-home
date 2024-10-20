@@ -14,8 +14,7 @@ substitutions:
 lvgl:
   style_definitions:
     - id: webhook
-      bg_color:
-        hex: "212121"
+      bg_color: 0x212121
 
     - id: control
       bg_color: "Very_Dark_Gray"
