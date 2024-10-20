@@ -6,7 +6,7 @@ lvgl:
       - label:
           text: "-° / -°"
           id: temperatures
-          styles: status_style
+          styles: roboto15_style
           align: top_left
           x: 8
           y: 4
@@ -16,7 +16,7 @@ lvgl:
       - label:
           text: "--:--"
           id: display_time
-          styles: status_style
+          styles: roboto15_style
           align: top_mid
           x: 0
           y: 4
