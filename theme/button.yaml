@@ -25,7 +25,7 @@ lvgl:
       height: $button_height_single
       pad_all: $padding
       shadow_width: 0
-      bg_color: $button_off_color
+      #bg_color: $button_off_color
       text_color: $button_text_color
       checked:
         bg_color: $button_on_color
