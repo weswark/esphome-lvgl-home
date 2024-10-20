@@ -8,3 +8,8 @@ font:
     id: roboto15_font
     size: 15
     bpp: 4
+
+lvgl:
+  style_definitions:
+    - id: roboto15_style
+      text_font: roboto15_font
