@@ -14,8 +14,9 @@ substitutions:
 
 lvgl:
   theme:
-    button:
+    label:
       text_font: $text_font
+    button:
       scroll_on_focus: false
       radius: $radius
       width: $button_width
