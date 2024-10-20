@@ -3,7 +3,6 @@ substitutions:
   text_font: roboto17_font
   button_on_color: "Dark_Orange"
   icon_on_color: "Yellow"
-  button_off_color: "Very_Dark_Gray"
   icon_off_color: "White"
   button_text_color: "White"
   button_height_single: 102px
@@ -15,7 +14,10 @@ substitutions:
 lvgl:
   style_definitions:
     - id: webhook
-      bg_color: "Gray"
+      bg_color: "Night_Grey"
+  style_definitions:
+    - id: control
+      bg_color: "Very_Dark_Gray"
   theme:
     button:
       text_font: $text_font
@@ -25,7 +27,6 @@ lvgl:
       height: $button_height_single
       pad_all: $padding
       shadow_width: 0
-      #bg_color: $button_off_color
       text_color: $button_text_color
       checked:
         bg_color: $button_on_color
