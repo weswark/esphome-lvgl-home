@@ -1,19 +1,23 @@
 # Panel Backlight
-switch:
+output:
   - platform: gpio
-    name: Display Backlight
-    id: display_backlight
     pin: 
       ch422g: io_ex
       number: 2
-    restore_mode: ALWAYS_ON
+    id: backlight_output
+
+
+light:
+  - platform: binary
+    id: display_backlight
+    output: backlight_output
+    id: backlight_light
     on_turn_on:
       then:
-        - lambda: |-
-            delay(100);  // Delay for 100 milliseconds
-            id(backlight_switch).turn_on();
-    #internal: true
+        - delay: 100ms  # Delay of 100 milliseconds
+        - output.turn_on: backlight_output
 
+    
 # Presence Sensor
 binary_sensor:
   - platform: homeassistant
