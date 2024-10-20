@@ -10,7 +10,6 @@ light:
   - platform: binary
     id: display_backlight
     output: backlight_output
-    id: backlight_light
     on_turn_on:
       then:
         - delay: 100ms  # Delay of 100 milliseconds
