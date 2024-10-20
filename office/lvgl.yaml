@@ -1,7 +1,7 @@
 lvgl:
   style_definitions:
     - id: status_style
-      text_font: montserrat_40
+      text_font: roboto13_font
       text_color: 0xFF0000
 
   top_layer:
