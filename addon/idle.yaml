@@ -4,7 +4,7 @@
 #    timeout: "10s"
 #    then:
 #      - logger.log: "Screen is idle"
-#      - light.turn_off: display_backlight
+#      - switch.turn_off: display_backlight
 #      - lvgl.pause:
 #          show_snow: true
 
@@ -15,12 +15,12 @@ switch:
     id: screensaver
     turn_on_action:
       - logger.log: "Screensaver is turned on"
-      - light.turn_off: display_backlight
+      - switch.turn_off: display_backlight
       - lvgl.pause:
           show_snow: true
     turn_off_action:
       - logger.log: "Screensaver is turned off"
-      - light.turn_on: display_backlight
+      - switch.turn_on: display_backlight
       - lvgl.resume:
 
 # Stops screen saver
@@ -29,5 +29,5 @@ touchscreen:
     then:
       - logger.log: "Screen is active"
       - lvgl.resume:
-      - light.turn_on: display_backlight
+      - switch.turn_on: display_backlight
 
