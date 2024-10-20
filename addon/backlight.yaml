@@ -11,11 +11,11 @@ switch:
 # Presence Sensor
 binary_sensor:
   - platform: homeassistant
-    id: backlight_presence
+    id: presence
     entity_id: binary_sensor.office_presence_presence
     on_press:
       - lvgl.resume:
-      - delay: 1s
+      - delay: 100ms
       - switch.turn_on: backlight
       - logger.log: "Screensaver is turned off"
 
