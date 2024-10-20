@@ -15,7 +15,7 @@ lvgl:
   style_definitions:
     - id: webhook
       bg_color:
-        hex: '212121'
+        hex: "212121"
 
     - id: control
       bg_color: "Very_Dark_Gray"
