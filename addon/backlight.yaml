@@ -1,37 +1,29 @@
 # Panel Backlight
-output:
+switch:
   - platform: gpio
+    id: backlight
     pin: 
       ch422g: io_ex
       number: 2
-    id: backlight_output
+    restore_mode: ALWAYS_ON
+    internal: true
 
-light:
-  - platform: binary
-    id: display_backlight
-    output: backlight_output
-    on_turn_on:
-      then:
-        - delay: 100ms  # Delay of 100 milliseconds
-        - output.turn_on: backlight_output
-
-    
 # Presence Sensor
 binary_sensor:
   - platform: homeassistant
     id: backlight_presence
     entity_id: binary_sensor.office_presence_presence
     on_press:
-      - logger.log: "Screensaver is turned off"
       - lvgl.resume:
       - delay: 1s
-      - light.turn_on: display_backlight
+      - switch.turn_on: backlight
+      - logger.log: "Screensaver is turned off"
 
     on_release:
-      - logger.log: "Screensaver is turned on"
-      - light.turn_off: display_backlight
+      - switch.turn_off: backlight
       - lvgl.pause:
           show_snow: true
+      - logger.log: "Screensaver is turned on"
 
 # Stops screen saver
 touchscreen:
@@ -39,4 +31,4 @@ touchscreen:
     then:
       - logger.log: "Screen is active"
       - lvgl.resume:
-      - light.turn_on: display_backlight
+      - switch.turn_on: backlight
