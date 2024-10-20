@@ -284,3 +284,5 @@ color:
 # Extra colors
     - id: Burnt_Sienna
       hex: 'CC5E14'
+    - id: Night_Gray
+      hex: '212121' 
