@@ -1,15 +1,17 @@
+# Starts screen saver
 lvgl:
   on_idle: 
     timeout: "10s"
     then:
-      - logger.log: "LVGL is idle"
-      #- light.turn_off: display_backlight
+      - logger.log: "Screen is idle"
+      - light.turn_off: display_backlight
       - lvgl.pause:
           show_snow: true
-          
+
+# Stops screen saver
 touchscreen:
   on_touch:
     then:
-      - logger.log: "LVGL is active"
+      - logger.log: "Screen is active"
       - lvgl.resume:
-      #- light.turn_on: display_backlight
+      - light.turn_on: display_backlight
