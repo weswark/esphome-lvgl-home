@@ -1,6 +1,7 @@
 # Panel Backlight
 switch:
   - platform: gpio
+    name: Display Backlight
     id: display_backlight
     pin: 
       ch422g: io_ex
