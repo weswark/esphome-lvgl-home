@@ -6,3 +6,10 @@ lvgl:
       #- light.turn_off: display_backlight
       - lvgl.pause:
           show_snow: true
+          
+touchscreen:
+  on_touch:
+    then:
+      - logger.log: "LVGL is active"
+      - lvgl.resume:
+      #- light.turn_on: display_backlight
