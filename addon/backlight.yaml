@@ -6,7 +6,6 @@ output:
       number: 2
     id: backlight_output
 
-
 light:
   - platform: binary
     id: display_backlight
