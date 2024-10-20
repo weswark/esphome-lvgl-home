@@ -5,6 +5,6 @@ font:
     bpp: 4
 
   - file: "gfonts://Roboto"
-    id: roboto13_font
-    size: 13
+    id: roboto14_font
+    size: 14
     bpp: 4
