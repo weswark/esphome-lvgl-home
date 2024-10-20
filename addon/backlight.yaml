@@ -1,4 +1,4 @@
-# Panel Backlight
+# Backlight
 switch:
   - platform: gpio
     id: backlight
@@ -8,7 +8,7 @@ switch:
     restore_mode: ALWAYS_ON
     internal: true
 
-# Presence Sensor
+# Screensaver Presence Trigger
 binary_sensor:
   - platform: homeassistant
     id: presence
@@ -24,11 +24,3 @@ binary_sensor:
       - lvgl.pause:
           show_snow: true
       - logger.log: "Screensaver is turned on"
-
-# Stops screen saver
-touchscreen:
-  on_touch:
-    then:
-      - logger.log: "Screen is active"
-      - lvgl.resume:
-      - switch.turn_on: backlight
