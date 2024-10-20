@@ -1,0 +1,8 @@
+lvgl:
+  on_idle: 
+    timeout: "10s"
+    then:
+      - logger.log: "LVGL is idle"
+      #- light.turn_off: display_backlight
+      - lvgl.pause:
+          show_snow: true
