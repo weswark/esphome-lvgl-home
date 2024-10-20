@@ -336,6 +336,7 @@ lvgl:
             height: $button_height_single
             checkable: false
             id: webhook_mainsail_button
+            styles: webhook
             widgets:
               - image:
                   src: mainsail_logo
