@@ -8,7 +8,7 @@ switch:
       number: 2
     restore_mode: ALWAYS_ON
     on_turn_on:
-      - delay: 1s
+      - delay: 10s
     #internal: true
 
 # Presence Sensor
