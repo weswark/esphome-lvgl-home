@@ -31,7 +31,7 @@ esphome:
         priority: -100
         then:
           - lambda: |-
-              lv_disp_set_inactive_time(NULL, 60000);  // Set the screen saver timeout to 1 minute
+              lv_disp_set_inactive_time(NULL, 10000);  // Set the screen saver timeout to 1 minute
           
 # Over the Air Updates
 ota:
