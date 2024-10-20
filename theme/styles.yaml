@@ -1,0 +1,5 @@
+lvgl:
+  style_definitions:
+    - id: status_style
+      text_font: roboto15_font
+      text_color: 0xFF0000
