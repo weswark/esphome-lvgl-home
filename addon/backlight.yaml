@@ -8,7 +8,10 @@ switch:
       number: 2
     restore_mode: ALWAYS_ON
     on_turn_on:
-      - delay: 10s
+      then:
+        - lambda: |-
+            delay(100);  // Delay for 100 milliseconds
+            id(backlight_switch).turn_on();
     #internal: true
 
 # Presence Sensor
