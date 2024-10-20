@@ -15,9 +15,11 @@ lvgl:
   style_definitions:
     - id: webhook
       bg_color: "Night_Grey"
+      
   style_definitions:
     - id: control
       bg_color: "Very_Dark_Gray"
+      
   theme:
     button:
       text_font: $text_font
