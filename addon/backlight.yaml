@@ -23,8 +23,9 @@ binary_sensor:
     entity_id: binary_sensor.office_presence_presence
     on_press:
       - logger.log: "Screensaver is turned off"
-      - light.turn_on: display_backlight
       - lvgl.resume:
+      - light.turn_on: display_backlight
+
     on_release:
       - logger.log: "Screensaver is turned on"
       - light.turn_off: display_backlight
