@@ -13,6 +13,9 @@ substitutions:
   radius: 12px
 
 lvgl:
+  style_definitions:
+    - id: webhook
+      bg_color: "Gray"
   theme:
     button:
       text_font: $text_font
