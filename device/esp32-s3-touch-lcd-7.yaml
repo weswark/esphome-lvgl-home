@@ -60,9 +60,6 @@ i2c:
   scan: false
   id: bus_a
 
-external_components:
-  components: [ch422g]
-
 ch422g:
   - id: io_ex
     address: 0x24
