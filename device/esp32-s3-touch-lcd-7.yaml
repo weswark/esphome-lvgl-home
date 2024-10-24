@@ -67,7 +67,7 @@ ch422g:
 external_components:
   # CH422G I/O Expander
   # https://github.com/esphome/esphome/pull/7356
-  - source: github://pr#7356
+  # - source: github://pr#7356
     components: [ch422g]
 
 
