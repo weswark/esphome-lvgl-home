@@ -61,7 +61,7 @@ i2c:
   id: bus_a
 
 external_components:
-    components: [ch422g]
+  components: [ch422g]
 
 ch422g:
   - id: io_ex
