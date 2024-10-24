@@ -61,8 +61,15 @@ i2c:
   id: bus_a
 
 ch422g:
-  id: io_ex
-  address: 0x24
+  - id: io_ex
+    address: 0x24
+
+external_components:
+  # CH422G I/O Expander
+  # https://github.com/esphome/esphome/pull/7356
+  - source: github://pr#7356
+    components: [ch422g]
+
 
 display:
   - platform: rpi_dpi_rgb
