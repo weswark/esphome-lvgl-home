@@ -62,14 +62,6 @@ i2c:
 
 ch422g:
   - id: io_ex
-#    address: 0x24
-
-#external_components:
-  # CH422G I/O Expander
-  # https://github.com/esphome/esphome/pull/7356
-  # - source: github://pr#7356
-  #   components: [ch422g]
-
 
 display:
   - platform: rpi_dpi_rgb
@@ -92,10 +84,6 @@ display:
     vsync_pin:
       number: 3
       ignore_strapping_warning: true
-    # enable_pin:
-      # # allow_other_uses: true
-      # ch422g: io_ex
-      # number: 2
     pclk_pin: 7
     pclk_inverted: true
     hsync_back_porch: 8
