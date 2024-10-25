@@ -58,12 +58,12 @@ i2c:
   scl: 9
   frequency: 400kHz
   scan: true
-  id: bus_a
+  id: bus_b
 
 # Touch screen
 touchscreen:
   - platform: gt911
-    i2c_id: bus_a
+    i2c_id: bus_b
     address: 0x5D
     id: my_touchscreen
     reset_pin:
