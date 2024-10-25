@@ -44,14 +44,6 @@ psram:
   mode: octal
   speed: 80MHz
 
-# Touch screen
-touchscreen:
-  platform: gt911
-  address: 0x5D
-  id: my_touchscreen
-  update_interval: 16ms
-  interrupt_pin: 4
-
 # i2c connections
 i2c:
   sda: 8
@@ -60,9 +52,24 @@ i2c:
   scan: true
   id: bus_a
 
-# Bus extender
+# Bus Extender
+external_components:
+  # CH422G I/O Expander
+  # https://github.com/esphome/esphome/pull/7356
+  - source: github://pr#7356
+    components: [ch422g]
+
 ch422g:
   - id: io_ex
+    address: 0x24
+
+# Touch screen
+touchscreen:
+  platform: gt911
+  address: 0x5D
+  id: my_touchscreen
+  update_interval: 16ms
+  interrupt_pin: 4
 
 # Display
 display:
