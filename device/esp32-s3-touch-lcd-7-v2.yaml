@@ -63,7 +63,7 @@ i2c:
 # Touch screen
 touchscreen:
   - platform: gt911
-    i2c_id: bus_b
+    i2c_id: bus_a
     address: 0x5D
     id: my_touchscreen
     reset_pin:
