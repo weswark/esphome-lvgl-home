@@ -92,9 +92,9 @@ display:
     dimensions:
       width: 800
       height: 480
-    reset_pin:
-      ch422g: io_ex
-      number: 3
+#    reset_pin:
+#      ch422g: io_ex
+#      number: 3
     de_pin:
       number: 5
     hsync_pin:
