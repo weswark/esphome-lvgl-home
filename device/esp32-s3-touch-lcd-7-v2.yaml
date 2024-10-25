@@ -36,8 +36,12 @@ api:
 
 # Enable logging
 logger:
-  level: VERBOSE
+  level: DEBUG
   hardware_uart: UART0
+  logs:
+    wifi: INFO
+    modbus_controller.sensor: INFO
+    sensor: INFO
 
 # Video memory
 psram:
@@ -67,7 +71,11 @@ touchscreen:
       number: 1
     interrupt_pin:
       number: 4
-
+    on_touch:
+      - logger.log:
+            format: Touch at (%d, %d)
+            args: [touch.x, touch.y]
+            
 # Display
 display:
   - platform: rpi_dpi_rgb
