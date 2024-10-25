@@ -58,16 +58,15 @@ ch422g:
 
 # Touch screen
 touchscreen:
-  platform: gt911
-  i2c_id: bus_a
-  address: 0x5D
-  id: my_touchscreen
-  update_interval: 16ms
-  interrupt_pin:
-    number: 4
-  reset_pin:
-    ch422g: io_ex
-    number: 1
+  - platform: gt911
+    i2c_id: bus_a
+    address: 0x5D
+    id: device_touchscreen
+    reset_pin:
+      ch422g: io_ex
+      number: 1
+    interrupt_pin:
+      number: 4
 
 # Display
 display:
