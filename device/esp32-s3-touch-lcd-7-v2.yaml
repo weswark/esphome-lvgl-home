@@ -63,18 +63,14 @@ i2c:
 # Touch screen
 touchscreen:
   - platform: gt911
-    i2c_id: bus_a
+    i2c_id: bus_b
     address: 0x5D
-    id: device_touchscreen
+    id: my_touchscreen
     reset_pin:
       ch422g: io_ex
       number: 1
     interrupt_pin:
       number: 4
-    on_touch:
-      - logger.log:
-            format: Touch at (%d, %d)
-            args: [touch.x, touch.y]
             
 # Display
 display:
