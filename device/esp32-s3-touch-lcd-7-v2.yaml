@@ -36,13 +36,17 @@ api:
 
 # Enable logging
 logger:
-  level: DEBUG
+  level: VERBOSE
   hardware_uart: UART0
 
 # Video memory
 psram:
   mode: octal
   speed: 80MHz
+
+# Bus extender
+ch422g:
+  - id: io_ex
 
 # i2c connections
 i2c:
@@ -51,10 +55,6 @@ i2c:
   frequency: 400kHz
   scan: true
   id: bus_a
-
-# Bus extender
-ch422g:
-  - id: io_ex
 
 # Touch screen
 touchscreen:
