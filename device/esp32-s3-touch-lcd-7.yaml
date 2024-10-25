@@ -70,6 +70,10 @@ touchscreen:
   id: my_touchscreen
   update_interval: 16ms
   interrupt_pin: 4
+  on_touch:
+  - logger.log:
+        format: Touch at (%d, %d)
+        args: [touch.x, touch.y]
 
 # Display
 display:
