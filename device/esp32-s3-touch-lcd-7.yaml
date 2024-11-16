@@ -84,7 +84,7 @@ display:
       height: 480
     reset_pin:
       ch422g: io_ex
-      number: 1
+      number: 3
     de_pin:
       number: 5
     hsync_pin:
