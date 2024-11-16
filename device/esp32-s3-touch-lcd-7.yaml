@@ -48,7 +48,7 @@ psram:
 external_components:
   # CH422G I/O Expander
   # https://github.com/esphome/esphome/pull/7356
-  - source: github://pr#7356
+  # - source: github://pr#7356
     components: [ch422g]
 
 ch422g:
@@ -84,7 +84,8 @@ display:
       height: 480
     reset_pin:
       ch422g: io_ex
-      number: 3
+      # number: 3
+      number: 1
     de_pin:
       number: 5
     hsync_pin:
