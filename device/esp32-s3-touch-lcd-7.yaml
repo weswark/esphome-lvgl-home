@@ -44,12 +44,6 @@ psram:
   mode: octal
   speed: 80MHz
 
-# Bus Extender
-external_components:
-  # CH422G I/O Expander
-  # https://github.com/esphome/esphome/pull/7356
-    components: [ch422g]
-
 ch422g:
   - id: io_ex
     address: 0x24
