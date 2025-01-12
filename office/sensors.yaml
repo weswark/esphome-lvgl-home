@@ -97,15 +97,15 @@ binary_sensor:
           state:
             checked: !lambda return x;
 
-  # Lenovo Server
+  # Mac Pro
   - platform: homeassistant
-    id: lenovo_power
-    entity_id: switch.lenovo_power
+    id: macpro_power
+    entity_id: switch.macpro_power
     publish_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
-          id: lenovo_power_button
+          id: macpro_power_button
           state:
             checked: !lambda return x;
 
