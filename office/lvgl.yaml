@@ -170,27 +170,27 @@ lvgl:
                   data:
                     entity_id: switch.office_3d_printer_lights
                     
-        # Lenovo Server
+        # Mac Pro Server
         - button: 
             height: $button_height_single
             checkable: true
-            id: lenovo_power_button
+            id: macpro_power_button
             styles: control
             widgets:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  id: lenovo_power_icon
+                  id: macpro_power_icon
                   text: $printer
               - label:
                   align: bottom_left
-                  id: lenovo_power_label
-                  text: "Lenovo"
+                  id: macpro_power_label
+                  text: "Mac Pro"
             on_click:
               - homeassistant.service:
                   service: switch.toggle
                   data:
-                    entity_id: switch.lenovo_power
+                    entity_id: switch.macpro_power
 
         # Office Aircon
         - button: 
