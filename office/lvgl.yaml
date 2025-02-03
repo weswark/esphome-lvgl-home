@@ -120,7 +120,7 @@ lvgl:
               - label:
                   align: bottom_left
                   id: office_scene_dimmed_label
-                  text: "Evening"
+                  text: "Dimmed"
             on_press:
               - homeassistant.service:
                   service: scene.turn_on
