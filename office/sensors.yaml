@@ -61,18 +61,6 @@ binary_sensor:
           state:
             checked: !lambda return x;
 
-  # Office Storage Light
-  - platform: homeassistant
-    id: office_storage
-    entity_id: light.office_storage
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_storage_light_button
-          state:
-            checked: !lambda return x;
-
   # 3d Printer
   - platform: homeassistant
     id: office_3d_printer_power
@@ -82,30 +70,6 @@ binary_sensor:
       then:
         lvgl.widget.update:
           id: printer_power_button
-          state:
-            checked: !lambda return x;
-
-  # 3d Printer Lights
-  - platform: homeassistant
-    id: office_3d_printer_lights
-    entity_id: switch.office_3d_printer_lights
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: printer_lights_button
-          state:
-            checked: !lambda return x;
-
-  # Mac Pro
-  - platform: homeassistant
-    id: macpro_power
-    entity_id: switch.macpro_power
-    publish_initial_state: true
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: macpro_power_button
           state:
             checked: !lambda return x;
 
