@@ -104,28 +104,6 @@ lvgl:
                   data:
                     entity_id: scene.office_evening
 
-        # Office Storage Light
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: office_storage_light_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: office_storage_light_icon
-                  text: $printer
-              - label:
-                  align: bottom_left
-                  id: office_storage_light_label
-                  text: "Storage"
-            on_click:
-              - homeassistant.service:
-                  service: light.toggle
-                  data:
-                    entity_id: light.office_storage
-
         # 3d Printer
         - button: 
             height: $button_height_single
@@ -147,50 +125,6 @@ lvgl:
                   service: switch.toggle
                   data:
                     entity_id: switch.office_3d_printer_power
-
-        # 3d Printer Lights
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: printer_lights_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: printer_lights_icon
-                  text: $lights
-              - label:
-                  align: bottom_left
-                  id: printer_lights_label
-                  text: "Lighting"
-            on_click:
-              - homeassistant.service:
-                  service: switch.toggle
-                  data:
-                    entity_id: switch.office_3d_printer_lights
-                    
-        # Mac Pro Server
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: macpro_power_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: macpro_power_icon
-                  text: $printer
-              - label:
-                  align: bottom_left
-                  id: macpro_power_label
-                  text: "Mac Pro"
-            on_click:
-              - homeassistant.service:
-                  service: switch.toggle
-                  data:
-                    entity_id: switch.macpro_power
 
         # Office Aircon
         - button: 
