@@ -1,18 +1,25 @@
 # Designed for ESP32-S3-Touch-LCD-7
 esp32:
   board: esp32-s3-devkitc-1
-  variant: esp32s3
+  variant: ESP32S3
   flash_size: 8MB
   framework:
     type: esp-idf
-    platform_version: 6.8.1
-    version: 5.3.0
     sdkconfig_options:
-      CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240: y
-      CONFIG_ESP32S3_DATA_CACHE_64KB: y
+      COMPILER_OPTIMIZATION_SIZE: y
+      CONFIG_ESP32S3_DATA_CACHE_64KB: "y"
+      CONFIG_ESPTOOLPY_FLASHSIZE_8MB: "y"
+      CONFIG_FREERTOS_HZ: "1000"
+      CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240: y
+      CONFIG_ESPTOOLPY_FLASHMODE_QIO: y
+      CONFIG_ESPTOOLPY_FLASHFREQ_120M: y
+      CONFIG_SPIRAM_MODE_OCT: y
+      CONFIG_IDF_EXPERIMENTAL_FEATURES: y
+      CONFIG_SPIRAM_SPEED_120M: y
       CONFIG_SPIRAM_FETCH_INSTRUCTIONS: y
       CONFIG_SPIRAM_RODATA: y
-      CONFIG_ESPTOOLPY_FLASHSIZE_8MB: y
+      CONFIG_ESP32S3_DATA_CACHE_LINE_64B: y
+      CONFIG_COMPILER_OPTIMIZATION_PERF: y
 
 # Esphome
 esphome:
@@ -20,13 +27,11 @@ esphome:
   friendly_name: ${friendly_name}
   area: ${room}
   platformio_options:
-    build_unflags: -Werror=all
+    build_flags: "-DBOARD_HAS_PSRAM"
+    board_build.arduino.memory_type: qio_opi
     board_build.flash_mode: dio
-    build_flags: "-DBOARD_HAS_PSRAM" # Added
-    board_build.esp-idf.memory_type: qio_opi #Added
-    board_upload.maximum_ram_size: 524288 #Added
-    board_build.flash_size: 8MB #Added
-          
+    board_upload.maximum_ram_size: 524288
+
 # Over the Air Updates
 ota:
   platform: esphome
@@ -42,50 +47,57 @@ logger:
 # Video memory
 psram:
   mode: octal
-  speed: 80MHz
-
-# Bus Extender
-external_components:
-  # CH422G I/O Expander
-  # https://github.com/esphome/esphome/pull/7356
-  - source: github://pr#7356
-    components: [ch422g]
+  speed: 120MHz
 
 # IO Extender
 ch422g:
-  - id: io_ex
-    address: 0x24
+  - id: ch422g_hub
 
 # i2c connections
 i2c:
-  sda: 8
-  scl: 9
-  frequency: 400kHz
-  scan: true
+  sda: GPIO08
+  scl: GPIO09
+  scan: True
   id: bus_a
 
 # Touch screen
 touchscreen:
   platform: gt911
-  address: 0x5D
-  id: my_touchscreen
-  update_interval: 16ms
-  interrupt_pin: 4
+  id: my_touch
+  interrupt_pin: GPIO4
+  reset_pin:
+    ch422g: ch422g_hub
+    number: 1
+    mode: OUTPUT
+  on_touch:
+    - lambda: |-
+        ESP_LOGI("Touch", "Touch detected at x=%d, y=%d", touch.x, touch.y);
+  on_update:
+    - lambda: |-
+          for (auto touch: touches)  {
+              if (touch.state <= 2) {
+                ESP_LOGI("Touch points:", "id=%d x=%d, y=%d x.raw=%d, y.raw=%d", touch.id, touch.x, touch.y, touch.x_raw, touch.y_raw);
+              }
+          }  
+  on_release:
+    then:
+      - if:
+          condition: lvgl.is_paused
+          then:
+            - lvgl.resume:
+            - lvgl.widget.redraw:
 
 # Display
 display:
   - platform: rpi_dpi_rgb
-    id: device_display
+    id: my_display
     update_interval: never
     auto_clear_enabled: false
     color_order: RGB
-    pclk_frequency: 16MHz
+    pclk_frequency: 16MHZ
     dimensions:
       width: 800
       height: 480
-    reset_pin:
-      ch422g: io_ex
-      number: 3
     de_pin:
       number: 5
     hsync_pin:
@@ -96,6 +108,12 @@ display:
       ignore_strapping_warning: true
     pclk_pin: 7
     pclk_inverted: true
+    reset_pin:
+      ch422g: ch422g_hub
+      number: 3
+#    enable_pin:
+#      ch422g: ch422g_hub
+#      number: 2  
     hsync_back_porch: 8
     hsync_front_porch: 8
     hsync_pulse_width: 4
@@ -104,8 +122,8 @@ display:
     vsync_pulse_width: 4
     data_pins:
       red:
-        - 1         #r3.
-        - 2         #r4.
+        - 1         #r3
+        - 2         #r4
         - 42        #r5
         - 41        #r6
         - 40        #r7
@@ -117,7 +135,7 @@ display:
         - 10        #b7
       green:
         - 39        #g2
-        - 0         #g3.
+        - 0         #g3
         - 45        #g4
         - 48        #g5
         - 47        #g6
