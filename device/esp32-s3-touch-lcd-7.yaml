@@ -47,12 +47,13 @@ psram:
 # Bus Extender
 external_components:
   # CH422G I/O Expander
-  # Update to use the main branch or a specific tag/commit
-  - source: github://esphome/esphome@main
+  # https://github.com/esphome/esphome/pull/7356
+  - source: github://pr#7356
     components: [ch422g]
 
 ch422g:
   - id: io_ex
+    address: 0x24
 
 # i2c connections
 i2c:
