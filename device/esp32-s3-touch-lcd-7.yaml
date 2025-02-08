@@ -47,8 +47,8 @@ psram:
 # Bus Extender
 external_components:
   # CH422G I/O Expander
-  # https://github.com/esphome/esphome/pull/7356
-  - source: github://pr#7356
+  # Update to use the main branch or a specific tag/commit
+  - source: github://esphome/esphome@main
     components: [ch422g]
 
 ch422g:
