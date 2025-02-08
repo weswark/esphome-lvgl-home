@@ -41,8 +41,6 @@ api:
 
 # Enable logging
 logger:
-  level: DEBUG
-  hardware_uart: UART0
 
 # Video memory
 psram:
