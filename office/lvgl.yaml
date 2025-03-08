@@ -169,6 +169,68 @@ lvgl:
                   data:
                     entity_id: switch.office_air_conditioner
 
+        # Office Blind Control
+        - obj:
+            height: $button_height_double
+            width: $button_width
+            id: office_blind_container
+            bg_color: $button_control_color
+            radius: $radius
+            pad_all: $padding
+            widgets:
+              # Button for toggle
+              - button:
+                  width: 100
+                  height: 100
+                  id: office_blind_button
+                  align: top_left
+                  bg_opa: 0
+                  border_width: 0
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: top_left
+                        id: office_blind_icon
+                        text: $blind
+                    - label:
+                        align: bottom_left
+                        id: office_blind_label
+                        text: "Blind"
+                  on_click:
+                    - homeassistant.service:
+                        service: cover.toggle
+                        data:
+                          entity_id: cover.office_blind
+              
+              # Slider for position
+              - slider:
+                  align: top_right
+                  id: office_blind_slider
+                  x: -5
+                  y: 5
+                  width: 40
+                  height: 165
+                  pad_all: 0
+                  min_value: 0
+                  max_value: 100
+                  radius: 10px
+                  adv_hittest: true
+                  knob:
+                    bg_color: white
+                    radius: 2px
+                    pad_left: -3px
+                    pad_right: -3px
+                    pad_top: -18px
+                    pad_bottom: -18px
+                  indicator:
+                    radius: 0px
+                    bg_color: gray
+                  on_release:
+                    - homeassistant.action:
+                        action: cover.set_cover_position
+                        data:
+                          entity_id: cover.office_blind
+                          position: "{{ x | int }}"
 
         # Webhook Mail
         - button: 
@@ -306,54 +368,3 @@ lvgl:
                   service: button.press
                   data:
                     entity_id: button.webhook_mainsail
-
-        # Office Blind Slider
-        - button: 
-            height: 200
-            checkable: false
-            id: office_blind_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: office_blind_icon
-                  text: $blind
-              - label:
-                  align: bottom_left
-                  id: office_blind_label
-                  text: "Blind"
-              - slider:
-                  align: top_right
-                  id: office_blind_slider
-                  x: -5
-                  y: 5
-                  width: 40
-                  height: 165
-                  pad_all: 0
-                  min_value: 0
-                  max_value: 100
-                  radius: 10px
-                  knob:
-                    bg_color: white
-                    radius: 2px
-                    pad_left: -3px
-                    pad_right: -3px
-                    pad_top: -18px
-                    pad_bottom: -18px
-                  indicator:
-                    radius: 0px
-                    bg_color: gray
-                  on_release:
-                    then:
-                      - homeassistant.action:
-                          action: cover.set_cover_position
-                          data:
-                            entity_id: cover.office_blind
-                            position: "{{ x | int }}"
-            on_click:
-              - homeassistant.service:
-                  service: cover.toggle
-                  data:
-                    entity_id: cover.office_blind
-
