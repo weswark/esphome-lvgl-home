@@ -169,11 +169,10 @@ lvgl:
                   data:
                     entity_id: switch.office_air_conditioner
 
-
         # Office Blind
         - button: 
             height: $button_height_double
-            checkable: true
+            checkable: false
             id: office_blind_button
             styles: control
             widgets:
@@ -184,11 +183,38 @@ lvgl:
               - label:
                   align: bottom_left
                   text: "Blind"
-            on_click:
+              - slider:
+                  align: top_right
+                  id: blind_slider
+                  x: -5
+                  y: 5
+                  width: 40
+                  height: 165
+                  pad_all: 0
+                  min_value: 0
+                  max_value: 100
+                  radius: 10px
+                  knob:
+                    bg_color: white
+                    radius: 2px
+                    pad_left: -3px
+                    pad_right: -3px
+                    pad_top: -18px
+                    pad_bottom: -18px
+                  indicator:
+                    radius: 0px
+                    bg_color: gray
+            on_short_click:
               - homeassistant.service:
                   service: cover.toggle
                   data:
                     entity_id: cover.office_blind
+            on_release:
+              - homeassistant.service:
+                  service: cover.set_cover_position
+                  data:
+                    entity_id: cover.office_blind
+                    position: !lambda return int(x);
 
         # Webhook Mail
         - button: 
