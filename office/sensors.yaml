@@ -31,20 +31,11 @@ binary_sensor:
     entity_id: binary_sensor.office_scene_evening
     publish_initial_state: true
     on_state:
-      - then:
-          - if:
-              condition:
-                lambda: 'return id(office_scene_evening).state;'
-              then:
-                - lvgl.widget.update:
-                    id: office_scene_evening_button
-                    state:
-                      checked: true
-              else:
-                - lvgl.widget.update:
-                    id: office_scene_evening_button
-                    state:
-                      checked: false
+      then:
+        lvgl.widget.update:
+          id: office_scene_evening_button
+          state:
+            checked: !lambda return x;
 
   # Office Dimmed Scene
   - platform: homeassistant
@@ -52,20 +43,11 @@ binary_sensor:
     entity_id: binary_sensor.office_scene_dimmed
     publish_initial_state: true
     on_state:
-      - then:
-          - if:
-              condition:
-                lambda: 'return id(office_scene_dimmed).state;'
-              then:
-                - lvgl.widget.update:
-                    id: office_scene_dimmed_button
-                    state:
-                      checked: true
-              else:
-                - lvgl.widget.update:
-                    id: office_scene_dimmed_button
-                    state:
-                      checked: false
+      then:
+        lvgl.widget.update:
+          id: office_scene_dimmed_button
+          state:
+            checked: !lambda return x;
 
   # Office Calls Scene
   - platform: homeassistant
@@ -73,20 +55,11 @@ binary_sensor:
     entity_id: binary_sensor.office_scene_desk_call
     publish_initial_state: true
     on_state:
-      - then:
-          - if:
-              condition:
-                lambda: 'return id(office_scene_desk_call).state;'
-              then:
-                - lvgl.widget.update:
-                    id: office_scene_calls_button
-                    state:
-                      checked: true
-              else:
-                - lvgl.widget.update:
-                    id: office_scene_calls_button
-                    state:
-                      checked: false
+      then:
+        lvgl.widget.update:
+          id: office_scene_calls_button
+          state:
+            checked: !lambda return x;
 
   # Office Features Scene
   - platform: homeassistant
@@ -94,20 +67,11 @@ binary_sensor:
     entity_id: binary_sensor.office_scene_features
     publish_initial_state: true
     on_state:
-      - then:
-          - if:
-              condition:
-                lambda: 'return id(office_scene_features).state;'
-              then:
-                - lvgl.widget.update:
-                    id: office_scene_features_button
-                    state:
-                      checked: true
-              else:
-                - lvgl.widget.update:
-                    id: office_scene_features_button
-                    state:
-                      checked: false
+      then:
+        lvgl.widget.update:
+          id: office_scene_features_button
+          state:
+            checked: !lambda return x;
 
   # 3d Printer
   - platform: homeassistant
@@ -115,20 +79,11 @@ binary_sensor:
     entity_id: switch.office_3d_printer_power
     publish_initial_state: true
     on_state:
-      - then:
-          - if:
-              condition:
-                lambda: 'return id(office_3d_printer_power).state;'
-              then:
-                - lvgl.widget.update:
-                    id: printer_power_button
-                    state:
-                      checked: true
-              else:
-                - lvgl.widget.update:
-                    id: printer_power_button
-                    state:
-                      checked: false
+      then:
+        lvgl.widget.update:
+          id: printer_power_button
+          state:
+            checked: !lambda return x;
 
   # Office Aircon
   - platform: homeassistant
@@ -136,17 +91,8 @@ binary_sensor:
     entity_id: switch.air_conditioner
     publish_initial_state: true
     on_state:
-      - then:
-          - if:
-              condition:
-                lambda: 'return id(office_air_conditioner).state;'
-              then:
-                - lvgl.widget.update:
-                    id: office_aircon_button
-                    state:
-                      checked: true
-              else:
-                - lvgl.widget.update:
-                    id: office_aircon_button
-                    state:
-                      checked: false
+      then:
+        lvgl.widget.update:
+          id: office_aircon_button
+          state:
+            checked: !lambda return x;
