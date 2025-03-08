@@ -109,6 +109,9 @@ display:
     reset_pin:
       ch422g: ch422g_hub
       number: 3
+#    enable_pin:
+#      ch422g: ch422g_hub
+#      number: 2  
     hsync_back_porch: 8
     hsync_front_porch: 8
     hsync_pulse_width: 4
