@@ -318,7 +318,7 @@ lvgl:
                   text_font: $icon_font
                   align: top_left
                   id: office_blind_icon
-                  text: $blinds
+                  text: $blind
               - label:
                   align: bottom_left
                   id: office_blind_label

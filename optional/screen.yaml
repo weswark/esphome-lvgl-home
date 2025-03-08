@@ -1,4 +1,4 @@
-# Optional controls for the screen
+# Optional controls for the screen, not currently being used.
 
 ### Switch
 switch:
@@ -53,24 +53,4 @@ time:
                 time_format: "%A %H:%M"
                 time: |-
                   return id(esptime).now();
-
-  - platform: homeassistant
-    id: antiburn_time
-    on_time:
-      - hours: 2,3,4,5
-        minutes: 5
-        seconds: 0
-        then:
-          - switch.turn_on: switch_antiburn
-          - switch.turn_off: lcdbacklight
-      - hours: 2,3,4,5
-        minutes: 35
-        seconds: 0
-        then:
-          - switch.turn_off: switch_antiburn
-      - hours: 5
-        minutes: 50
-        seconds: 0
-        then:
-          - switch.turn_on: lcdbacklight
 
