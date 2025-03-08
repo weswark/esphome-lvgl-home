@@ -35,8 +35,7 @@ binary_sensor:
           - lvgl.widget.update:
               id: office_scene_evening_button
               state:
-                checked: |-
-                  lambda: return id(office_scene_evening).state;
+                checked: "{{ id(office_scene_evening).state }}"
 
   # Office Dimmed Scene
   - platform: homeassistant
@@ -48,8 +47,7 @@ binary_sensor:
           - lvgl.widget.update:
               id: office_scene_dimmed_button
               state:
-                checked: |-
-                  lambda: return id(office_scene_dimmed).state;
+                checked: "{{ id(office_scene_dimmed).state }}"
 
   # Office Calls Scene
   - platform: homeassistant
@@ -61,8 +59,7 @@ binary_sensor:
           - lvgl.widget.update:
               id: office_scene_calls_button
               state:
-                checked: |-
-                  lambda: return id(office_scene_desk_call).state;
+                checked: "{{ id(office_scene_desk_call).state }}"
 
   # Office Features Scene
   - platform: homeassistant
@@ -74,8 +71,7 @@ binary_sensor:
           - lvgl.widget.update:
               id: office_scene_features_button
               state:
-                checked: |-
-                  lambda: return id(office_scene_features).state;
+                checked: "{{ id(office_scene_features).state }}"
 
   # 3d Printer
   - platform: homeassistant
@@ -87,8 +83,7 @@ binary_sensor:
           - lvgl.widget.update:
               id: printer_power_button
               state:
-                checked: |-
-                  lambda: return id(office_3d_printer_power).state;
+                checked: "{{ id(office_3d_printer_power).state }}"
 
   # Office Aircon
   - platform: homeassistant
@@ -100,5 +95,4 @@ binary_sensor:
           - lvgl.widget.update:
               id: office_aircon_button
               state:
-                checked: |-
-                  lambda: return id(office_air_conditioner).state;
+                checked: "{{ id(office_air_conditioner).state }}"
