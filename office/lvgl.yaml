@@ -170,6 +170,26 @@ lvgl:
                     entity_id: switch.office_air_conditioner
 
 
+        # Office Blind
+        - button: 
+            height: $button_height_double
+            checkable: true
+            id: office_blind_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blind
+              - label:
+                  align: bottom_left
+                  text: "Blind"
+            on_click:
+              - homeassistant.service:
+                  service: cover.toggle
+                  data:
+                    entity_id: cover.office_blind
+
         # Webhook Mail
         - button: 
             height: $button_height_single
