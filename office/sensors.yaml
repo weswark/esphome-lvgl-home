@@ -32,11 +32,8 @@ binary_sensor:
     publish_initial_state: true
     on_state:
       then:
-        lvgl.widget.update:
-          id: office_scene_evening_button
-          state:
-            checked:
-              lambda: return x;
+        lambda: |-
+          id(office_scene_evening_button).set_state(x ? LV_STATE_CHECKED : 0);
 
   # Office Dimmed Scene
   - platform: homeassistant
