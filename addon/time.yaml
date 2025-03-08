@@ -21,7 +21,7 @@ script:
     then:
       - lvgl.label.update:
           id: display_time
-          text: !lambda |-
+          text: |-
             static char time_buf[17];
             auto now = id(sntp_time).now();
             snprintf(time_buf, sizeof(time_buf), "%02d:%02d", now.hour, now.minute);

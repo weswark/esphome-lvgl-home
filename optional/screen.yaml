@@ -1,3 +1,4 @@
+# Optional controls for the screen
 
 ### Switch
 switch:
@@ -50,7 +51,8 @@ time:
               id: time_hour
               text:
                 time_format: "%A %H:%M"
-                time: !lambda return id(esptime).now();
+                time: |-
+                  return id(esptime).now();
 
   - platform: homeassistant
     id: antiburn_time
