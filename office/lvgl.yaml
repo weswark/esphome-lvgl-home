@@ -204,17 +204,12 @@ lvgl:
                   indicator:
                     radius: 0px
                     bg_color: gray
-            on_short_click:
-              - homeassistant.service:
-                  service: cover.toggle
-                  data:
-                    entity_id: cover.office_blind
-            on_release:
-              - homeassistant.service:
-                  service: cover.set_cover_position
-                  data:
-                    entity_id: cover.office_blind
-                    position: !lambda return int(x);
+                  on_release:
+                    - homeassistant.service:
+                        service: cover.set_cover_position
+                        data:
+                          entity_id: cover.office_blind
+                          position: !lambda return int(x);
 
         # Webhook Mail
         - button: 
