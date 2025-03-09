@@ -182,7 +182,7 @@ lvgl:
                   text: $blinds_open
               - label:
                   align: bottom_left
-                  text: "Blind Open"
+                  text: "Open"
             on_click:
               - homeassistant.service:
                   service: cover.set_cover_position
@@ -203,7 +203,7 @@ lvgl:
                   text: $blinds_closed
               - label:
                   align: bottom_left
-                  text: "Blind Close"
+                  text: "Close"
             on_click:
               - homeassistant.service:
                   service: cover.set_cover_position
