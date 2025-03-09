@@ -188,7 +188,7 @@ lvgl:
                   service: cover.set_cover_position
                   data:
                     entity_id: cover.office_blind
-                    position: 0
+                    position: "0"
 
         # Office Blind Close
         - button: 
@@ -209,7 +209,7 @@ lvgl:
                   service: cover.set_cover_position
                   data:
                     entity_id: cover.office_blind
-                    position: 100
+                    position: "100"
 
         # Webhook Mail
         - button: 
