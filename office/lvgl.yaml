@@ -208,6 +208,8 @@ lvgl:
                   indicator:
                     radius: 0px
                     bg_color: $slider_active_color
+                    outline_width: 1
+                    outline_color: white
                   on_release:
                     - homeassistant.service:
                         service: cover.set_cover_position
