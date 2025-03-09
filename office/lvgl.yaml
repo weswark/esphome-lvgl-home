@@ -206,7 +206,6 @@ lvgl:
                     pad_top: -18px
                     pad_bottom: -18px
                   indicator:
-                    radius: 0px
                     bg_color: $slider_active_color
                     outline_width: 1
                     outline_color: white
