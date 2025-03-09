@@ -200,7 +200,7 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $blind
+                  text: $blinds-closed
               - label:
                   align: bottom_left
                   text: "Blind Close"
