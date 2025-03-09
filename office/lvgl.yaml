@@ -179,7 +179,7 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $blind
+                  text: $blind-open
               - label:
                   align: bottom_left
                   text: "Blind Open"
@@ -188,7 +188,7 @@ lvgl:
                   service: cover.set_cover_position
                   data:
                     entity_id: cover.office_blind
-                    position: "0"
+                    position: "100"
 
         # Office Blind Close
         - button: 
@@ -209,7 +209,7 @@ lvgl:
                   service: cover.set_cover_position
                   data:
                     entity_id: cover.office_blind
-                    position: "100"
+                    position: "0"
 
         # Webhook Mail
         - button: 
