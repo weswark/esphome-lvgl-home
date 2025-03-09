@@ -171,8 +171,8 @@ lvgl:
 
         # Office Blind
         - button: 
-            height: $button_height_double
-            checkable: false
+            height: $button_height_single
+            checkable: true
             id: office_blind_button
             styles: control
             widgets:
@@ -183,35 +183,11 @@ lvgl:
               - label:
                   align: bottom_left
                   text: "Blind"
-              - slider:
-                  align: top_right
-                  id: blind_slider
-                  x: -5
-                  y: 5
-                  width: 40
-                  height: 188
-                  pad_all: 0
-                  min_value: 0
-                  max_value: 100
-                  radius: 8px
-                  bg_color: $slider_background_color
-                  bg_opa: 100%
-                  knob:
-                    bg_color: $slider_knob_color
-                    radius: 2px
-                    pad_left: -3px
-                    pad_right: -3px
-                    pad_top: -18px
-                    pad_bottom: -18px
-                  indicator:
-                    radius: 0px
-                    bg_color: $slider_active_color
-                  on_release:
-                    - homeassistant.service:
-                        service: cover.set_cover_position
-                        data:
-                          entity_id: cover.office_blind
-                          position: !lambda return int(x);
+            on_click:
+              - homeassistant.service:
+                  service: cover.toggle
+                  data:
+                    entity_id: cover.office_blind
 
         # Webhook Mail
         - button: 
