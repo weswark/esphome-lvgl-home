@@ -193,8 +193,6 @@ lvgl:
                   pad_all: 0
                   min_value: 0
                   max_value: 100
-                  outline_width: 1
-                  outline_color: white
                   radius: 8px
                   bg_color: $slider_background_color
                   bg_opa: 100%
@@ -206,10 +204,8 @@ lvgl:
                     pad_top: -18px
                     pad_bottom: -18px
                   indicator:
+                    radius: 0px
                     bg_color: $slider_active_color
-                    outline_width: 1
-                    outline_color: white
-                    radius: 8px
                   on_release:
                     - homeassistant.service:
                         service: cover.set_cover_position
