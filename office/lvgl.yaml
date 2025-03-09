@@ -193,6 +193,8 @@ lvgl:
                   pad_all: 0
                   min_value: 0
                   max_value: 100
+                  outline_width: 1
+                  outline_color: white
                   radius: 8px
                   bg_color: $slider_background_color
                   bg_opa: 100%
