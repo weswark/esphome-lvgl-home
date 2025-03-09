@@ -194,10 +194,10 @@ lvgl:
                   min_value: 0
                   max_value: 100
                   radius: 10px
-                  bg_color: "0xFFFFFF"
+                  bg_color: $slider_background_color
                   bg_opa: 100%
                   knob:
-                    bg_color: white
+                    bg_color: $slider_knob_color
                     radius: 2px
                     pad_left: -3px
                     pad_right: -3px
@@ -205,7 +205,7 @@ lvgl:
                     pad_bottom: -18px
                   indicator:
                     radius: 0px
-                    bg_color: blue
+                    bg_color: $slider_active_color
                   on_release:
                     - homeassistant.service:
                         service: cover.set_cover_position
