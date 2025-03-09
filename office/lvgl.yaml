@@ -194,6 +194,7 @@ lvgl:
                   min_value: 0
                   max_value: 100
                   radius: 10px
+                  bg_color: white
                   knob:
                     bg_color: white
                     radius: 2px

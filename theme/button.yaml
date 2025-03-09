@@ -10,6 +10,7 @@ substitutions:
   button_width: 149px
   padding: 8px
   radius: 12px
+  slider_indicator_color: "0x808080"  # Gray color in hex
 
 lvgl:
   style_definitions:
