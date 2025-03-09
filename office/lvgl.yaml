@@ -203,7 +203,7 @@ lvgl:
                     pad_bottom: -18px
                   indicator:
                     radius: 0px
-                    bg_color: gray
+                    bg_color: blue
                   on_release:
                     - homeassistant.service:
                         service: cover.set_cover_position
