@@ -195,7 +195,7 @@ lvgl:
                   max_value: 100
                   radius: 10px
                   bg_color: "0xFFFFFF"
-                  bg_opa: 50%
+                  bg_opa: 100%
                   knob:
                     bg_color: white
                     radius: 2px
