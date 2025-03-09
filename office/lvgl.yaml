@@ -179,7 +179,7 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $blinds-open
+                  text: $blinds_open
               - label:
                   align: bottom_left
                   text: "Blind Open"
@@ -200,7 +200,7 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $blinds-closed
+                  text: $blinds_closed
               - label:
                   align: bottom_left
                   text: "Blind Close"
