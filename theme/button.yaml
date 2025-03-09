@@ -10,8 +10,8 @@ substitutions:
   button_width: 149px
   padding: 8px
   radius: 12px
-  slider_background_color: "0x2D2D2D"
-  slider_active_color: "0x505050"
+  slider_background_color: "0x505050"
+  slider_active_color: "0x2D2D2D"
   slider_knob_color: "0xFFFFFF"
 
 lvgl:
