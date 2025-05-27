@@ -19,10 +19,7 @@ font:
       "\U000F1087",  # mdi-router-network
       "\U000F036B",  # mdi-message-video
       "\U000F0614",  # mdi-application-outline
-      "\U000F07C9",  # mdi-forklift
-      "\U000F02AB",  # mdi-gmail
-      "\U000F04B1",  # mdi-slack
-      "\U000F0633",  # mdi-command
+
       
       ]
 
@@ -40,7 +37,4 @@ substitutions:
   network:        "\U000F1087"
   videocall:      "\U000F036B"
   application:    "\U000F0614"
-  forklift:       "\U000F07C9"
-  gmail:          "\U000F02AB"
-  slack:          "\U000F04B1"
-  command:        "\U000F0633"
+
