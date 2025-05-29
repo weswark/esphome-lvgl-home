@@ -165,15 +165,7 @@ lvgl:
                   text: "Aircon"
             on_click:
               - homeassistant.service:
-                  service: climate.set_hvac_mode
-                  data:
-                    entity_id: climate.office_air_conditioner
-                    hvac_mode: >-
-                      {% if states('climate.office_air_conditioner') == 'off' %}
-                        auto
-                      {% else %}
-                        off
-                      {% endif %}
+                  service: script.office_air_conditioner
 
         # Office Blind Open
         - button: 
