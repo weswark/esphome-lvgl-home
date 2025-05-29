@@ -164,21 +164,16 @@ lvgl:
                   align: bottom_left
                   text: "Aircon"
             on_click:
-              - if:
-                  condition:
-                    lambda: 'return id(office_aircon_climate).mode != esphome::climate::CLIMATE_MODE_OFF;'
-                  then:
-                    - homeassistant.service:
-                        service: climate.set_hvac_mode
-                        data:
-                          entity_id: climate.office_air_conditioner
-                          hvac_mode: "off"
-                  else:
-                    - homeassistant.service:
-                        service: climate.set_hvac_mode
-                        data:
-                          entity_id: climate.office_air_conditioner
-                          hvac_mode: "auto"
+              - homeassistant.service:
+                  service: climate.set_hvac_mode
+                  data:
+                    entity_id: climate.office_air_conditioner
+                    hvac_mode: >-
+                      {% if states('climate.office_air_conditioner') == 'off' %}
+                        auto
+                      {% else %}
+                        off
+                      {% endif %}
 
         # Office Blind Open
         - button: 
