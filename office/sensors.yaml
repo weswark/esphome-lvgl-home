@@ -29,7 +29,7 @@ binary_sensor:
   - platform: homeassistant
     id: office_scene_evening
     entity_id: binary_sensor.office_scene_evening
-    publish_initial_state: true
+    trigger_on_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
@@ -41,7 +41,7 @@ binary_sensor:
   - platform: homeassistant
     id: office_scene_dimmed
     entity_id: binary_sensor.office_scene_dimmed
-    publish_initial_state: true
+    trigger_on_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
@@ -53,7 +53,7 @@ binary_sensor:
   - platform: homeassistant
     id: office_scene_desk_call
     entity_id: binary_sensor.office_scene_desk_call
-    publish_initial_state: true
+    trigger_on_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
@@ -65,7 +65,7 @@ binary_sensor:
   - platform: homeassistant
     id: office_scene_features
     entity_id: binary_sensor.office_scene_features
-    publish_initial_state: true
+    trigger_on_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
@@ -77,7 +77,7 @@ binary_sensor:
   - platform: homeassistant
     id: office_3d_printer_power
     entity_id: switch.office_3d_printer_power
-    publish_initial_state: true
+    trigger_on_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
@@ -89,7 +89,7 @@ binary_sensor:
   - platform: homeassistant
     id: office_air_conditioner
     entity_id: switch.office_air_conditioner
-    publish_initial_state: true
+    trigger_on_initial_state: true
     on_state:
       then:
         lvgl.widget.update:
