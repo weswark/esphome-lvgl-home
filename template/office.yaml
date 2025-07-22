@@ -3,6 +3,8 @@ substitutions:
   name: "device-name"
   friendly_name: "Touch Screen"
   room: "Room Name"
+  project: "Esp.S3"
+  version: "2025.06"
 
 # Wifi Setup
 wifi:
