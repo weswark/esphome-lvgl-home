@@ -1,10 +1,8 @@
 # ESP32-S3-Touch-LCD-7
 substitutions:
-  name: "device-name"
-  friendly_name: "Touch Screen"
-  room: "Room Name"
-  project: "Esp.S3"
-  version: "2025.06"
+  name: "your-device-name"
+  friendly_name: "Your Room Sensor"
+  room: "Your Room"
 
 # Wifi Setup
 wifi:
