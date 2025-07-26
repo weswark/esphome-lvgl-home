@@ -2,6 +2,10 @@
 
 Welcome to my ESPHome LVGL configuration repository! This project provides a modular setup for ESP32-S3 touch LCD devices using the LVGL graphics library, designed specifically for home automation and sensor monitoring.
 
+![ESP32-S3 Touch LCD Device](device.jpg)
+
+*7-inch touch LCD display running ESPHome with LVGL interface, showing home automation controls including temperature display, printer status, air conditioning controls, and various smart home features.*
+
 ## Purpose
 
 This repository contains ESPHome configurations for creating beautiful, touch-enabled displays for home automation. The setup is organized into modular components that can be mixed and matched to create custom interfaces for different rooms and use cases.
@@ -16,6 +20,7 @@ This repository contains ESPHome configurations for creating beautiful, touch-en
 - **Network & Time**: Automatic network connectivity and time synchronization
 - **Backlight Control**: Intelligent display brightness management
 
+
 ## Quick Start
 
 ### 1. Fork This Repository
@@ -24,7 +29,7 @@ This repository contains ESPHome configurations for creating beautiful, touch-en
 
 ### 2. Use the Template
 
-Start with the template configuration file:
+Start with the template configuration file in esphome to build for your device:
 
 ```yaml
 # Use template/office.yaml as your starting point
@@ -47,7 +52,7 @@ The template pulls in modular components that you can customize:
 
 ### 4. Update WiFi and Secrets
 
-Create your `secrets.yaml` file with your WiFi credentials:
+Set your WiFi credentials in the Esphome secrets file:
 
 ```yaml
 wifi_ssid: "Your_WiFi_SSID"
@@ -69,7 +74,7 @@ wifi_password: "Your_WiFi_Password"
 ├── office/         # Room-specific configurations
 │   ├── lvgl.yaml
 │   └── sensors.yaml
-├── template/       # Template configurations
+├── template/       # Template for Esphome
 │   └── office.yaml
 └── theme/          # UI styling
     └── button.yaml
@@ -79,7 +84,7 @@ wifi_password: "Your_WiFi_Password"
 
 1. **Install ESPHome**: Follow the [ESPHome installation guide](https://esphome.io/guides/installing_esphome.html)
 
-2. **Copy the Template**: Use `template/office.yaml` as your starting configuration
+2. **Copy the repo**: Use `template/office.yaml` as your starting configuration
 
 3. **Customize**: Update the substitutions and modify components as needed for your specific setup
 
