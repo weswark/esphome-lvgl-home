@@ -12,7 +12,7 @@ switch:
 binary_sensor:
   - platform: homeassistant
     id: presence
-    entity_id: binary_sensor.1b00_presence
+    entity_id: binary_sensor.office_presence_group
     on_press:
       - lvgl.resume:
       - delay: 10ms
