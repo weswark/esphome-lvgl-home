@@ -3,6 +3,8 @@ substitutions:
   name: "waveshare-home"
   friendly_name: "Waveshare Home"
   room: "home"
+  project: "waveshare-home"
+  version: "0.1"
 
 # Wifi Setup
 wifi:
