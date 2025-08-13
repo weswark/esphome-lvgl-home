@@ -2,7 +2,7 @@
 substitutions:
   name: "waveshare-home"
   friendly_name: "Waveshare Home"
-  room: "Home"
+  room: "home"
 
 # Wifi Setup
 wifi:
