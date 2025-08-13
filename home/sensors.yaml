@@ -1,0 +1,98 @@
+sensor:
+
+  # Header Outdoor Temperate
+  - platform: homeassistant
+    entity_id: sensor.office_temperature
+    id: office_temperature
+    on_value:
+      - lvgl.label.update:
+          id: temperatures
+          text:
+            format: "%d° / %d°"
+            args: [ '(int)round(id(outdoor_temperature).state)', '(int)round(x)' ]
+
+  - platform: homeassistant
+    entity_id: sensor.outdoor_temperature
+    id: outdoor_temperature
+    on_value:
+      - lvgl.label.update:
+          id: temperatures
+          text:
+            format: "%d° / %d°"
+            args: [ '(int)round(x)', '(int)round(id(office_temperature).state)' ]
+
+
+
+binary_sensor:
+
+  # Office Evening Scene
+  - platform: homeassistant
+    id: office_scene_evening
+    entity_id: binary_sensor.office_scene_evening
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_scene_evening_button
+          state:
+            checked: !lambda return x;
+
+  # Office Dimmed Scene
+  - platform: homeassistant
+    id: office_scene_dimmed
+    entity_id: binary_sensor.office_scene_dimmed
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_scene_dimmed_button
+          state:
+            checked: !lambda return x;
+
+  # Office Calls Scene
+  - platform: homeassistant
+    id: office_scene_desk_call
+    entity_id: binary_sensor.office_scene_desk_call
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_scene_calls_button
+          state:
+            checked: !lambda return x;
+
+  # Office Features Scene
+  - platform: homeassistant
+    id: office_scene_features
+    entity_id: binary_sensor.office_scene_features
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_scene_features_button
+          state:
+            checked: !lambda return x;
+
+  # 3d Printer
+  - platform: homeassistant
+    id: office_3d_printer_power
+    entity_id: switch.office_3d_printer_power
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: printer_power_button
+          state:
+            checked: !lambda return x;
+
+  # Office Aircon
+  - platform: homeassistant
+    id: office_air_conditioner
+    entity_id: switch.office_air_conditioner
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: office_aircon_button
+          state:
+            checked: !lambda return x;

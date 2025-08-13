@@ -1,0 +1,210 @@
+lvgl:
+  top_layer:
+    widgets:
+    
+      # Temperature
+      - label:
+          text: "-° / -°"
+          id: temperatures
+          styles: roboto15_style
+          align: top_left
+          x: 8
+          y: 4
+          text_color: 0xFFFFFF
+
+      # Clock
+      - label:
+          text: "--:--"
+          id: display_time
+          styles: roboto15_style
+          align: top_mid
+          x: 0
+          y: 4
+          text_align: center
+          text_color: 0xFFFFFF
+          
+  pages:
+    - id: main_page
+      layout: 
+        type: flex
+        flex_flow: column_wrap
+      width: 100%
+      bg_color: Black
+      bg_opa: cover
+      pad_top: 30
+      pad_bottom: 5
+      pad_left: 5
+      pad_right: 5
+      
+      widgets:
+      
+        # Office Features Scene
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: office_scene_features_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: scene_features_icon                
+                  text: $ledstrip
+              - label:
+                  align: bottom_left
+                  id: scene_features_label
+                  text: "Features"
+            on_press:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_features
+
+        # Office Calls Scene
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: office_scene_calls_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: office_scene_calls_icon                
+                  text: $videocall
+              - label:
+                  align: bottom_left
+                  id: office_scene_calls_label
+                  text: "Calls"
+            on_press:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_desk_call
+
+        # Office Evening Scene
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: office_scene_evening_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: office_scene_evening_icon                
+                  text: $nightlight
+              - label:
+                  align: bottom_left
+                  id: office_scene_evening_label
+                  text: "Evening"
+            on_press:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_evening
+
+
+        # Office Dimmed Scene
+        - button: 
+            height: $button_height_single
+            checkable: false
+            id: office_scene_dimmed_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: office_scene_dimmed_icon                
+                  text: $nightlight
+              - label:
+                  align: bottom_left
+                  id: office_scene_dimmed_label
+                  text: "Dimmed"
+            on_press:
+              - homeassistant.service:
+                  service: scene.turn_on
+                  data:
+                    entity_id: scene.office_dimmed
+
+        # 3d Printer
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: printer_power_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: printer_power_icon
+                  text: $printer
+              - label:
+                  align: bottom_left
+                  id: printer_power_label
+                  text: "Printer"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_3d_printer_power
+
+        # Office Aircon
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_aircon_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $aircon
+              - label:
+                  align: bottom_left
+                  text: "Aircon"
+            on_click:
+              - homeassistant.service:
+                  service: script.office_air_conditioner
+
+        # Office Blind Open
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blind_open_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blinds_open
+              - label:
+                  align: bottom_left
+                  text: "Open"
+            on_click:
+              - homeassistant.service:
+                  service: cover.set_cover_position
+                  data:
+                    entity_id: cover.office_blind
+                    position: "100"
+
+        # Office Blind Close
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blind_close_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blinds_closed
+              - label:
+                  align: bottom_left
+                  text: "Close"
+            on_click:
+              - homeassistant.service:
+                  service: cover.set_cover_position
+                  data:
+                    entity_id: cover.office_blind
+                    position: "0"
