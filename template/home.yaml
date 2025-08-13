@@ -20,6 +20,6 @@ packages:
             assets/fonts.yaml,
             assets/icons.yaml,
             theme/button.yaml,
-            office/sensors.yaml,
-            office/lvgl.yaml]
+            home/sensors.yaml,
+            home/lvgl.yaml]
     refresh: 1sec
